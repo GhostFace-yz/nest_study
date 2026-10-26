@@ -1,0 +1,383 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.65rem;
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.16 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0 0);
+  --primary: oklch(0.55 0.215 14);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.965 0 0);
+  --secondary-foreground: oklch(0.22 0 0);
+  --muted: oklch(0.965 0 0);
+  --muted-foreground: oklch(0.52 0 0);
+  --accent: oklch(0.96 0.005 20);
+  --accent-foreground: oklch(0.22 0 0);
+  --destructive: oklch(0.58 0.24 27);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.55 0.215 14 / 45%);
+
+  --code-bg: oklch(0.975 0 0);
+  --code-border: oklch(0.92 0 0);
+  --hl-keyword: oklch(0.5 0.21 320);
+  --hl-string: oklch(0.48 0.14 150);
+  --hl-number: oklch(0.55 0.16 45);
+  --hl-comment: oklch(0.6 0.01 260);
+  --hl-function: oklch(0.5 0.16 255);
+  --hl-type: oklch(0.52 0.12 200);
+  --hl-attr: oklch(0.52 0.16 30);
+}
+
+.dark {
+  --background: oklch(0.155 0.005 285);
+  --foreground: oklch(0.93 0.003 285);
+  --card: oklch(0.19 0.006 285);
+  --card-foreground: oklch(0.93 0.003 285);
+  --popover: oklch(0.19 0.006 285);
+  --popover-foreground: oklch(0.93 0.003 285);
+  --primary: oklch(0.63 0.22 14);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.25 0.008 285);
+  --secondary-foreground: oklch(0.93 0.003 285);
+  --muted: oklch(0.245 0.007 285);
+  --muted-foreground: oklch(0.66 0.008 285);
+  --accent: oklch(0.26 0.012 285);
+  --accent-foreground: oklch(0.95 0.003 285);
+  --destructive: oklch(0.62 0.22 25);
+  --border: oklch(0.29 0.008 285);
+  --input: oklch(0.31 0.008 285);
+  --ring: oklch(0.63 0.22 14 / 55%);
+
+  --code-bg: oklch(0.175 0.006 285);
+  --code-border: oklch(0.28 0.008 285);
+  --hl-keyword: oklch(0.78 0.15 320);
+  --hl-string: oklch(0.8 0.14 145);
+  --hl-number: oklch(0.82 0.12 60);
+  --hl-comment: oklch(0.55 0.012 280);
+  --hl-function: oklch(0.78 0.12 250);
+  --hl-type: oklch(0.8 0.1 200);
+  --hl-attr: oklch(0.8 0.12 35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--primary) 28%, transparent);
+  }
+}
+
+/* ---------- 滚动条 ---------- */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklch, var(--muted-foreground) 35%, transparent) transparent;
+}
+.scroll-thin::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: color-mix(in oklch, var(--muted-foreground) 30%, transparent);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.scroll-thin::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in oklch, var(--muted-foreground) 55%, transparent);
+  background-clip: content-box;
+}
+
+/* ---------- Markdown 正文 ---------- */
+.md {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--foreground);
+  overflow-wrap: break-word;
+}
+.md p {
+  margin: 0.85em 0;
+}
+.md h1,
+.md h2,
+.md h3,
+.md h4,
+.md h5 {
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 1.6em 0 0.7em;
+  scroll-margin-top: 4rem;
+}
+.md h2 {
+  font-size: 1.35em;
+}
+.md h3 {
+  font-size: 1.15em;
+}
+.md h4 {
+  font-size: 1.02em;
+}
+.md h5 {
+  font-size: 0.95em;
+  color: var(--muted-foreground);
+}
+.md a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklch, var(--primary) 40%, transparent);
+}
+.md a:hover {
+  text-decoration-color: var(--primary);
+}
+.md strong {
+  font-weight: 700;
+  color: color-mix(in oklch, var(--foreground) 92%, var(--primary));
+  margin-inline: 0.1em;
+}
+.md ul,
+.md ol {
+  margin: 0.85em 0;
+  padding-left: 1.4em;
+}
+.md ul {
+  list-style: disc;
+}
+.md ol {
+  list-style: decimal;
+}
+.md li {
+  margin: 0.35em 0;
+}
+.md li > p {
+  margin: 0.25em 0;
+}
+.md code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 5px;
+  padding: 0.12em 0.36em;
+  white-space: break-spaces;
+}
+.md pre {
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 10px;
+  padding: 0.95rem 1.1rem;
+  overflow-x: auto;
+  margin: 1.1em 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.md pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+  white-space: pre;
+}
+.md blockquote {
+  margin: 1em 0;
+  padding: 0.1em 0 0.1em 1em;
+  border-left: 3px solid var(--border);
+  color: var(--muted-foreground);
+}
+.md hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+.md img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin: 0.6em 0;
+}
+.md table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.1em 0;
+  font-size: 0.92em;
+}
+.md th,
+.md td {
+  border: 1px solid var(--border);
+  padding: 0.5em 0.75em;
+  text-align: left;
+  vertical-align: top;
+}
+.md th {
+  background: color-mix(in oklch, var(--muted) 70%, transparent);
+  font-weight: 600;
+}
+.md tbody tr:nth-child(even) {
+  background: color-mix(in oklch, var(--muted) 35%, transparent);
+}
+.md details {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  margin: 1em 0;
+  background: color-mix(in oklch, var(--muted) 30%, transparent);
+}
+.md summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* 官网的 file-tree 结构 */
+.md .file-tree {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  margin: 1em 0;
+  background: var(--code-bg);
+  line-height: 1.9;
+}
+.md .file-tree .children {
+  padding-left: 1.15rem;
+  border-left: 1px dashed color-mix(in oklch, var(--muted-foreground) 35%, transparent);
+  margin-left: 0.35rem;
+}
+.md .file-tree .item::before {
+  content: '·';
+  margin-right: 0.5rem;
+  color: var(--muted-foreground);
+}
+
+/* ---------- 代码高亮 ---------- */
+.hljs {
+  color: var(--foreground);
+  background: transparent;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag {
+  color: var(--hl-keyword);
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-addition {
+  color: var(--hl-string);
+}
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+  color: var(--hl-number);
+}
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  color: var(--hl-comment);
+  font-style: italic;
+}
+.hljs-function .hljs-title,
+.hljs-title.function_,
+.hljs-title.class_,
+.hljs-title {
+  color: var(--hl-function);
+}
+.hljs-type,
+.hljs-class .hljs-title,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: var(--hl-type);
+}
+.hljs-attr,
+.hljs-attribute,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-property,
+.hljs-params {
+  color: var(--hl-attr);
+}
+.hljs-tag,
+.hljs-name {
+  color: var(--hl-keyword);
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 700;
+}
+
+/* 代码块顶部小工具条 */
+.code-block {
+  position: relative;
+}
+.code-block:hover .code-lang {
+  opacity: 1;
+}
+.code-lang {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  opacity: 0.55;
+  transition: opacity 0.15s;
+  user-select: none;
+}
+
+/* 划词联动：另一侧对应句子的高亮（CSS Custom Highlight API） */
+::highlight(nest-linked) {
+  background-color: color-mix(in oklch, var(--primary) 26%, transparent);
+  color: inherit;
+}
