@@ -1,0 +1,63 @@
+{
+ "meta": {
+  "path": "/api/common/Headers",
+  "name": "Headers",
+  "zh": "请求头",
+  "category": "request",
+  "type": "const"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Route handler parameter decorator. Extracts the <code>headers</code> property from the <code>req</code> object and populates the decorated parameter with the value of <code>headers</code>.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <pre class=\"language-typescript\"><code language=\"ts\" hidecopy=\"true\" class=\"language-typescript no-box api-heading\">\nconst <a href=\"#/api/common/Headers\" class=\"code-anchor highlight\">Headers</a>: (property?: string) =&gt; ParameterDecorator;</code></pre> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b2\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/controllers#request-object\" target=\"_blank\" rel=\"noopener\">Request object</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b3\"><span>Description</span></h3> <p data-tid=\"b4\">For example: <code>async update(@<a href=\"#/api/common/Headers\" class=\"code-anchor highlight\">Headers</a>('Cache-Control') cacheControl: string)</code></p> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Route handler parameter decorator. Extracts the [[0]] property from the [[1]] object and populates the decorated parameter with the value of [[2]].",
+   "plain": "Route handler parameter decorator. Extracts the  property from the  object and populates the decorated parameter with the value of .",
+   "tokens": [
+    "<code>headers</code>",
+    "<code>req</code>",
+    "<code>headers</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b3",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b4",
+   "kind": "prose",
+   "tag": "p",
+   "text": "For example: [[0]]",
+   "plain": "For example:",
+   "tokens": [
+    "<code>async update(@<a href=\"#/api/common/Headers\" class=\"code-anchor highlight\">Headers</a>('Cache-Control') cacheControl: string)</code>"
+   ],
+   "auto": null
+  }
+ ]
+}

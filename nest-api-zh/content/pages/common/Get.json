@@ -1,0 +1,30 @@
+{
+ "meta": {
+  "path": "/api/common/Get",
+  "name": "Get",
+  "zh": "GET 路由",
+  "category": "routing",
+  "type": "const"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Route handler (method) Decorator. Routes HTTP GET requests to the specified path.</p> </section> <pre class=\"language-typescript\"><code language=\"ts\" hidecopy=\"true\" class=\"language-typescript no-box api-heading\">\nconst <a href=\"#/api/common/Get\" class=\"code-anchor highlight\">Get</a>: (path?: string | string[]) =&gt; MethodDecorator;</code></pre> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b1\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/controllers#routing\" target=\"_blank\" rel=\"noopener\">Routing</a></p> </li> </ul> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Route handler (method) Decorator. Routes HTTP GET requests to the specified path.",
+   "plain": "Route handler (method) Decorator. Routes HTTP GET requests to the specified path.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  }
+ ]
+}

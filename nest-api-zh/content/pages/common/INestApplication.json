@@ -1,0 +1,1123 @@
+{
+ "meta": {
+  "path": "/api/common/INestApplication",
+  "name": "INestApplication",
+  "zh": "应用接口",
+  "category": "core",
+  "type": "interface"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Interface defining the core NestApplication object.</p> </section> <section class=\"interface-overview\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\ninterface <a href=\"#/api/common/INestApplication\" class=\"code-anchor highlight\">INestApplication</a>&lt;TServer = any&gt; extends <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext\" target=\"_blank\" rel=\"noopener\">INestApplicationContext</a> {\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#use_0()\"><span class=\"member-name\">use</span>(...args: any[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#enableCors_0()\"><span class=\"member-name\">enableCors</span>(options?: any): void</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#enableCsrfProtection_0()\"><span class=\"member-name\">enableCsrfProtection</span>(options?: CsrfProtectionOptions&lt;any&gt;): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#useSecurityHeaders_0()\"><span class=\"member-name\">useSecurityHeaders</span>(options?: SecurityHeadersOptions): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#enableVersioning_0()\"><span class=\"member-name\">enableVersioning</span>(options?: VersioningOptions): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#listen_0()\"><span class=\"member-name\">listen</span>(port: string | number, callback?: () =&gt; void): Promise&lt;any&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#getUrl_0()\"><span class=\"member-name\">getUrl</span>(): Promise&lt;string&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#setGlobalPrefix_0()\"><span class=\"member-name\">setGlobalPrefix</span>(prefix: string, options?: GlobalPrefixOptions&lt;string | RouteInfo&gt;): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#useWebSocketAdapter_0()\"><span class=\"member-name\">useWebSocketAdapter</span>(adapter: WebSocketAdapter&lt;any, any, any&gt;): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#connectMicroservice_0()\"><span class=\"member-name\">connectMicroservice</span>&lt;T extends object = any&gt;(options: T, hybridOptions?: NestHybridApplicationOptions): INestMicroservice</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#getMicroservices_0()\"><span class=\"member-name\">getMicroservices</span>(): INestMicroservice[]</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#getHttpServer_0()\"><span class=\"member-name\">getHttpServer</span>(): TServer</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#getHttpAdapter_0()\"><span class=\"member-name\">getHttpAdapter</span>(): HttpServer</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#startAllMicroservices_0()\"><span class=\"member-name\">startAllMicroservices</span>(): Promise&lt;this&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#useGlobalFilters_0()\"><span class=\"member-name\">useGlobalFilters</span>(...filters: ExceptionFilter&lt;any&gt;[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#useGlobalPipes_0()\"><span class=\"member-name\">useGlobalPipes</span>(...pipes: PipeTransform&lt;any, any&gt;[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#useGlobalInterceptors_0()\"><span class=\"member-name\">useGlobalInterceptors</span>(...interceptors: NestInterceptor&lt;any, any&gt;[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#useGlobalGuards_0()\"><span class=\"member-name\">useGlobalGuards</span>(...guards: CanActivate[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/common/INestApplication#close_0()\"><span class=\"member-name\">close</span>(): Promise&lt;void&gt;</a>\n\n  // inherited from <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext\" target=\"_blank\" rel=\"noopener\">nest/packages/common/INestApplicationContext</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#select_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">select</span>&lt;T&gt;(module: Type&lt;T&gt; | DynamicModule, options?: SelectOptions): INestApplicationContext</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#get_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">get</span>&lt;TInput = any, TResult = TInput&gt;(typeOrToken: string | symbol | Function | Type&lt;TInput&gt;): TResult</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#resolve_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">resolve</span>&lt;TInput = any, TResult = TInput&gt;(typeOrToken: string | symbol | Function | Type&lt;TInput&gt;): Promise&lt;TResult&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#registerRequestByContextId_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">registerRequestByContextId</span>&lt;T = any&gt;(request: T, contextId: { id: number; }): void</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#close_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">close</span>(): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#useLogger_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">useLogger</span>(logger: false | LoggerService | (\"verbose\" | \"debug\" | \"log\" | \"warn\" | \"error\" | \"fatal\")[]): void</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#flushLogs_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">flushLogs</span>(): void</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#enableShutdownHooks_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">enableShutdownHooks</span>(signals?: string[] | ShutdownSignal[], options?: ShutdownHooksOptions): this</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/common/INestApplicationContext#init_0()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">init</span>(): Promise&lt;this&gt;</a>\n}</code></pre> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b1\"><span><span>Methods</span></span></h3> <a id=\"use_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------use----------\"> use() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b2\">A wrapper function around HTTP adapter method: <code>adapter.use()</code>. Example <code>app.use(cors())</code></p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">use</span>(...args: any[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b3\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b4\">Option</th> <th data-tid=\"b5\">Type</th> <th data-tid=\"b6\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>args</code> </td> <td class=\"param-type\"><code>any[]</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b7\">Returns</h4> <p><code>this</code> </p> </div> </td> </tr> </tbody> </table> <a id=\"enableCors_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------enablecors----------\"> enableCors() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b8\">Enables CORS (Cross-Origin Resource Sharing)</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">enableCors</span>(options?: any): void</code></pre> <h4 class=\"no-anchor\" id=\"parameters-1\" data-tid=\"b9\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b10\">Option</th> <th data-tid=\"b11\">Type</th> <th data-tid=\"b12\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> <p data-tid=\"b13\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-1\" data-tid=\"b14\">Returns</h4> <p><code>void</code> </p> </div> </td> </tr> </tbody> </table> <a id=\"enableCsrfProtection_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------enablecsrfprotection----------\"> enableCsrfProtection() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b15\">Enables protection against cross-site request forgery (CSRF) for every route, based on Fetch Metadata (<code>Sec-Fetch-Site</code>) with an <code>Origin</code>/<code>Host</code> fallback (the algorithm of Go's <code>net/http.CrossOriginProtection</code>).</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">enableCsrfProtection</span>(options?: <a href=\"https://api-references-nestjs.netlify.app/api/common/CsrfProtectionOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">CsrfProtectionOptions</a>&lt;any&gt;): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-2\" data-tid=\"b16\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b17\">Option</th> <th data-tid=\"b18\">Type</th> <th data-tid=\"b19\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/CsrfProtectionOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">CsrfProtectionOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b20\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-2\" data-tid=\"b21\">Returns</h4> <p><code>this</code> </p> </div> </td> </tr> <tr> <td class=\"description\"> <p data-tid=\"b22\"><code>GET</code>, <code>HEAD</code> and <code>OPTIONS</code> requests are always allowed. Other requests are rejected with a <code><a href=\"#/api/common/ForbiddenException\" class=\"code-anchor highlight\">ForbiddenException</a></code>, which goes through the exception filters, when the browser reports them as cross-origin. Requests carrying neither <code>Sec-Fetch-Site</code> nor <code>Origin</code> (non-browser clients) are allowed.</p> <p data-tid=\"b23\">Must be called once, before <code>app.init()</code> / <code>app.listen()</code>. The check runs before Nest middleware, body parsing, guards and handlers. It shares one request hook with <code>app.useSecurityHeaders()</code>, registered where the first of the two is called: middleware registered with <code>app.use()</code> before that runs before the check.</p> </td> </tr> </tbody> </table> <a id=\"useSecurityHeaders_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------usesecurityheaders----------\"> useSecurityHeaders() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b24\">Sets security-related response headers on every response (routes, <code>404</code>s and errors, including rejections of <code>enableCsrfProtection()</code>): the same headers and defaults as helmet 8, including a default Content-Security-Policy, and removes <code>X-Powered-By</code>.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useSecurityHeaders</span>(options?: <a href=\"https://api-references-nestjs.netlify.app/api/common/SecurityHeadersOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">SecurityHeadersOptions</a>): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-3\" data-tid=\"b25\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b26\">Option</th> <th data-tid=\"b27\">Type</th> <th data-tid=\"b28\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/SecurityHeadersOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">SecurityHeadersOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b29\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-3\" data-tid=\"b30\">Returns</h4> <p><code>this</code> </p> </div> </td> </tr> <tr> <td class=\"description\"> <p data-tid=\"b31\">Pass <code>false</code> for a header to leave it out, <code>true</code> for its default, or an object to configure it. Options are validated when this method is called. Route handlers and <code>@<a href=\"#/api/common/Header\" class=\"code-anchor highlight\">Header</a>()</code> can still override a header per route.</p> <p data-tid=\"b32\">Must be called once, before <code>app.init()</code> / <code>app.listen()</code>. It shares one request hook with <code>app.enableCsrfProtection()</code>, registered where the first of the two is called: middleware registered with <code>app.use()</code> before that runs first, so responses it ends itself do not carry the headers.</p> </td> </tr> </tbody> </table> <a id=\"enableVersioning_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------enableversioning----------\"> enableVersioning() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b33\">Enables Versioning for the application. By default, URI-based versioning is used.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">enableVersioning</span>(options?: <a href=\"https://api-references-nestjs.netlify.app/api/common/VersioningOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">VersioningOptions</a>): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-4\" data-tid=\"b34\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b35\">Option</th> <th data-tid=\"b36\">Type</th> <th data-tid=\"b37\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/VersioningOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">VersioningOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b38\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-4\" data-tid=\"b39\">Returns</h4> <p><code>this</code> </p> </div> </td> </tr> </tbody> </table> <a id=\"listen_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------listen----------\"> listen() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b40\">Starts the application.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">listen</span>(port: string | number, hostname: string, callback?: () =&gt; void): Promise&lt;any&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-5\" data-tid=\"b41\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b42\">Option</th> <th data-tid=\"b43\">Type</th> <th data-tid=\"b44\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>port</code> </td> <td class=\"param-type\"><code>string | number</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>hostname</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>callback</code> </td> <td class=\"param-type\"><code>() =&gt; void</code></td> <td class=\"param-description\"> <p data-tid=\"b45\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-5\" data-tid=\"b46\">Returns</h4> <p><code>Promise&lt;any&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"getUrl_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------geturl----------\"> getUrl() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b47\">Returns the url the application is listening at, based on OS and IP version. Returns as an IP value either in IPv6 or IPv4</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getUrl</span>(): Promise&lt;string&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-6\" data-tid=\"b48\">Parameters</h4> <p data-tid=\"b49\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-6\" data-tid=\"b50\">Returns</h4> <p data-tid=\"b51\"><code>Promise&lt;string&gt;</code> The IP where the server is listening</p> </div> </td> </tr> </tbody> </table> <a id=\"setGlobalPrefix_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------setglobalprefix----------\"> setGlobalPrefix() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b52\">Registers a prefix for every HTTP route path.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">setGlobalPrefix</span>(prefix: string, options?: GlobalPrefixOptions&lt;string | RouteInfo&gt;): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-7\" data-tid=\"b53\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b54\">Option</th> <th data-tid=\"b55\">Type</th> <th data-tid=\"b56\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>prefix</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> <p data-tid=\"b57\">The prefix for every HTTP route path (for example <code>/v1/api</code>)</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>GlobalPrefixOptions</code></td> <td class=\"param-description\"> <p data-tid=\"b58\">Global prefix options object</p> <pre class=\" language-typescript\"><code class=\" language-typescript\">\nOptional. Default is `undefined`.</code></pre> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-7\" data-tid=\"b59\">Returns</h4> <p><code>this</code> </p> </div> </td> </tr> </tbody> </table> <a id=\"useWebSocketAdapter_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------usewebsocketadapter----------\"> useWebSocketAdapter() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b60\">Register Ws Adapter which will be used inside Gateways. Use when you want to override default <code>socket.io</code> library.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useWebSocketAdapter</span>(adapter: <a href=\"https://api-references-nestjs.netlify.app/api/common/WebSocketAdapter\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">WebSocketAdapter</a>&lt;any, any, any&gt;): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-8\" data-tid=\"b61\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b62\">Option</th> <th data-tid=\"b63\">Type</th> <th data-tid=\"b64\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>adapter</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/WebSocketAdapter\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">WebSocketAdapter</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-8\" data-tid=\"b65\">Returns</h4> <p><code>this</code> </p> </div> </td> </tr> </tbody> </table> <a id=\"connectMicroservice_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------connectmicroservice----------\"> connectMicroservice() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b66\">Connects microservice to the NestApplication instance. Transforms application to a hybrid instance.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">connectMicroservice</span>&lt;T extends object = any&gt;(options: T, hybridOptions?: <a href=\"https://api-references-nestjs.netlify.app/api/common/NestHybridApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestHybridApplicationOptions</a>): <a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-9\" data-tid=\"b67\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b68\">Option</th> <th data-tid=\"b69\">Type</th> <th data-tid=\"b70\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> <p data-tid=\"b71\">Microservice options object</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>hybridOptions</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/NestHybridApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestHybridApplicationOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b72\">Hybrid options object</p> <pre class=\" language-typescript\"><code class=\" language-typescript\">\nOptional. Default is `undefined`.</code></pre> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-9\" data-tid=\"b73\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a></code> </p> </div> </td> </tr> </tbody> </table> <a id=\"getMicroservices_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------getmicroservices----------\"> getMicroservices() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b74\">Returns array of the microservices connected to the NestApplication.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getMicroservices</span>(): <a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a>[]</code></pre> <h4 class=\"no-anchor\" id=\"parameters-10\" data-tid=\"b75\">Parameters</h4> <p data-tid=\"b76\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-10\" data-tid=\"b77\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a>[]</code> </p> </div> </td> </tr> </tbody> </table> <a id=\"getHttpServer_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------gethttpserver----------\"> getHttpServer() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b78\">Returns the underlying native HTTP server.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getHttpServer</span>(): TServer</code></pre> <h4 class=\"no-anchor\" id=\"parameters-11\" data-tid=\"b79\">Parameters</h4> <p data-tid=\"b80\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-11\" data-tid=\"b81\">Returns</h4> <p><code>TServer</code> </p> </div> </td> </tr> </tbody> </table> <a id=\"getHttpAdapter_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------gethttpadapter----------\"> getHttpAdapter() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b82\">Returns the underlying HTTP adapter.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getHttpAdapter</span>(): <a href=\"https://api-references-nestjs.netlify.app/api/common/HttpServer\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">HttpServer</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-12\" data-tid=\"b83\">Parameters</h4> <p data-tid=\"b84\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-12\" data-tid=\"b85\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/common/HttpServer\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">HttpServer</a></code> </p> </div> </td> </tr> </tbody> </table> <a id=\"startAllMicroservices_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------startallmicroservices----------\"> startAllMicroservices() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b86\">Starts all connected microservices asynchronously.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">startAllMicroservices</span>(): Promise&lt;this&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-13\" data-tid=\"b87\">Parameters</h4> <p data-tid=\"b88\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-13\" data-tid=\"b89\">Returns</h4> <p><code>Promise&lt;this&gt;</code> </p> </div> </td> </tr> </tbody> </table> <a id=\"useGlobalFilters_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------useglobalfilters----------\"> useGlobalFilters() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b90\">Registers exception filters as global filters (will be used within every HTTP route handler)</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useGlobalFilters</span>(...filters: <a href=\"#/api/common/ExceptionFilter\" class=\"code-anchor highlight\">ExceptionFilter</a>&lt;any&gt;[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-14\" data-tid=\"b91\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b92\">Option</th> <th data-tid=\"b93\">Type</th> <th data-tid=\"b94\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>filters</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/ExceptionFilter\" class=\"code-anchor highlight\">ExceptionFilter</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-14\" data-tid=\"b95\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useGlobalPipes_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------useglobalpipes----------\"> useGlobalPipes() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b96\">Registers pipes as global pipes (will be used within every HTTP route handler)</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useGlobalPipes</span>(...pipes: <a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;any, any&gt;[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-15\" data-tid=\"b97\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b98\">Option</th> <th data-tid=\"b99\">Type</th> <th data-tid=\"b100\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>pipes</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-15\" data-tid=\"b101\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useGlobalInterceptors_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------useglobalinterceptors----------\"> useGlobalInterceptors() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b102\">Registers interceptors as global interceptors (will be used within every HTTP route handler)</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useGlobalInterceptors</span>(...interceptors: <a href=\"#/api/common/NestInterceptor\" class=\"code-anchor highlight\">NestInterceptor</a>&lt;any, any&gt;[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-16\" data-tid=\"b103\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b104\">Option</th> <th data-tid=\"b105\">Type</th> <th data-tid=\"b106\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>interceptors</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/NestInterceptor\" class=\"code-anchor highlight\">NestInterceptor</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-16\" data-tid=\"b107\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useGlobalGuards_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------useglobalguards----------\"> useGlobalGuards() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b108\">Registers guards as global guards (will be used within every HTTP route handler)</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useGlobalGuards</span>(...guards: <a href=\"#/api/common/CanActivate\" class=\"code-anchor highlight\">CanActivate</a>[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-17\" data-tid=\"b109\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b110\">Option</th> <th data-tid=\"b111\">Type</th> <th data-tid=\"b112\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>guards</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/CanActivate\" class=\"code-anchor highlight\">CanActivate</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-17\" data-tid=\"b113\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"close_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------close----------\"> close() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b114\">Terminates the application (including NestApplication, Gateways, and each connected microservice)</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">close</span>(): Promise&lt;void&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-18\" data-tid=\"b115\">Parameters</h4> <p data-tid=\"b116\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-18\" data-tid=\"b117\">Returns</h4> <p><code>Promise&lt;void&gt;</code> </p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Interface defining the core NestApplication object.",
+   "plain": "Interface defining the core NestApplication object.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b2",
+   "kind": "prose",
+   "tag": "p",
+   "text": "A wrapper function around HTTP adapter method: [[0]]. Example [[1]]",
+   "plain": "A wrapper function around HTTP adapter method: . Example",
+   "tokens": [
+    "<code>adapter.use()</code>",
+    "<code>app.use(cors())</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b3",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b6",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b7",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b8",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Enables CORS (Cross-Origin Resource Sharing)",
+   "plain": "Enables CORS (Cross-Origin Resource Sharing)",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b9",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b10",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b11",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b12",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b13",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b14",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b15",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Enables protection against cross-site request forgery (CSRF) for every route, based on Fetch Metadata ([[0]]) with an [[1]]/[[2]] fallback (the algorithm of Go's [[3]]).",
+   "plain": "Enables protection against cross-site request forgery (CSRF) for every route, based on Fetch Metadata () with an / fallback (the algorithm of Go's ).",
+   "tokens": [
+    "<code>Sec-Fetch-Site</code>",
+    "<code>Origin</code>",
+    "<code>Host</code>",
+    "<code>net/http.CrossOriginProtection</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b16",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b17",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b18",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b19",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b20",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b21",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b22",
+   "kind": "prose",
+   "tag": "p",
+   "text": "[[0]], [[1]] and [[2]] requests are always allowed. Other requests are rejected with a [[3]], which goes through the exception filters, when the browser reports them as cross-origin. Requests carrying neither [[4]] nor [[5]] (non-browser clients) are allowed.",
+   "plain": ",  and  requests are always allowed. Other requests are rejected with a , which goes through the exception filters, when the browser reports them as cross-origin. Requests carrying neither  nor  (non-browser clients) are allowed.",
+   "tokens": [
+    "<code>GET</code>",
+    "<code>HEAD</code>",
+    "<code>OPTIONS</code>",
+    "<code><a href=\"#/api/common/ForbiddenException\" class=\"code-anchor highlight\">ForbiddenException</a></code>",
+    "<code>Sec-Fetch-Site</code>",
+    "<code>Origin</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b23",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Must be called once, before [[0]] / [[1]]. The check runs before Nest middleware, body parsing, guards and handlers. It shares one request hook with [[2]], registered where the first of the two is called: middleware registered with [[3]] before that runs before the check.",
+   "plain": "Must be called once, before  / . The check runs before Nest middleware, body parsing, guards and handlers. It shares one request hook with , registered where the first of the two is called: middleware registered with  before that runs before the check.",
+   "tokens": [
+    "<code>app.init()</code>",
+    "<code>app.listen()</code>",
+    "<code>app.useSecurityHeaders()</code>",
+    "<code>app.use()</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b24",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Sets security-related response headers on every response (routes, [[0]]s and errors, including rejections of [[1]]): the same headers and defaults as helmet 8, including a default Content-Security-Policy, and removes [[2]].",
+   "plain": "Sets security-related response headers on every response (routes, s and errors, including rejections of ): the same headers and defaults as helmet 8, including a default Content-Security-Policy, and removes .",
+   "tokens": [
+    "<code>404</code>",
+    "<code>enableCsrfProtection()</code>",
+    "<code>X-Powered-By</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b25",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b26",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b27",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b28",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b29",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b30",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b31",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Pass [[0]] for a header to leave it out, [[1]] for its default, or an object to configure it. Options are validated when this method is called. Route handlers and [[2]] can still override a header per route.",
+   "plain": "Pass  for a header to leave it out,  for its default, or an object to configure it. Options are validated when this method is called. Route handlers and  can still override a header per route.",
+   "tokens": [
+    "<code>false</code>",
+    "<code>true</code>",
+    "<code>@<a href=\"#/api/common/Header\" class=\"code-anchor highlight\">Header</a>()</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b32",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Must be called once, before [[0]] / [[1]]. It shares one request hook with [[2]], registered where the first of the two is called: middleware registered with [[3]] before that runs first, so responses it ends itself do not carry the headers.",
+   "plain": "Must be called once, before  / . It shares one request hook with , registered where the first of the two is called: middleware registered with  before that runs first, so responses it ends itself do not carry the headers.",
+   "tokens": [
+    "<code>app.init()</code>",
+    "<code>app.listen()</code>",
+    "<code>app.enableCsrfProtection()</code>",
+    "<code>app.use()</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b33",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Enables Versioning for the application. By default, URI-based versioning is used.",
+   "plain": "Enables Versioning for the application. By default, URI-based versioning is used.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b34",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b35",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b36",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b37",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b38",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b39",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b40",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Starts the application.",
+   "plain": "Starts the application.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b41",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b42",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b43",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b44",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b45",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b46",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b47",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Returns the url the application is listening at, based on OS and IP version. Returns as an IP value either in IPv6 or IPv4",
+   "plain": "Returns the url the application is listening at, based on OS and IP version. Returns as an IP value either in IPv6 or IPv4",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b48",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b49",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b50",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b51",
+   "kind": "prose",
+   "tag": "p",
+   "text": "[[0]] The IP where the server is listening",
+   "plain": "The IP where the server is listening",
+   "tokens": [
+    "<code>Promise&lt;string&gt;</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b52",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Registers a prefix for every HTTP route path.",
+   "plain": "Registers a prefix for every HTTP route path.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b53",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b54",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b55",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b56",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b57",
+   "kind": "prose",
+   "tag": "p",
+   "text": "The prefix for every HTTP route path (for example [[0]])",
+   "plain": "The prefix for every HTTP route path (for example )",
+   "tokens": [
+    "<code>/v1/api</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b58",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Global prefix options object",
+   "plain": "Global prefix options object",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b59",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b60",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Register Ws Adapter which will be used inside Gateways. Use when you want to override default [[0]] library.",
+   "plain": "Register Ws Adapter which will be used inside Gateways. Use when you want to override default  library.",
+   "tokens": [
+    "<code>socket.io</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b61",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b62",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b63",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b64",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b65",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b66",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Connects microservice to the NestApplication instance. Transforms application to a hybrid instance.",
+   "plain": "Connects microservice to the NestApplication instance. Transforms application to a hybrid instance.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b67",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b68",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b69",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b70",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b71",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Microservice options object",
+   "plain": "Microservice options object",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b72",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Hybrid options object",
+   "plain": "Hybrid options object",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b73",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b74",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Returns array of the microservices connected to the NestApplication.",
+   "plain": "Returns array of the microservices connected to the NestApplication.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b75",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b76",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b77",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b78",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Returns the underlying native HTTP server.",
+   "plain": "Returns the underlying native HTTP server.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b79",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b80",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b81",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b82",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Returns the underlying HTTP adapter.",
+   "plain": "Returns the underlying HTTP adapter.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b83",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b84",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b85",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b86",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Starts all connected microservices asynchronously.",
+   "plain": "Starts all connected microservices asynchronously.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b87",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b88",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b89",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b90",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Registers exception filters as global filters (will be used within every HTTP route handler)",
+   "plain": "Registers exception filters as global filters (will be used within every HTTP route handler)",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b91",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b92",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b93",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b94",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b95",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b96",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Registers pipes as global pipes (will be used within every HTTP route handler)",
+   "plain": "Registers pipes as global pipes (will be used within every HTTP route handler)",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b97",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b98",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b99",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b100",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b101",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b102",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Registers interceptors as global interceptors (will be used within every HTTP route handler)",
+   "plain": "Registers interceptors as global interceptors (will be used within every HTTP route handler)",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b103",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b104",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b105",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b106",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b107",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b108",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Registers guards as global guards (will be used within every HTTP route handler)",
+   "plain": "Registers guards as global guards (will be used within every HTTP route handler)",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b109",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b110",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b111",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b112",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b113",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b114",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Terminates the application (including NestApplication, Gateways, and each connected microservice)",
+   "plain": "Terminates the application (including NestApplication, Gateways, and each connected microservice)",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b115",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b116",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b117",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  }
+ ]
+}

@@ -49,6 +49,10 @@ lerna-debug.log*
 .temp
 .tmp
 
+# 翻译缓存（可随时重建，别提交）
+tools/.cache/
+**/tools/.cache/
+
 # Runtime data
 pids
 *.pid

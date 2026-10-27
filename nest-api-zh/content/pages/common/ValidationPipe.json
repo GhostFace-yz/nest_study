@@ -1,0 +1,697 @@
+{
+ "meta": {
+  "path": "/api/common/ValidationPipe",
+  "name": "ValidationPipe",
+  "zh": "校验管道",
+  "category": "pipes",
+  "type": "pipe"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> </section> <pre class=\"language-typescript\">  <code class=\"language-typescript\">\nclass <a href=\"#/api/common/ValidationPipe\" class=\"code-anchor highlight\">ValidationPipe</a> implements <a class=\"code-anchor\" href=\"#/api/common/PipeTransform\">PipeTransform</a> {\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#isTransformEnabled\">protected <span class=\"member-name\">isTransformEnabled</span>: boolean</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#isDetailedOutputDisabled\">protected <span class=\"member-name\">isDetailedOutputDisabled</span>?: boolean</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#validatorOptions\">protected <span class=\"member-name\">validatorOptions</span>: ValidatorOptions</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#transformOptions\">protected <span class=\"member-name\">transformOptions</span>: ClassTransformOptions | undefined</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#errorHttpStatusCode\">protected <span class=\"member-name\">errorHttpStatusCode</span>: ErrorHttpStatusCode</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#expectedType\">protected <span class=\"member-name\">expectedType</span>: Type&lt;any&gt; | undefined</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#exceptionFactory\">protected <span class=\"member-name\">exceptionFactory</span>: (errors: ValidationError[]) =&gt; any</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#validateCustomDecorators\">protected <span class=\"member-name\">validateCustomDecorators</span>: boolean</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#errorFormat\">protected <span class=\"member-name\">errorFormat</span>: ValidationErrorFormat</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#loadValidator()\">protected <span class=\"member-name\">loadValidator</span>(validatorPackage?: ValidatorPackage): ValidatorPackage | Promise&lt;ValidatorPackage&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#loadTransformer()\">protected <span class=\"member-name\">loadTransformer</span>(transformerPackage?: TransformerPackage): TransformerPackage | Promise&lt;TransformerPackage&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#transform()\"><span class=\"member-name\">transform</span>(value: unknown, metadata: ArgumentMetadata&lt;any&gt;)</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#createExceptionFactory()\"><span class=\"member-name\">createExceptionFactory</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#toValidate()\">protected <span class=\"member-name\">toValidate</span>(metadata: ArgumentMetadata&lt;any&gt;): boolean</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#transformPrimitive()\">protected <span class=\"member-name\">transformPrimitive</span>(value: unknown, metadata: ArgumentMetadata&lt;any&gt;)</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#toEmptyIfNil()\">protected <span class=\"member-name\">toEmptyIfNil</span>&lt;T = any, R = T&gt;(value: unknown, metatype: object | Type&lt;unknown&gt;): R | object | string</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#isPrimitive()\">protected <span class=\"member-name\">isPrimitive</span>(value: unknown): boolean</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#stripProtoKeys()\">protected <span class=\"member-name\">stripProtoKeys</span>(value: any): void</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#validate()\">protected <span class=\"member-name\">validate</span>(object: object, validatorOptions?: ValidatorOptions): Promise&lt;ValidationError[]&gt; | ValidationError[]</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#flattenValidationErrors()\">protected <span class=\"member-name\">flattenValidationErrors</span>(validationErrors: ValidationError[]): string[]</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#groupValidationErrors()\">protected <span class=\"member-name\">groupValidationErrors</span>(validationErrors: ValidationError[], parentPath?: string): Record&lt;string, string[]&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#mapChildrenToValidationErrors()\">protected <span class=\"member-name\">mapChildrenToValidationErrors</span>(error: ValidationError, parentPath?: string): ValidationError[]</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ValidationPipe#prependConstraintsWithParentProp()\">protected <span class=\"member-name\">prependConstraintsWithParentProp</span>(parentPath: string, error: ValidationError): ValidationError</a>\n}</code></pre> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b0\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/techniques/validation\" target=\"_blank\" rel=\"noopener\">Validation</a></p> </li> </ul> </section> <section class=\"instance-properties\"> <h2 id=\"properties\" data-tid=\"b1\">Properties</h2> <table class=\"is-full-width list-table property-table\"> <thead> <tr> <th data-tid=\"b2\">Property</th> <th data-tid=\"b3\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-property\"> <td> <a id=\"isTransformEnabled\"></a> <code>protected <span class=\"member-name\">isTransformEnabled</span>: boolean</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"isDetailedOutputDisabled\"></a> <code>protected <span class=\"member-name\">isDetailedOutputDisabled</span>?: boolean</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"validatorOptions\"></a> <code>protected <span class=\"member-name\">validatorOptions</span>: ValidatorOptions</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"transformOptions\"></a> <code>protected <span class=\"member-name\">transformOptions</span>: ClassTransformOptions | undefined</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"errorHttpStatusCode\"></a> <code>protected <span class=\"member-name\">errorHttpStatusCode</span>: ErrorHttpStatusCode</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"expectedType\"></a> <code>protected <span class=\"member-name\">expectedType</span>: <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a>&lt;any&gt; | undefined</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"exceptionFactory\"></a> <code>protected <span class=\"member-name\">exceptionFactory</span>: (errors: <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]) =&gt; any</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"validateCustomDecorators\"></a> <code>protected <span class=\"member-name\">validateCustomDecorators</span>: boolean</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"errorFormat\"></a> <code>protected <span class=\"member-name\">errorFormat</span>: <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationErrorFormat\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationErrorFormat</a></code> </td> <td> </td> </tr> </tbody> </table> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b4\"><span><span>Methods</span></span></h3> <a id=\"loadValidator()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------loadvalidator----------\"> loadValidator() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">loadValidator</span>(validatorPackage?: ValidatorPackage): ValidatorPackage | Promise&lt;ValidatorPackage&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b5\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b6\">Option</th> <th data-tid=\"b7\">Type</th> <th data-tid=\"b8\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>validatorPackage</code> </td> <td class=\"param-type\"><code>ValidatorPackage</code></td> <td class=\"param-description\"> <p data-tid=\"b9\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b10\">Returns</h4> <p><code>ValidatorPackage | Promise&lt;ValidatorPackage&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"loadTransformer()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------loadtransformer----------\"> loadTransformer() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">loadTransformer</span>(transformerPackage?: TransformerPackage): TransformerPackage | Promise&lt;TransformerPackage&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-1\" data-tid=\"b11\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b12\">Option</th> <th data-tid=\"b13\">Type</th> <th data-tid=\"b14\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>transformerPackage</code> </td> <td class=\"param-type\"><code>TransformerPackage</code></td> <td class=\"param-description\"> <p data-tid=\"b15\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-1\" data-tid=\"b16\">Returns</h4> <p><code>TransformerPackage | Promise&lt;TransformerPackage&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"transform()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------transform----------\"> transform() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">transform</span>(value: unknown, metadata: <a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a>&lt;any&gt;)</code></pre> <h4 class=\"no-anchor\" id=\"parameters-2\" data-tid=\"b17\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b18\">Option</th> <th data-tid=\"b19\">Type</th> <th data-tid=\"b20\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>unknown</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadata</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a><any></any></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> </div> </td> </tr> </tbody> </table> <a id=\"createExceptionFactory()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------createexceptionfactory----------\"> createExceptionFactory() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">createExceptionFactory</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-3\" data-tid=\"b21\">Parameters</h4> <p data-tid=\"b22\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"toValidate()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------tovalidate----------\"> toValidate() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">toValidate</span>(metadata: <a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a>&lt;any&gt;): boolean</code></pre> <h4 class=\"no-anchor\" id=\"parameters-4\" data-tid=\"b23\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b24\">Option</th> <th data-tid=\"b25\">Type</th> <th data-tid=\"b26\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadata</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a><any></any></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-2\" data-tid=\"b27\">Returns</h4> <p><code>boolean</code></p> </div> </td> </tr> </tbody> </table> <a id=\"transformPrimitive()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------transformprimitive----------\"> transformPrimitive() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">transformPrimitive</span>(value: unknown, metadata: <a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a>&lt;any&gt;)</code></pre> <h4 class=\"no-anchor\" id=\"parameters-5\" data-tid=\"b28\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b29\">Option</th> <th data-tid=\"b30\">Type</th> <th data-tid=\"b31\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>unknown</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadata</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a><any></any></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> </div> </td> </tr> </tbody> </table> <a id=\"toEmptyIfNil()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------toemptyifnil----------\"> toEmptyIfNil() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">toEmptyIfNil</span>&lt;T = any, R = T&gt;(value: unknown, metatype: object | <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a>&lt;unknown&gt;): R | object | string</code></pre> <h4 class=\"no-anchor\" id=\"parameters-6\" data-tid=\"b32\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b33\">Option</th> <th data-tid=\"b34\">Type</th> <th data-tid=\"b35\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>unknown</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metatype</code> </td> <td class=\"param-type\"><code>object | <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a><unknown></unknown></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-3\" data-tid=\"b36\">Returns</h4> <p><code>R | object | string</code></p> </div> </td> </tr> </tbody> </table> <a id=\"isPrimitive()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------isprimitive----------\"> isPrimitive() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">isPrimitive</span>(value: unknown): boolean</code></pre> <h4 class=\"no-anchor\" id=\"parameters-7\" data-tid=\"b37\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b38\">Option</th> <th data-tid=\"b39\">Type</th> <th data-tid=\"b40\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>unknown</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-4\" data-tid=\"b41\">Returns</h4> <p><code>boolean</code></p> </div> </td> </tr> </tbody> </table> <a id=\"stripProtoKeys()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------stripprotokeys----------\"> stripProtoKeys() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\"><a href=\"https://api-references-nestjs.netlify.app/api/common/stripProtoKeys\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">stripProtoKeys</a></span>(value: any): void</code></pre> <h4 class=\"no-anchor\" id=\"parameters-8\" data-tid=\"b42\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b43\">Option</th> <th data-tid=\"b44\">Type</th> <th data-tid=\"b45\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-5\" data-tid=\"b46\">Returns</h4> <p><code>void</code></p> </div> </td> </tr> </tbody> </table> <a id=\"validate()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------validate----------\"> validate() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">validate</span>(object: object, validatorOptions?: ValidatorOptions): Promise&lt;<a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]&gt; | <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]</code></pre> <h4 class=\"no-anchor\" id=\"parameters-9\" data-tid=\"b47\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b48\">Option</th> <th data-tid=\"b49\">Type</th> <th data-tid=\"b50\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>object</code> </td> <td class=\"param-type\"><code>object</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>validatorOptions</code> </td> <td class=\"param-type\"><code>ValidatorOptions</code></td> <td class=\"param-description\"> <p data-tid=\"b51\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-6\" data-tid=\"b52\">Returns</h4> <p><code>Promise&lt;<a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]&gt; | <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]</code></p> </div> </td> </tr> </tbody> </table> <a id=\"flattenValidationErrors()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------flattenvalidationerrors----------\"> flattenValidationErrors() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">flattenValidationErrors</span>(validationErrors: <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]): string[]</code></pre> <h4 class=\"no-anchor\" id=\"parameters-10\" data-tid=\"b53\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b54\">Option</th> <th data-tid=\"b55\">Type</th> <th data-tid=\"b56\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>validationErrors</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-7\" data-tid=\"b57\">Returns</h4> <p><code>string[]</code></p> </div> </td> </tr> </tbody> </table> <a id=\"groupValidationErrors()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------groupvalidationerrors----------\"> groupValidationErrors() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">groupValidationErrors</span>(validationErrors: <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[], parentPath?: string): Record&lt;string, string[]&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-11\" data-tid=\"b58\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b59\">Option</th> <th data-tid=\"b60\">Type</th> <th data-tid=\"b61\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>validationErrors</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>parentPath</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> <p data-tid=\"b62\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-8\" data-tid=\"b63\">Returns</h4> <p><code>Record&lt;string, string[]&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"mapChildrenToValidationErrors()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------mapchildrentovalidationerrors----------\"> mapChildrenToValidationErrors() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">mapChildrenToValidationErrors</span>(error: <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>, parentPath?: string): <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]</code></pre> <h4 class=\"no-anchor\" id=\"parameters-12\" data-tid=\"b64\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b65\">Option</th> <th data-tid=\"b66\">Type</th> <th data-tid=\"b67\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>error</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>parentPath</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> <p data-tid=\"b68\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-9\" data-tid=\"b69\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>[]</code></p> </div> </td> </tr> </tbody> </table> <a id=\"prependConstraintsWithParentProp()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------prependconstraintswithparentprop----------\"> prependConstraintsWithParentProp() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">prependConstraintsWithParentProp</span>(parentPath: string, error: <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a>): <a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-13\" data-tid=\"b70\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b71\">Option</th> <th data-tid=\"b72\">Type</th> <th data-tid=\"b73\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>parentPath</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>error</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-10\" data-tid=\"b74\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ValidationError\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ValidationError</a></code></p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h2",
+   "text": "Properties",
+   "plain": "Properties",
+   "tokens": [],
+   "auto": "属性"
+  },
+  {
+   "id": "b2",
+   "kind": "th",
+   "tag": "th",
+   "text": "Property",
+   "plain": "Property",
+   "tokens": [],
+   "auto": "属性"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b4",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b5",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b6",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b7",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b8",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b9",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b10",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b11",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b12",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b13",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b14",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b15",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b16",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b17",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b18",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b19",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b20",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b21",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b22",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b23",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b24",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b25",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b26",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b27",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b28",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b29",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b30",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b31",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b32",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b33",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b34",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b35",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b36",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b37",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b38",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b39",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b40",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b41",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b42",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b43",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b44",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b45",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b46",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b47",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b48",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b49",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b50",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b51",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b52",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b53",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b54",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b55",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b56",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b57",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b58",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b59",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b60",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b61",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b62",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b63",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b64",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b65",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b66",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b67",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b68",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b69",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b70",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b71",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b72",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b73",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b74",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  }
+ ]
+}

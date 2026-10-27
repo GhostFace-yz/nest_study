@@ -1,0 +1,154 @@
+{
+ "meta": {
+  "path": "/api/common/Injectable",
+  "name": "Injectable",
+  "zh": "可注入",
+  "category": "di",
+  "type": "decorator"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Decorator that marks a class as a <a href=\"https://docs.nestjs.com/providers\" target=\"_blank\" rel=\"noopener\">provider</a>. Providers can be injected into other classes via constructor parameter injection using Nest's built-in <a href=\"https://docs.nestjs.com/providers#dependency-injection\" target=\"_blank\" rel=\"noopener\">Dependency Injection (DI)</a> system.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n <span class=\"member-name\">@<a href=\"#/api/common/Injectable\" class=\"code-anchor highlight\">Injectable</a></span>(options?: <a href=\"https://api-references-nestjs.netlify.app/api/common/ScopeOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ScopeOptions</a>)</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b2\">Parameters</h4> <table class=\"is-full-width list-table parameters-table function-overload-parameters\"> <thead> <tr> <th data-tid=\"b3\">Option</th> <th data-tid=\"b4\">Type</th> <th data-tid=\"b5\">Description</th> </tr> </thead> <tbody> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ScopeOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ScopeOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b6\">options specifying scope of injectable</p> <pre class=\" language-typescript\"><code class=\" language-typescript\">\nOptional. Default is `undefined`.</code></pre> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b7\">Returns</h4> <p><code>ClassDecorator</code></p> </div> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b8\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/providers\" target=\"_blank\" rel=\"noopener\">Providers</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/fundamentals/custom-providers\" target=\"_blank\" rel=\"noopener\">Custom Providers</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/fundamentals/injection-scopes\" target=\"_blank\" rel=\"noopener\">Injection Scopes</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b9\"><span>Description</span></h3> <p data-tid=\"b10\">When injecting a provider, it must be visible within the module scope (loosely speaking, the containing module) of the class it is being injected into. This can be done by:</p> <ul> <li data-tid=\"b11\">defining the provider in the same module scope</li> <li data-tid=\"b12\">exporting the provider from one module scope and importing that module into the module scope of the class being injected into</li> <li data-tid=\"b13\">exporting the provider from a module that is marked as global using the <code>@<a href=\"#/api/common/Global\" class=\"code-anchor highlight\">Global</a>()</code> decorator</li> </ul> <p data-tid=\"b14\">Providers can also be defined in a more explicit and imperative form using various <a href=\"https://docs.nestjs.com/fundamentals/custom-providers\" target=\"_blank\" rel=\"noopener\">custom provider</a> techniques that expose more capabilities of the DI system.</p> </section> <section class=\"decorator-options\"> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Decorator that marks a class as a [[0]]. Providers can be injected into other classes via constructor parameter injection using Nest's built-in [[1]] system.",
+   "plain": "Decorator that marks a class as a . Providers can be injected into other classes via constructor parameter injection using Nest's built-in  system.",
+   "tokens": [
+    "<a href=\"https://docs.nestjs.com/providers\" target=\"_blank\" rel=\"noopener\">provider</a>",
+    "<a href=\"https://docs.nestjs.com/providers#dependency-injection\" target=\"_blank\" rel=\"noopener\">Dependency Injection (DI)</a>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b6",
+   "kind": "prose",
+   "tag": "p",
+   "text": "options specifying scope of injectable",
+   "plain": "options specifying scope of injectable",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b7",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b8",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b9",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b10",
+   "kind": "prose",
+   "tag": "p",
+   "text": "When injecting a provider, it must be visible within the module scope (loosely speaking, the containing module) of the class it is being injected into. This can be done by:",
+   "plain": "When injecting a provider, it must be visible within the module scope (loosely speaking, the containing module) of the class it is being injected into. This can be done by:",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b11",
+   "kind": "prose",
+   "tag": "li",
+   "text": "defining the provider in the same module scope",
+   "plain": "defining the provider in the same module scope",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b12",
+   "kind": "prose",
+   "tag": "li",
+   "text": "exporting the provider from one module scope and importing that module into the module scope of the class being injected into",
+   "plain": "exporting the provider from one module scope and importing that module into the module scope of the class being injected into",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b13",
+   "kind": "prose",
+   "tag": "li",
+   "text": "exporting the provider from a module that is marked as global using the [[0]] decorator",
+   "plain": "exporting the provider from a module that is marked as global using the  decorator",
+   "tokens": [
+    "<code>@<a href=\"#/api/common/Global\" class=\"code-anchor highlight\">Global</a>()</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b14",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Providers can also be defined in a more explicit and imperative form using various [[0]] techniques that expose more capabilities of the DI system.",
+   "plain": "Providers can also be defined in a more explicit and imperative form using various  techniques that expose more capabilities of the DI system.",
+   "tokens": [
+    "<a href=\"https://docs.nestjs.com/fundamentals/custom-providers\" target=\"_blank\" rel=\"noopener\">custom provider</a>"
+   ],
+   "auto": null
+  }
+ ]
+}

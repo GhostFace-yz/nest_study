@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NestJS 常用 API 中英对照参考：左侧英文原文，右侧中文译文，滚动同步。">
+  <meta name="color-scheme" content="dark light">
+  <title>NestJS API 参考 · 中英对照</title>
+  <link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#view">跳到正文</a>
+
+  <header class="topbar">
+    <button id="menu-btn" class="icon-btn menu-btn" type="button" aria-label="打开 API 目录" aria-controls="sidebar" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+
+    <a class="brand" href="#/" aria-label="NestJS API 参考首页">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32">
+          <path class="logo-hex" d="M16 1.6 29.2 9.3v13.4L16 30.4 2.8 22.7V9.3z"/>
+          <path class="logo-mark" d="M10.1 21.5V11l2.7 0 5.2 6.6V11h2.9v10.5h-2.6l-5.3-6.7v6.7z"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>NestJS API</strong>
+        <small>中英对照</small>
+      </span>
+    </a>
+
+    <div class="search-box" role="search">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg>
+      <input id="search-input" type="search" placeholder="搜索 API，例如 Controller、管道、HttpException…" autocomplete="off" spellcheck="false" aria-label="搜索 API">
+      <kbd>/</kbd>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="sync-btn" class="chip is-on" type="button" aria-pressed="true" title="开启 / 关闭左右同步滚动">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v13m0 0-3-3m3 3 3-3M16 20V7m0 0-3 3m3-3 3 3"/></svg>
+        <span>同步滚动</span>
+      </button>
+      <button id="theme-btn" class="icon-btn theme-btn" type="button" aria-label="切换明暗主题" title="切换明暗主题">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.3 14.8A8.4 8.4 0 0 1 9.2 3.7a8.4 8.4 0 1 0 11.1 11.1Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="sidebar" id="sidebar" aria-label="API 目录">
+    <div class="side-top">
+      <span class="side-label">API 目录</span>
+      <span class="side-count" id="side-count">—</span>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-footer">
+      <a href="https://api-references-nestjs.netlify.app/api" target="_blank" rel="noopener">官方英文原站 <span aria-hidden="true">↗</span></a>
+      <p>基于 NestJS 官方 API Reference 整理，仅供学习参考。</p>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="main">
+    <div class="view" id="view" tabindex="-1"></div>
+  </main>
+
+  <noscript>
+    <div class="noscript">这个文档需要启用 JavaScript 才能显示中英对照内容。</div>
+  </noscript>
+
+  <script src="data/index.js"></script>
+  <script src="data/docs.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

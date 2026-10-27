@@ -1,0 +1,34 @@
+{
+ "meta": {
+  "path": "/api/common/Ip",
+  "name": "Ip",
+  "zh": "客户端 IP",
+  "category": "request",
+  "type": "const"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Route handler parameter decorator. Extracts the <code><a href=\"#/api/common/Ip\" class=\"code-anchor highlight\">Ip</a></code> property from the <code>req</code> object and populates the decorated parameter with the value of <code>ip</code>.</p> </section> <pre class=\"language-typescript\"><code language=\"ts\" hidecopy=\"true\" class=\"language-typescript no-box api-heading\">\nconst <a href=\"#/api/common/Ip\" class=\"code-anchor highlight\">Ip</a>: () =&gt; ParameterDecorator;</code></pre> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b1\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/controllers#request-object\" target=\"_blank\" rel=\"noopener\">Request object</a></p> </li> </ul> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Route handler parameter decorator. Extracts the [[0]] property from the [[1]] object and populates the decorated parameter with the value of [[2]].",
+   "plain": "Route handler parameter decorator. Extracts the  property from the  object and populates the decorated parameter with the value of .",
+   "tokens": [
+    "<code><a href=\"#/api/common/Ip\" class=\"code-anchor highlight\">Ip</a></code>",
+    "<code>req</code>",
+    "<code>ip</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  }
+ ]
+}

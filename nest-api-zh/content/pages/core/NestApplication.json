@@ -1,0 +1,1468 @@
+{
+ "meta": {
+  "path": "/api/core/NestApplication",
+  "name": "NestApplication",
+  "zh": "应用实例",
+  "category": "core",
+  "type": "class"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> </section> <pre class=\"language-typescript\">  <code class=\"language-typescript\">\nclass <a href=\"#/api/core/NestApplication\" class=\"code-anchor highlight\">NestApplication</a> extends <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext\" target=\"_blank\" rel=\"noopener\">NestApplicationContext<nestapplicationoptions></nestapplicationoptions></a> implements <a class=\"code-anchor\" href=\"\">INestApplication</a> {\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#constructor()\"><span class=\"member-name\">constructor</span>(container: NestContainer, httpAdapter: HttpServer, config: ApplicationConfig, graphInspector: GraphInspector, appOptions: NestApplicationOptions = {})</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#logger\">protected <span class=\"member-name\">logger</span>: Logger</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#prepareClose()\">protected <span class=\"member-name\">prepareClose</span>(): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#dispose()\">protected <span class=\"member-name\">dispose</span>(): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#getHttpAdapter()\"><span class=\"member-name\">getHttpAdapter</span>(): AbstractHttpAdapter</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#registerHttpServer()\"><span class=\"member-name\">registerHttpServer</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#getUnderlyingHttpServer()\"><span class=\"member-name\">getUnderlyingHttpServer</span>&lt;T&gt;(): T</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#applyOptions()\"><span class=\"member-name\">applyOptions</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#createServer()\"><span class=\"member-name\">createServer</span>&lt;T = any&gt;(): T</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#registerModules()\"><span class=\"member-name\">registerModules</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#registerWsModule()\"><span class=\"member-name\">registerWsModule</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#init()\"><span class=\"member-name\">init</span>(): Promise&lt;this&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#registerParserMiddleware()\"><span class=\"member-name\">registerParserMiddleware</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#registerRouter()\"><span class=\"member-name\">registerRouter</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#registerRouterHooks()\"><span class=\"member-name\">registerRouterHooks</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#connectMicroservice()\"><span class=\"member-name\">connectMicroservice</span>&lt;T extends object&gt;(microserviceOptions: T, hybridAppOptions: NestHybridApplicationOptions = {}): INestMicroservice</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#getMicroservices()\"><span class=\"member-name\">getMicroservices</span>(): INestMicroservice[]</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#getHttpServer()\"><span class=\"member-name\">getHttpServer</span>()</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#startAllMicroservices()\"><span class=\"member-name\">startAllMicroservices</span>(): Promise&lt;this&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#use()\"><span class=\"member-name\">use</span>(...args: [any, any?]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#useBodyParser()\"><span class=\"member-name\">useBodyParser</span>(...args: [any, any?]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#enableCors()\"><span class=\"member-name\">enableCors</span>(options?: any): void</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#enableCsrfProtection()\"><span class=\"member-name\">enableCsrfProtection</span>(options?: CsrfProtectionOptions): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#useSecurityHeaders()\"><span class=\"member-name\">useSecurityHeaders</span>(options?: SecurityHeadersOptions): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#enableVersioning()\"><span class=\"member-name\">enableVersioning</span>(options: VersioningOptions = { type: VersioningType.URI }): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#listen()\"><span class=\"member-name\">listen</span>(port: string | number, ...args: any[]): Promise&lt;any&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#getUrl()\"><span class=\"member-name\">getUrl</span>(): Promise&lt;string&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#setGlobalPrefix()\"><span class=\"member-name\">setGlobalPrefix</span>(prefix: string, options?: GlobalPrefixOptions): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#useWebSocketAdapter()\"><span class=\"member-name\">useWebSocketAdapter</span>(adapter: WebSocketAdapter): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#useGlobalFilters()\"><span class=\"member-name\">useGlobalFilters</span>(...filters: ExceptionFilter[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#useGlobalPipes()\"><span class=\"member-name\">useGlobalPipes</span>(...pipes: PipeTransform&lt;any&gt;[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#useGlobalInterceptors()\"><span class=\"member-name\">useGlobalInterceptors</span>(...interceptors: NestInterceptor[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#useGlobalGuards()\"><span class=\"member-name\">useGlobalGuards</span>(...guards: CanActivate[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#useStaticAssets()\"><span class=\"member-name\">useStaticAssets</span>(pathOrOptions: any, options?: any): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#setBaseViewsDir()\"><span class=\"member-name\">setBaseViewsDir</span>(path: string | string[]): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#setViewEngine()\"><span class=\"member-name\">setViewEngine</span>(engineOrOptions: any): this</a>\n  <a class=\"code-anchor\" href=\"#/api/core/NestApplication#preloadLazyPackages()\"><span class=\"member-name\">preloadLazyPackages</span>(): Promise&lt;void&gt;</a>\n\n  // inherited from <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext\" target=\"_blank\" rel=\"noopener\">nest/packages/core/NestApplicationContext</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#constructor()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">constructor</span>(container: NestContainer, appOptions: TOptions = {} as TOptions, contextModule: Module = null, scope: Type&lt;any&gt;[] = new Array&lt;Type&lt;any&gt;&gt;())</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#isInitialized\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">isInitialized</span>: false</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#injector\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">injector</span>: Injector</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#logger\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">logger</span>: Logger</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#instanceLinksHost\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">instanceLinksHost</span></a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#container\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">container</span>: NestContainer</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#appOptions\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">appOptions</span>: TOptions</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#selectContextModule()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">selectContextModule</span>()</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#select()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">select</span>&lt;T&gt;(moduleType: any, selectOptions?: SelectOptions): INestApplicationContext</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#get()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">get</span>&lt;TInput = any, TResult = TInput&gt;(typeOrToken: any, options: GetOrResolveOptions = { strict: false }): TResult | Array&lt;TResult&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#resolve()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">resolve</span>&lt;TInput = any, TResult = TInput&gt;(typeOrToken: any, contextId: ContextId = createContextId(), options: GetOrResolveOptions = { strict: false }): Promise&lt;TResult | Array&lt;TResult&gt;&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#registerRequestByContextId()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">registerRequestByContextId</span>&lt;T = any&gt;(request: T, contextId: ContextId)</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#init()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">init</span>(): Promise&lt;this&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#close()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">close</span>(signal?: string): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#shutdown()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">shutdown</span>(signal?: string): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#useLogger()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">useLogger</span>(logger: any)</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#flushLogs()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">flushLogs</span>()</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#flushLogsOnOverride()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">flushLogsOnOverride</span>()</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#enableShutdownHooks()\" target=\"_blank\" rel=\"noopener\"><span class=\"member-name\">enableShutdownHooks</span>(signals: any[] = [], options: ShutdownHooksOptions = {}): this</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#prepareClose()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">prepareClose</span>(): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#dispose()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">dispose</span>(): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#listenToShutdownSignals()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">listenToShutdownSignals</span>(signals: string[], options: ShutdownHooksOptions = {})</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#unsubscribeFromProcessSignals()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">unsubscribeFromProcessSignals</span>()</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#callInitHook()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">callInitHook</span>(): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#callDestroyHook()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">callDestroyHook</span>(): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#callBootstrapHook()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">callBootstrapHook</span>(): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#callShutdownHook()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">callShutdownHook</span>(signal?: string): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#callBeforeShutdownHook()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">callBeforeShutdownHook</span>(signal?: string): Promise&lt;void&gt;</a>\n  <a class=\"code-anchor\" href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext#assertNotInPreviewMode()\" target=\"_blank\" rel=\"noopener\">protected <span class=\"member-name\">assertNotInPreviewMode</span>(methodName: string)</a>\n}</code></pre> <h2 id=\"constructor\" data-tid=\"b0\">Constructor</h2> <a id=\"constructor()\"></a> <table class=\"is-full-width method-table constructor\"> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">constructor</span>(container: <a href=\"https://api-references-nestjs.netlify.app/api/core/NestContainer\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestContainer</a>, httpAdapter: <a href=\"https://api-references-nestjs.netlify.app/api/common/HttpServer\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">HttpServer</a>, config: <a href=\"https://api-references-nestjs.netlify.app/api/core/ApplicationConfig\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ApplicationConfig</a>, graphInspector: <a href=\"https://api-references-nestjs.netlify.app/api/core/GraphInspector\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">GraphInspector</a>, appOptions: <a href=\"https://api-references-nestjs.netlify.app/api/common/NestApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestApplicationOptions</a> = {})</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b1\">Parameters</h4> <table class=\"is-full-width list-table parameters-table constructor-overload-parameters\"> <thead> <tr> <th data-tid=\"b2\">Option</th> <th data-tid=\"b3\">Type</th> <th data-tid=\"b4\">Description</th> </tr> </thead> <tbody> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>container</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/NestContainer\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestContainer</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>httpAdapter</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/HttpServer\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">HttpServer</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>config</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/ApplicationConfig\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ApplicationConfig</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>graphInspector</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/GraphInspector\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">GraphInspector</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>appOptions</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/NestApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestApplicationOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b5\">Optional. Default is <code>{}</code>.</p> </td> </tr> </tbody> </table> </div> </td> </tr> </tbody> </table> <section class=\"instance-properties\"> <h2 id=\"properties\" data-tid=\"b6\">Properties</h2> <table class=\"is-full-width list-table property-table\"> <thead> <tr> <th data-tid=\"b7\">Property</th> <th data-tid=\"b8\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-property\"> <td> <a id=\"logger\"></a> <code>protected <span class=\"member-name\">logger</span>: <a href=\"https://api-references-nestjs.netlify.app/api/common/Logger\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Logger</a></code> </td> <td><span class=\"read-only-property\" data-tid=\"b9\">Read-only.</span> </td> </tr> </tbody> </table> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b10\"><span><span>Methods</span></span></h3> <a id=\"prepareClose()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------prepareclose----------\"> prepareClose() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">prepareClose</span>(): Promise&lt;void&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-1\" data-tid=\"b11\">Parameters</h4> <p data-tid=\"b12\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b13\">Returns</h4> <p><code>Promise&lt;void&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"dispose()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------dispose----------\"> dispose() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">dispose</span>(): Promise&lt;void&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-2\" data-tid=\"b14\">Parameters</h4> <p data-tid=\"b15\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-1\" data-tid=\"b16\">Returns</h4> <p><code>Promise&lt;void&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"getHttpAdapter()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------gethttpadapter----------\"> getHttpAdapter() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getHttpAdapter</span>(): <a href=\"https://api-references-nestjs.netlify.app/api/core/AbstractHttpAdapter\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">AbstractHttpAdapter</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-3\" data-tid=\"b17\">Parameters</h4> <p data-tid=\"b18\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-2\" data-tid=\"b19\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/core/AbstractHttpAdapter\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">AbstractHttpAdapter</a></code></p> </div> </td> </tr> </tbody> </table> <a id=\"registerHttpServer()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------registerhttpserver----------\"> registerHttpServer() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">registerHttpServer</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-4\" data-tid=\"b20\">Parameters</h4> <p data-tid=\"b21\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"getUnderlyingHttpServer()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------getunderlyinghttpserver----------\"> getUnderlyingHttpServer() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getUnderlyingHttpServer</span>&lt;T&gt;(): T</code></pre> <h4 class=\"no-anchor\" id=\"parameters-5\" data-tid=\"b22\">Parameters</h4> <p data-tid=\"b23\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-3\" data-tid=\"b24\">Returns</h4> <p><code>T</code></p> </div> </td> </tr> </tbody> </table> <a id=\"applyOptions()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------applyoptions----------\"> applyOptions() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">applyOptions</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-6\" data-tid=\"b25\">Parameters</h4> <p data-tid=\"b26\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"createServer()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------createserver----------\"> createServer() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">createServer</span>&lt;T = any&gt;(): T</code></pre> <h4 class=\"no-anchor\" id=\"parameters-7\" data-tid=\"b27\">Parameters</h4> <p data-tid=\"b28\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-4\" data-tid=\"b29\">Returns</h4> <p><code>T</code></p> </div> </td> </tr> </tbody> </table> <a id=\"registerModules()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------registermodules----------\"> registerModules() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">registerModules</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-8\" data-tid=\"b30\">Parameters</h4> <p data-tid=\"b31\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"registerWsModule()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------registerwsmodule----------\"> registerWsModule() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">registerWsModule</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-9\" data-tid=\"b32\">Parameters</h4> <p data-tid=\"b33\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"init()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------init----------\"> init() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">init</span>(): Promise&lt;this&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-10\" data-tid=\"b34\">Parameters</h4> <p data-tid=\"b35\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-5\" data-tid=\"b36\">Returns</h4> <p><code>Promise&lt;this&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"registerParserMiddleware()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------registerparsermiddleware----------\"> registerParserMiddleware() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">registerParserMiddleware</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-11\" data-tid=\"b37\">Parameters</h4> <p data-tid=\"b38\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"registerRouter()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------registerrouter----------\"> registerRouter() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">registerRouter</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-12\" data-tid=\"b39\">Parameters</h4> <p data-tid=\"b40\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"registerRouterHooks()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------registerrouterhooks----------\"> registerRouterHooks() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">registerRouterHooks</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-13\" data-tid=\"b41\">Parameters</h4> <p data-tid=\"b42\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"connectMicroservice()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------connectmicroservice----------\"> connectMicroservice() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">connectMicroservice</span>&lt;T extends object&gt;(microserviceOptions: T, hybridAppOptions: <a href=\"https://api-references-nestjs.netlify.app/api/common/NestHybridApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestHybridApplicationOptions</a> = {}): <a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-14\" data-tid=\"b43\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b44\">Option</th> <th data-tid=\"b45\">Type</th> <th data-tid=\"b46\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>microserviceOptions</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>hybridAppOptions</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/NestHybridApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestHybridApplicationOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b47\">Optional. Default is <code>{}</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-6\" data-tid=\"b48\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a></code></p> </div> </td> </tr> </tbody> </table> <a id=\"getMicroservices()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------getmicroservices----------\"> getMicroservices() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getMicroservices</span>(): <a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a>[]</code></pre> <h4 class=\"no-anchor\" id=\"parameters-15\" data-tid=\"b49\">Parameters</h4> <p data-tid=\"b50\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-7\" data-tid=\"b51\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a>[]</code></p> </div> </td> </tr> </tbody> </table> <a id=\"getHttpServer()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------gethttpserver----------\"> getHttpServer() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getHttpServer</span>()</code></pre> <h4 class=\"no-anchor\" id=\"parameters-16\" data-tid=\"b52\">Parameters</h4> <p data-tid=\"b53\">There are no parameters.</p> </div> </td> </tr> </tbody> </table> <a id=\"startAllMicroservices()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------startallmicroservices----------\"> startAllMicroservices() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">startAllMicroservices</span>(): Promise&lt;this&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-17\" data-tid=\"b54\">Parameters</h4> <p data-tid=\"b55\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-8\" data-tid=\"b56\">Returns</h4> <p><code>Promise&lt;this&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"use()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------use----------\"> use() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">use</span>(...args: [any, any?]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-18\" data-tid=\"b57\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b58\">Option</th> <th data-tid=\"b59\">Type</th> <th data-tid=\"b60\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>args</code> </td> <td class=\"param-type\"><code>[any, any?]</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-9\" data-tid=\"b61\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useBodyParser()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------usebodyparser----------\"> useBodyParser() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useBodyParser</span>(...args: [any, any?]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-19\" data-tid=\"b62\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b63\">Option</th> <th data-tid=\"b64\">Type</th> <th data-tid=\"b65\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>args</code> </td> <td class=\"param-type\"><code>[any, any?]</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-10\" data-tid=\"b66\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"enableCors()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------enablecors----------\"> enableCors() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">enableCors</span>(options?: any): void</code></pre> <h4 class=\"no-anchor\" id=\"parameters-20\" data-tid=\"b67\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b68\">Option</th> <th data-tid=\"b69\">Type</th> <th data-tid=\"b70\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> <p data-tid=\"b71\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-11\" data-tid=\"b72\">Returns</h4> <p><code>void</code></p> </div> </td> </tr> </tbody> </table> <a id=\"enableCsrfProtection()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------enablecsrfprotection----------\"> enableCsrfProtection() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">enableCsrfProtection</span>(options?: <a href=\"https://api-references-nestjs.netlify.app/api/common/CsrfProtectionOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">CsrfProtectionOptions</a>): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-21\" data-tid=\"b73\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b74\">Option</th> <th data-tid=\"b75\">Type</th> <th data-tid=\"b76\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/CsrfProtectionOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">CsrfProtectionOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b77\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-12\" data-tid=\"b78\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useSecurityHeaders()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------usesecurityheaders----------\"> useSecurityHeaders() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useSecurityHeaders</span>(options?: <a href=\"https://api-references-nestjs.netlify.app/api/common/SecurityHeadersOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">SecurityHeadersOptions</a>): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-22\" data-tid=\"b79\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b80\">Option</th> <th data-tid=\"b81\">Type</th> <th data-tid=\"b82\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/SecurityHeadersOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">SecurityHeadersOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b83\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-13\" data-tid=\"b84\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"enableVersioning()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------enableversioning----------\"> enableVersioning() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">enableVersioning</span>(options: <a href=\"https://api-references-nestjs.netlify.app/api/common/VersioningOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">VersioningOptions</a> = { type: VersioningType.URI }): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-23\" data-tid=\"b85\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b86\">Option</th> <th data-tid=\"b87\">Type</th> <th data-tid=\"b88\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/VersioningOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">VersioningOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b89\">Optional. Default is <code>{ type: VersioningType.URI }</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-14\" data-tid=\"b90\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"listen()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------listen----------\"> listen() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">listen</span>(port: string | number): Promise&lt;any&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-24\" data-tid=\"b91\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b92\">Option</th> <th data-tid=\"b93\">Type</th> <th data-tid=\"b94\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>port</code> </td> <td class=\"param-type\"><code>string | number</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-15\" data-tid=\"b95\">Returns</h4> <p><code>Promise&lt;any&gt;</code></p> </div> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">listen</span>(port: string | number, hostname: string): Promise&lt;any&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-25\" data-tid=\"b96\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b97\">Option</th> <th data-tid=\"b98\">Type</th> <th data-tid=\"b99\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>port</code> </td> <td class=\"param-type\"><code>string | number</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>hostname</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-16\" data-tid=\"b100\">Returns</h4> <p><code>Promise&lt;any&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"getUrl()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------geturl----------\"> getUrl() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getUrl</span>(): Promise&lt;string&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-26\" data-tid=\"b101\">Parameters</h4> <p data-tid=\"b102\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-17\" data-tid=\"b103\">Returns</h4> <p><code>Promise&lt;string&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"setGlobalPrefix()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------setglobalprefix----------\"> setGlobalPrefix() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">setGlobalPrefix</span>(prefix: string, options?: GlobalPrefixOptions): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-27\" data-tid=\"b104\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b105\">Option</th> <th data-tid=\"b106\">Type</th> <th data-tid=\"b107\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>prefix</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>GlobalPrefixOptions</code></td> <td class=\"param-description\"> <p data-tid=\"b108\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-18\" data-tid=\"b109\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useWebSocketAdapter()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------usewebsocketadapter----------\"> useWebSocketAdapter() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useWebSocketAdapter</span>(adapter: <a href=\"https://api-references-nestjs.netlify.app/api/common/WebSocketAdapter\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">WebSocketAdapter</a>): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-28\" data-tid=\"b110\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b111\">Option</th> <th data-tid=\"b112\">Type</th> <th data-tid=\"b113\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>adapter</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/WebSocketAdapter\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">WebSocketAdapter</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-19\" data-tid=\"b114\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useGlobalFilters()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------useglobalfilters----------\"> useGlobalFilters() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useGlobalFilters</span>(...filters: <a href=\"#/api/common/ExceptionFilter\" class=\"code-anchor highlight\">ExceptionFilter</a>[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-29\" data-tid=\"b115\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b116\">Option</th> <th data-tid=\"b117\">Type</th> <th data-tid=\"b118\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>filters</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/ExceptionFilter\" class=\"code-anchor highlight\">ExceptionFilter</a>[]</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-20\" data-tid=\"b119\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useGlobalPipes()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------useglobalpipes----------\"> useGlobalPipes() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useGlobalPipes</span>(...pipes: <a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;any&gt;[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-30\" data-tid=\"b120\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b121\">Option</th> <th data-tid=\"b122\">Type</th> <th data-tid=\"b123\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>pipes</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a><any>[]</any></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-21\" data-tid=\"b124\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useGlobalInterceptors()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------useglobalinterceptors----------\"> useGlobalInterceptors() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useGlobalInterceptors</span>(...interceptors: <a href=\"#/api/common/NestInterceptor\" class=\"code-anchor highlight\">NestInterceptor</a>[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-31\" data-tid=\"b125\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b126\">Option</th> <th data-tid=\"b127\">Type</th> <th data-tid=\"b128\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>interceptors</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/NestInterceptor\" class=\"code-anchor highlight\">NestInterceptor</a>[]</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-22\" data-tid=\"b129\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useGlobalGuards()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------useglobalguards----------\"> useGlobalGuards() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useGlobalGuards</span>(...guards: <a href=\"#/api/common/CanActivate\" class=\"code-anchor highlight\">CanActivate</a>[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-32\" data-tid=\"b130\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b131\">Option</th> <th data-tid=\"b132\">Type</th> <th data-tid=\"b133\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>guards</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/CanActivate\" class=\"code-anchor highlight\">CanActivate</a>[]</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-23\" data-tid=\"b134\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"useStaticAssets()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------usestaticassets----------\"> useStaticAssets() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useStaticAssets</span>(options: any): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-33\" data-tid=\"b135\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b136\">Option</th> <th data-tid=\"b137\">Type</th> <th data-tid=\"b138\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-24\" data-tid=\"b139\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useStaticAssets</span>(path: string, options?: any): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-34\" data-tid=\"b140\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b141\">Option</th> <th data-tid=\"b142\">Type</th> <th data-tid=\"b143\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>path</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> <p data-tid=\"b144\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-25\" data-tid=\"b145\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"setBaseViewsDir()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------setbaseviewsdir----------\"> setBaseViewsDir() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">setBaseViewsDir</span>(path: string | string[]): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-35\" data-tid=\"b146\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b147\">Option</th> <th data-tid=\"b148\">Type</th> <th data-tid=\"b149\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>path</code> </td> <td class=\"param-type\"><code>string | string[]</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-26\" data-tid=\"b150\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"setViewEngine()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------setviewengine----------\"> setViewEngine() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">setViewEngine</span>(engineOrOptions: any): this</code></pre> <h4 class=\"no-anchor\" id=\"parameters-36\" data-tid=\"b151\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b152\">Option</th> <th data-tid=\"b153\">Type</th> <th data-tid=\"b154\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>engineOrOptions</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-27\" data-tid=\"b155\">Returns</h4> <p><code>this</code></p> </div> </td> </tr> </tbody> </table> <a id=\"preloadLazyPackages()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------preloadlazypackages----------\"> preloadLazyPackages() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b156\">Pre-load optional packages so that createNestApplication, createNestMicroservice and createHttpAdapter can stay synchronous.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">preloadLazyPackages</span>(): Promise&lt;void&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-37\" data-tid=\"b157\">Parameters</h4> <p data-tid=\"b158\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-28\" data-tid=\"b159\">Returns</h4> <p><code>Promise&lt;void&gt;</code></p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "heading",
+   "tag": "h2",
+   "text": "Constructor",
+   "plain": "Constructor",
+   "tokens": [],
+   "auto": "构造函数"
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b2",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b5",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>{}</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b6",
+   "kind": "heading",
+   "tag": "h2",
+   "text": "Properties",
+   "plain": "Properties",
+   "tokens": [],
+   "auto": "属性"
+  },
+  {
+   "id": "b7",
+   "kind": "th",
+   "tag": "th",
+   "text": "Property",
+   "plain": "Property",
+   "tokens": [],
+   "auto": "属性"
+  },
+  {
+   "id": "b8",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b9",
+   "kind": "note",
+   "tag": "span",
+   "text": "Read-only.",
+   "plain": "Read-only.",
+   "tokens": [],
+   "auto": "只读。"
+  },
+  {
+   "id": "b10",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b11",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b12",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b13",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b14",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b15",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b16",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b17",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b18",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b19",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b20",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b21",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b22",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b23",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b24",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b25",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b26",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b27",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b28",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b29",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b30",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b31",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b32",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b33",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b34",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b35",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b36",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b37",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b38",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b39",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b40",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b41",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b42",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b43",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b44",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b45",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b46",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b47",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>{}</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b48",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b49",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b50",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b51",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b52",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b53",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b54",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b55",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b56",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b57",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b58",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b59",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b60",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b61",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b62",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b63",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b64",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b65",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b66",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b67",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b68",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b69",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b70",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b71",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b72",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b73",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b74",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b75",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b76",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b77",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b78",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b79",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b80",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b81",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b82",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b83",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b84",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b85",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b86",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b87",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b88",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b89",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>{ type: VersioningType.URI }</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b90",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b91",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b92",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b93",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b94",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b95",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b96",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b97",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b98",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b99",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b100",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b101",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b102",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b103",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b104",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b105",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b106",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b107",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b108",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b109",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b110",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b111",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b112",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b113",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b114",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b115",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b116",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b117",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b118",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b119",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b120",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b121",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b122",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b123",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b124",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b125",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b126",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b127",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b128",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b129",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b130",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b131",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b132",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b133",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b134",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b135",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b136",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b137",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b138",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b139",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b140",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b141",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b142",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b143",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b144",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b145",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b146",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b147",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b148",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b149",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b150",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b151",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b152",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b153",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b154",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b155",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b156",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Pre-load optional packages so that createNestApplication, createNestMicroservice and createHttpAdapter can stay synchronous.",
+   "plain": "Pre-load optional packages so that createNestApplication, createNestMicroservice and createHttpAdapter can stay synchronous.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b157",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b158",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b159",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  }
+ ]
+}

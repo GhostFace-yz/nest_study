@@ -1,0 +1,801 @@
+{
+ "meta": {
+  "path": "/api/core/Reflector",
+  "name": "Reflector",
+  "zh": "元数据反射器",
+  "category": "core",
+  "type": "class"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Helper class providing Nest reflection capabilities.</p> </section> <pre class=\"language-typescript\">  <code class=\"language-typescript\">\nclass <a href=\"#/api/core/Reflector\" class=\"code-anchor highlight\">Reflector</a> {\n  <a class=\"code-anchor\" href=\"#/api/core/Reflector#createDecorator()\">static <span class=\"member-name\">createDecorator</span>&lt;TParam, TTransformed = TParam&gt;(options: CreateDecoratorOptions&lt;TParam, TTransformed&gt; = {}): ReflectableDecorator&lt;TParam, TTransformed&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/core/Reflector#get()\"><span class=\"member-name\">get</span>&lt;TResult = any, TKey = any&gt;(metadataKeyOrDecorator: TKey, target: any): TResult</a>\n  <a class=\"code-anchor\" href=\"#/api/core/Reflector#getAll()\"><span class=\"member-name\">getAll</span>&lt;TResult extends any[] = any[], TKey = any&gt;(metadataKeyOrDecorator: TKey, targets: any[]): TResult</a>\n  <a class=\"code-anchor\" href=\"#/api/core/Reflector#getAllAndMerge()\"><span class=\"member-name\">getAllAndMerge</span>&lt;TResult extends any[] | object = any[], TKey = any&gt;(metadataKeyOrDecorator: TKey, targets: any[]): TResult</a>\n  <a class=\"code-anchor\" href=\"#/api/core/Reflector#getAllAndOverride()\"><span class=\"member-name\">getAllAndOverride</span>&lt;TResult = any, TKey = any&gt;(metadataKeyOrDecorator: TKey, targets: any[]): TResult | undefined</a>\n}</code></pre> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b1\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/guards#putting-it-all-together\" target=\"_blank\" rel=\"noopener\">Reflection</a></p> </li> </ul> </section> <section class=\"static-methods\"> <h3 id=\"static-methods\" data-tid=\"b2\"><span><span>Static methods</span></span></h3> <a id=\"createDecorator()\"></a> <table class=\"is-full-width method-table static-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------createdecorator----------\"> createDecorator() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b3\">Creates a decorator that can be used to decorate classes and methods with metadata. Can be used as a strongly-typed alternative to <code>@<a href=\"#/api/common/SetMetadata\" class=\"code-anchor highlight\">SetMetadata</a></code>.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nstatic <span class=\"member-name\">createDecorator</span>&lt;TParam&gt;(options?: <a href=\"https://api-references-nestjs.netlify.app/api/core/CreateDecoratorOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">CreateDecoratorOptions</a>&lt;TParam, TParam&gt;): <a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;TParam&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b4\">Parameters</h4> <table class=\"is-full-width list-table parameters-table static-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b5\">Option</th> <th data-tid=\"b6\">Type</th> <th data-tid=\"b7\">Description</th> </tr> </thead> <tbody> <tr class=\"static-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/CreateDecoratorOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">CreateDecoratorOptions</a><tparam, tparam=\"\"></tparam,></code></td> <td class=\"param-description\"> <p data-tid=\"b8\">Decorator options.</p> <pre class=\" language-typescript\"><code class=\" language-typescript\">\nOptional. Default is `undefined`.</code></pre> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b9\">Returns</h4> <p data-tid=\"b10\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;TParam&gt;</code> A decorator function.</p> </div> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nstatic <span class=\"member-name\">createDecorator</span>&lt;TParam, TTransformed&gt;(options: CreateDecoratorWithTransformOptions&lt;TParam, TTransformed&gt;): <a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;TParam, TTransformed&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-1\" data-tid=\"b11\">Parameters</h4> <table class=\"is-full-width list-table parameters-table static-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b12\">Option</th> <th data-tid=\"b13\">Type</th> <th data-tid=\"b14\">Description</th> </tr> </thead> <tbody> <tr class=\"static-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>CreateDecoratorWithTransformOptions<tparam, ttransformed=\"\"></tparam,></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-1\" data-tid=\"b15\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;TParam, TTransformed&gt;</code></p> </div> </td> </tr> </tbody> </table> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b16\"><span><span>Methods</span></span></h3> <a id=\"get()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------get----------\"> get() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b17\">Retrieve metadata for a specified key or decorator for a specified target.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b18\">Retrieve metadata for a reflectable decorator for a specified target.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">get</span>&lt;T extends <a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;any&gt;&gt;(decorator: T, target: any): T extends <a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;any, infer R&gt; ? R : unknown</code></pre> <h4 class=\"no-anchor\" id=\"parameters-2\" data-tid=\"b19\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b20\">Option</th> <th data-tid=\"b21\">Type</th> <th data-tid=\"b22\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>decorator</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> <p data-tid=\"b23\">reflectable decorator created through <code>Reflector.createDecorator</code></p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>target</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> <p data-tid=\"b24\">context (decorated object) to retrieve metadata from</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"examples\" data-tid=\"b25\">Examples</h4> <div class=\"example-info\"> <pre class=\"language-typescript\">    <code class=\"language-typescript\">\n`const roles = this.reflector.get<string[]>('roles', context.getHandler());`</string[]></code></pre> </div> <h4 class=\"no-anchor\" id=\"returns-2\" data-tid=\"b26\">Returns</h4> <p><code>T extends <a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;any, infer R&gt; ? R : unknown</code></p> </div> </td> </tr> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b27\">Retrieve metadata for a specified key for a specified target.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">get</span>&lt;TResult = any, TKey = any&gt;(metadataKey: TKey, target: any): TResult</code></pre> <h4 class=\"no-anchor\" id=\"parameters-3\" data-tid=\"b28\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b29\">Option</th> <th data-tid=\"b30\">Type</th> <th data-tid=\"b31\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadataKey</code> </td> <td class=\"param-type\"><code>TKey</code></td> <td class=\"param-description\"> <p data-tid=\"b32\">lookup key for metadata to retrieve</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>target</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> <p data-tid=\"b33\">context (decorated object) to retrieve metadata from</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"examples-1\" data-tid=\"b34\">Examples</h4> <div class=\"example-info\"> <pre class=\"language-typescript\">    <code class=\"language-typescript\">\n`const roles = this.reflector.get<string[]>('roles', context.getHandler());`</string[]></code></pre> </div> <h4 class=\"no-anchor\" id=\"returns-3\" data-tid=\"b35\">Returns</h4> <p><code>TResult</code></p> </div> </td> </tr> </tbody> </table> <a id=\"getAll()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------getall----------\"> getAll() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b36\">Retrieve metadata for a specified key or decorator for a specified set of targets.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b37\">Retrieve metadata for a specified decorator for a specified set of targets.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getAll</span>&lt;TParam = any, TTransformed = TParam&gt;(decorator: <a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;TParam, TTransformed&gt;, targets: any[]): TTransformed extends Array&lt;any&gt; ? TTransformed : TTransformed[]</code></pre> <h4 class=\"no-anchor\" id=\"parameters-4\" data-tid=\"b38\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b39\">Option</th> <th data-tid=\"b40\">Type</th> <th data-tid=\"b41\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>decorator</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a><tparam, ttransformed=\"\"></tparam,></code></td> <td class=\"param-description\"> <p data-tid=\"b42\">lookup decorator for metadata to retrieve</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>targets</code> </td> <td class=\"param-type\"><code>any[]</code></td> <td class=\"param-description\"> <p data-tid=\"b43\">context (decorated objects) to retrieve metadata from</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-4\" data-tid=\"b44\">Returns</h4> <p><code>TTransformed extends Array&lt;any&gt; ? TTransformed : TTransformed[]</code></p> </div> </td> </tr> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b45\">Retrieve metadata for a specified key for a specified set of targets.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getAll</span>&lt;TResult extends any[] = any[], TKey = any&gt;(metadataKey: TKey, targets: any[]): TResult</code></pre> <h4 class=\"no-anchor\" id=\"parameters-5\" data-tid=\"b46\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b47\">Option</th> <th data-tid=\"b48\">Type</th> <th data-tid=\"b49\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadataKey</code> </td> <td class=\"param-type\"><code>TKey</code></td> <td class=\"param-description\"> <p data-tid=\"b50\">lookup key for metadata to retrieve</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>targets</code> </td> <td class=\"param-type\"><code>any[]</code></td> <td class=\"param-description\"> <p data-tid=\"b51\">context (decorated objects) to retrieve metadata from</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-5\" data-tid=\"b52\">Returns</h4> <p><code>TResult</code></p> </div> </td> </tr> </tbody> </table> <a id=\"getAllAndMerge()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------getallandmerge----------\"> getAllAndMerge() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b53\">Retrieve metadata for a specified key or decorator for a specified set of targets and merge results.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b54\">Retrieve metadata for a specified decorator for a specified set of targets and merge results.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getAllAndMerge</span>&lt;TParam = any, TTransformed = TParam&gt;(decorator: <a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;TParam, TTransformed&gt;, targets: any[]): TTransformed extends Array&lt;any&gt; ? TTransformed : TTransformed extends object ? TTransformed : TTransformed[]</code></pre> <h4 class=\"no-anchor\" id=\"parameters-6\" data-tid=\"b55\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b56\">Option</th> <th data-tid=\"b57\">Type</th> <th data-tid=\"b58\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>decorator</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a><tparam, ttransformed=\"\"></tparam,></code></td> <td class=\"param-description\"> <p data-tid=\"b59\">lookup decorator for metadata to retrieve</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>targets</code> </td> <td class=\"param-type\"><code>any[]</code></td> <td class=\"param-description\"> <p data-tid=\"b60\">context (decorated objects) to retrieve metadata from</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-6\" data-tid=\"b61\">Returns</h4> <p><code>TTransformed extends Array&lt;any&gt; ? TTransformed : TTransformed extends object ? TTransformed : TTransformed[]</code></p> </div> </td> </tr> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b62\">Retrieve metadata for a specified key for a specified set of targets and merge results.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getAllAndMerge</span>&lt;TResult extends any[] | object = any[], TKey = any&gt;(metadataKey: TKey, targets: any[]): TResult</code></pre> <h4 class=\"no-anchor\" id=\"parameters-7\" data-tid=\"b63\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b64\">Option</th> <th data-tid=\"b65\">Type</th> <th data-tid=\"b66\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadataKey</code> </td> <td class=\"param-type\"><code>TKey</code></td> <td class=\"param-description\"> <p data-tid=\"b67\">lookup key for metadata to retrieve</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>targets</code> </td> <td class=\"param-type\"><code>any[]</code></td> <td class=\"param-description\"> <p data-tid=\"b68\">context (decorated objects) to retrieve metadata from</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-7\" data-tid=\"b69\">Returns</h4> <p><code>TResult</code></p> </div> </td> </tr> </tbody> </table> <a id=\"getAllAndOverride()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------getallandoverride----------\"> getAllAndOverride() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b70\">Retrieve metadata for a specified key or decorator for a specified set of targets and return a first not undefined value.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b71\">Retrieve metadata for a specified decorator for a specified set of targets and return a first not undefined value.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getAllAndOverride</span>&lt;TParam = any, TTransformed = TParam&gt;(decorator: <a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;TParam, TTransformed&gt;, targets: any[]): TTransformed</code></pre> <h4 class=\"no-anchor\" id=\"parameters-8\" data-tid=\"b72\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b73\">Option</th> <th data-tid=\"b74\">Type</th> <th data-tid=\"b75\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>decorator</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a><tparam, ttransformed=\"\"></tparam,></code></td> <td class=\"param-description\"> <p data-tid=\"b76\">lookup decorator for metadata to retrieve</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>targets</code> </td> <td class=\"param-type\"><code>any[]</code></td> <td class=\"param-description\"> <p data-tid=\"b77\">context (decorated objects) to retrieve metadata from</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-8\" data-tid=\"b78\">Returns</h4> <p><code>TTransformed</code></p> </div> </td> </tr> <tr> <td> <div class=\"overload-info\"> <div class=\"short-description\"> <p data-tid=\"b79\">Retrieve metadata for a specified key for a specified set of targets and return a first not undefined value.</p> </div> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getAllAndOverride</span>&lt;TResult = any, TKey = any&gt;(metadataKey: TKey, targets: any[]): TResult</code></pre> <h4 class=\"no-anchor\" id=\"parameters-9\" data-tid=\"b80\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b81\">Option</th> <th data-tid=\"b82\">Type</th> <th data-tid=\"b83\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadataKey</code> </td> <td class=\"param-type\"><code>TKey</code></td> <td class=\"param-description\"> <p data-tid=\"b84\">lookup key for metadata to retrieve</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>targets</code> </td> <td class=\"param-type\"><code>any[]</code></td> <td class=\"param-description\"> <p data-tid=\"b85\">context (decorated objects) to retrieve metadata from</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-9\" data-tid=\"b86\">Returns</h4> <p><code>TResult</code></p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Helper class providing Nest reflection capabilities.",
+   "plain": "Helper class providing Nest reflection capabilities.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Static methods",
+   "plain": "Static methods",
+   "tokens": [],
+   "auto": "静态方法"
+  },
+  {
+   "id": "b3",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Creates a decorator that can be used to decorate classes and methods with metadata. Can be used as a strongly-typed alternative to [[0]].",
+   "plain": "Creates a decorator that can be used to decorate classes and methods with metadata. Can be used as a strongly-typed alternative to .",
+   "tokens": [
+    "<code>@<a href=\"#/api/common/SetMetadata\" class=\"code-anchor highlight\">SetMetadata</a></code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b4",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b6",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b7",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b8",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Decorator options.",
+   "plain": "Decorator options.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b9",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b10",
+   "kind": "prose",
+   "tag": "p",
+   "text": "[[0]] A decorator function.",
+   "plain": "A decorator function.",
+   "tokens": [
+    "<code><a href=\"https://api-references-nestjs.netlify.app/api/core/ReflectableDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ReflectableDecorator</a>&lt;TParam&gt;</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b11",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b12",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b13",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b14",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b15",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b16",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b17",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified key or decorator for a specified target.",
+   "plain": "Retrieve metadata for a specified key or decorator for a specified target.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b18",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a reflectable decorator for a specified target.",
+   "plain": "Retrieve metadata for a reflectable decorator for a specified target.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b19",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b20",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b21",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b22",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b23",
+   "kind": "prose",
+   "tag": "p",
+   "text": "reflectable decorator created through [[0]]",
+   "plain": "reflectable decorator created through",
+   "tokens": [
+    "<code>Reflector.createDecorator</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b24",
+   "kind": "prose",
+   "tag": "p",
+   "text": "context (decorated object) to retrieve metadata from",
+   "plain": "context (decorated object) to retrieve metadata from",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b25",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Examples",
+   "plain": "Examples",
+   "tokens": [],
+   "auto": "示例"
+  },
+  {
+   "id": "b26",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b27",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified key for a specified target.",
+   "plain": "Retrieve metadata for a specified key for a specified target.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b28",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b29",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b30",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b31",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b32",
+   "kind": "prose",
+   "tag": "p",
+   "text": "lookup key for metadata to retrieve",
+   "plain": "lookup key for metadata to retrieve",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b33",
+   "kind": "prose",
+   "tag": "p",
+   "text": "context (decorated object) to retrieve metadata from",
+   "plain": "context (decorated object) to retrieve metadata from",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b34",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Examples",
+   "plain": "Examples",
+   "tokens": [],
+   "auto": "示例"
+  },
+  {
+   "id": "b35",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b36",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified key or decorator for a specified set of targets.",
+   "plain": "Retrieve metadata for a specified key or decorator for a specified set of targets.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b37",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified decorator for a specified set of targets.",
+   "plain": "Retrieve metadata for a specified decorator for a specified set of targets.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b38",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b39",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b40",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b41",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b42",
+   "kind": "prose",
+   "tag": "p",
+   "text": "lookup decorator for metadata to retrieve",
+   "plain": "lookup decorator for metadata to retrieve",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b43",
+   "kind": "prose",
+   "tag": "p",
+   "text": "context (decorated objects) to retrieve metadata from",
+   "plain": "context (decorated objects) to retrieve metadata from",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b44",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b45",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified key for a specified set of targets.",
+   "plain": "Retrieve metadata for a specified key for a specified set of targets.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b46",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b47",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b48",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b49",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b50",
+   "kind": "prose",
+   "tag": "p",
+   "text": "lookup key for metadata to retrieve",
+   "plain": "lookup key for metadata to retrieve",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b51",
+   "kind": "prose",
+   "tag": "p",
+   "text": "context (decorated objects) to retrieve metadata from",
+   "plain": "context (decorated objects) to retrieve metadata from",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b52",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b53",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified key or decorator for a specified set of targets and merge results.",
+   "plain": "Retrieve metadata for a specified key or decorator for a specified set of targets and merge results.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b54",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified decorator for a specified set of targets and merge results.",
+   "plain": "Retrieve metadata for a specified decorator for a specified set of targets and merge results.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b55",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b56",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b57",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b58",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b59",
+   "kind": "prose",
+   "tag": "p",
+   "text": "lookup decorator for metadata to retrieve",
+   "plain": "lookup decorator for metadata to retrieve",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b60",
+   "kind": "prose",
+   "tag": "p",
+   "text": "context (decorated objects) to retrieve metadata from",
+   "plain": "context (decorated objects) to retrieve metadata from",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b61",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b62",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified key for a specified set of targets and merge results.",
+   "plain": "Retrieve metadata for a specified key for a specified set of targets and merge results.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b63",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b64",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b65",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b66",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b67",
+   "kind": "prose",
+   "tag": "p",
+   "text": "lookup key for metadata to retrieve",
+   "plain": "lookup key for metadata to retrieve",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b68",
+   "kind": "prose",
+   "tag": "p",
+   "text": "context (decorated objects) to retrieve metadata from",
+   "plain": "context (decorated objects) to retrieve metadata from",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b69",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b70",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified key or decorator for a specified set of targets and return a first not undefined value.",
+   "plain": "Retrieve metadata for a specified key or decorator for a specified set of targets and return a first not undefined value.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b71",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified decorator for a specified set of targets and return a first not undefined value.",
+   "plain": "Retrieve metadata for a specified decorator for a specified set of targets and return a first not undefined value.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b72",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b73",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b74",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b75",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b76",
+   "kind": "prose",
+   "tag": "p",
+   "text": "lookup decorator for metadata to retrieve",
+   "plain": "lookup decorator for metadata to retrieve",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b77",
+   "kind": "prose",
+   "tag": "p",
+   "text": "context (decorated objects) to retrieve metadata from",
+   "plain": "context (decorated objects) to retrieve metadata from",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b78",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b79",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Retrieve metadata for a specified key for a specified set of targets and return a first not undefined value.",
+   "plain": "Retrieve metadata for a specified key for a specified set of targets and return a first not undefined value.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b80",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b81",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b82",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b83",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b84",
+   "kind": "prose",
+   "tag": "p",
+   "text": "lookup key for metadata to retrieve",
+   "plain": "lookup key for metadata to retrieve",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b85",
+   "kind": "prose",
+   "tag": "p",
+   "text": "context (decorated objects) to retrieve metadata from",
+   "plain": "context (decorated objects) to retrieve metadata from",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b86",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  }
+ ]
+}

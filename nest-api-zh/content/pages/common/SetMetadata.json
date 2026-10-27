@@ -1,0 +1,104 @@
+{
+ "meta": {
+  "path": "/api/common/SetMetadata",
+  "name": "SetMetadata",
+  "zh": "设置元数据",
+  "category": "di",
+  "type": "const"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Decorator that assigns metadata to the class/function using the specified <code>key</code>.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <pre class=\"language-typescript\"><code language=\"ts\" hidecopy=\"true\" class=\"language-typescript no-box api-heading\">\nconst <a href=\"#/api/common/SetMetadata\" class=\"code-anchor highlight\">SetMetadata</a>: &lt;K = string, V = any&gt;(metadataKey: K, metadataValue: V) =&gt; <a href=\"https://api-references-nestjs.netlify.app/api/common/CustomDecorator\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">CustomDecorator</a>&lt;K&gt;;</code></pre> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b2\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/fundamentals/execution-context#reflection-and-metadata\" target=\"_blank\" rel=\"noopener\">Reflection</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b3\"><span>Description</span></h3> <p data-tid=\"b4\">Requires two parameters:</p> <ul> <li data-tid=\"b5\"><code>key</code> - a value defining the key under which the metadata is stored</li> <li data-tid=\"b6\"><code>value</code> - metadata to be associated with <code>key</code></li> </ul> <p data-tid=\"b7\">This metadata can be reflected using the <code><a href=\"#/api/core/Reflector\" class=\"code-anchor highlight\">Reflector</a></code> class.</p> <p data-tid=\"b8\">Example: <code>@<a href=\"#/api/common/SetMetadata\" class=\"code-anchor highlight\">SetMetadata</a>('roles', ['admin'])</code></p> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Decorator that assigns metadata to the class/function using the specified [[0]].",
+   "plain": "Decorator that assigns metadata to the class/function using the specified .",
+   "tokens": [
+    "<code>key</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b3",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b4",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Requires two parameters:",
+   "plain": "Requires two parameters:",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b5",
+   "kind": "prose",
+   "tag": "li",
+   "text": "[[0]] - a value defining the key under which the metadata is stored",
+   "plain": "- a value defining the key under which the metadata is stored",
+   "tokens": [
+    "<code>key</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b6",
+   "kind": "prose",
+   "tag": "li",
+   "text": "[[0]] - metadata to be associated with [[1]]",
+   "plain": "- metadata to be associated with",
+   "tokens": [
+    "<code>value</code>",
+    "<code>key</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b7",
+   "kind": "prose",
+   "tag": "p",
+   "text": "This metadata can be reflected using the [[0]] class.",
+   "plain": "This metadata can be reflected using the  class.",
+   "tokens": [
+    "<code><a href=\"#/api/core/Reflector\" class=\"code-anchor highlight\">Reflector</a></code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b8",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Example: [[0]]",
+   "plain": "Example:",
+   "tokens": [
+    "<code>@<a href=\"#/api/common/SetMetadata\" class=\"code-anchor highlight\">SetMetadata</a>('roles', ['admin'])</code>"
+   ],
+   "auto": null
+  }
+ ]
+}

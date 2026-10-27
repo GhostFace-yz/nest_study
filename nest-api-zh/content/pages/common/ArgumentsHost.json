@@ -1,0 +1,315 @@
+{
+ "meta": {
+  "path": "/api/common/ArgumentsHost",
+  "name": "ArgumentsHost",
+  "zh": "参数宿主",
+  "category": "guards",
+  "type": "interface"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Provides methods for retrieving the arguments being passed to a handler. Allows choosing the appropriate execution context (e.g., Http, RPC, or WebSockets) to retrieve the arguments from.</p> </section> <section class=\"interface-overview\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\ninterface <a href=\"#/api/common/ArgumentsHost\" class=\"code-anchor highlight\">ArgumentsHost</a> {\n  <a class=\"code-anchor\" href=\"#/api/common/ArgumentsHost#getArgs_0()\"><span class=\"member-name\">getArgs</span>&lt;T extends Array&lt;any&gt; = any[]&gt;(): T</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ArgumentsHost#getArgByIndex_0()\"><span class=\"member-name\">getArgByIndex</span>&lt;T = any&gt;(index: number): T</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ArgumentsHost#switchToRpc_0()\"><span class=\"member-name\">switchToRpc</span>(): RpcArgumentsHost</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ArgumentsHost#switchToHttp_0()\"><span class=\"member-name\">switchToHttp</span>(): HttpArgumentsHost</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ArgumentsHost#switchToWs_0()\"><span class=\"member-name\">switchToWs</span>(): WsArgumentsHost</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ArgumentsHost#getType_0()\"><span class=\"member-name\">getType</span>&lt;TContext extends string = ContextType&gt;(): TContext</a>\n}</code></pre> <div class=\"descendants interface\"> <h3 id=\"child-interfaces\" data-tid=\"b1\"><span>Child interfaces</span></h3> <ul> <li> <code><a href=\"#/api/common/ExecutionContext\" class=\"code-anchor highlight\">ExecutionContext</a></code> </li> </ul> </div> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b2\"><span><span>Methods</span></span></h3> <a id=\"getArgs_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------getargs----------\"> getArgs() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b3\">Returns the array of arguments being passed to the handler.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getArgs</span>&lt;T extends Array&lt;any&gt; = any[]&gt;(): T</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b4\">Parameters</h4> <p data-tid=\"b5\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b6\">Returns</h4> <p><code>T</code></p> </div> </td> </tr> </tbody> </table> <a id=\"getArgByIndex_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------getargbyindex----------\"> getArgByIndex() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b7\">Returns a particular argument by index.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getArgByIndex</span>&lt;T = any&gt;(index: number): T</code></pre> <h4 class=\"no-anchor\" id=\"parameters-1\" data-tid=\"b8\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b9\">Option</th> <th data-tid=\"b10\">Type</th> <th data-tid=\"b11\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>index</code> </td> <td class=\"param-type\"><code>number</code></td> <td class=\"param-description\"> <p data-tid=\"b12\">index of argument to retrieve</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-1\" data-tid=\"b13\">Returns</h4> <p><code>T</code></p> </div> </td> </tr> </tbody> </table> <a id=\"switchToRpc_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------switchtorpc----------\"> switchToRpc() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b14\">Switch context to RPC.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">switchToRpc</span>(): RpcArgumentsHost</code></pre> <h4 class=\"no-anchor\" id=\"parameters-2\" data-tid=\"b15\">Parameters</h4> <p data-tid=\"b16\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-2\" data-tid=\"b17\">Returns</h4> <p data-tid=\"b18\"><code>RpcArgumentsHost</code> interface with methods to retrieve RPC arguments</p> </div> </td> </tr> </tbody> </table> <a id=\"switchToHttp_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------switchtohttp----------\"> switchToHttp() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b19\">Switch context to HTTP.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">switchToHttp</span>(): HttpArgumentsHost</code></pre> <h4 class=\"no-anchor\" id=\"parameters-3\" data-tid=\"b20\">Parameters</h4> <p data-tid=\"b21\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-3\" data-tid=\"b22\">Returns</h4> <p data-tid=\"b23\"><code>HttpArgumentsHost</code> interface with methods to retrieve HTTP arguments</p> </div> </td> </tr> </tbody> </table> <a id=\"switchToWs_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------switchtows----------\"> switchToWs() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b24\">Switch context to WebSockets.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">switchToWs</span>(): WsArgumentsHost</code></pre> <h4 class=\"no-anchor\" id=\"parameters-4\" data-tid=\"b25\">Parameters</h4> <p data-tid=\"b26\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-4\" data-tid=\"b27\">Returns</h4> <p data-tid=\"b28\"><code>WsArgumentsHost</code> interface with methods to retrieve WebSockets arguments</p> </div> </td> </tr> </tbody> </table> <a id=\"getType_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------gettype----------\"> getType() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b29\">Returns the current execution context type (string)</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">getType</span>&lt;TContext extends string = <a href=\"https://api-references-nestjs.netlify.app/api/common/ContextType\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ContextType</a>&gt;(): TContext</code></pre> <h4 class=\"no-anchor\" id=\"parameters-5\" data-tid=\"b30\">Parameters</h4> <p data-tid=\"b31\">There are no parameters.</p> <h4 class=\"no-anchor\" id=\"returns-5\" data-tid=\"b32\">Returns</h4> <p><code>TContext</code></p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Provides methods for retrieving the arguments being passed to a handler. Allows choosing the appropriate execution context (e.g., Http, RPC, or WebSockets) to retrieve the arguments from.",
+   "plain": "Provides methods for retrieving the arguments being passed to a handler. Allows choosing the appropriate execution context (e.g., Http, RPC, or WebSockets) to retrieve the arguments from.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Child interfaces",
+   "plain": "Child interfaces",
+   "tokens": [],
+   "auto": "子接口"
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b3",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Returns the array of arguments being passed to the handler.",
+   "plain": "Returns the array of arguments being passed to the handler.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b4",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b5",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b6",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b7",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Returns a particular argument by index.",
+   "plain": "Returns a particular argument by index.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b8",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b9",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b10",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b11",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b12",
+   "kind": "prose",
+   "tag": "p",
+   "text": "index of argument to retrieve",
+   "plain": "index of argument to retrieve",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b13",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b14",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Switch context to RPC.",
+   "plain": "Switch context to RPC.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b15",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b16",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b17",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b18",
+   "kind": "prose",
+   "tag": "p",
+   "text": "[[0]] interface with methods to retrieve RPC arguments",
+   "plain": "interface with methods to retrieve RPC arguments",
+   "tokens": [
+    "<code>RpcArgumentsHost</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b19",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Switch context to HTTP.",
+   "plain": "Switch context to HTTP.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b20",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b21",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b22",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b23",
+   "kind": "prose",
+   "tag": "p",
+   "text": "[[0]] interface with methods to retrieve HTTP arguments",
+   "plain": "interface with methods to retrieve HTTP arguments",
+   "tokens": [
+    "<code>HttpArgumentsHost</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b24",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Switch context to WebSockets.",
+   "plain": "Switch context to WebSockets.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b25",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b26",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b27",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b28",
+   "kind": "prose",
+   "tag": "p",
+   "text": "[[0]] interface with methods to retrieve WebSockets arguments",
+   "plain": "interface with methods to retrieve WebSockets arguments",
+   "tokens": [
+    "<code>WsArgumentsHost</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b29",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Returns the current execution context type (string)",
+   "plain": "Returns the current execution context type (string)",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b30",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b31",
+   "kind": "prose",
+   "tag": "p",
+   "text": "There are no parameters.",
+   "plain": "There are no parameters.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b32",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  }
+ ]
+}

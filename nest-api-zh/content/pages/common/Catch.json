@@ -1,0 +1,147 @@
+{
+ "meta": {
+  "path": "/api/common/Catch",
+  "name": "Catch",
+  "zh": "捕获异常",
+  "category": "guards",
+  "type": "decorator"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Decorator that marks a class as a Nest exception filter. An exception filter handles exceptions thrown by or not handled by your application code.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n <span class=\"member-name\">@<a href=\"#/api/common/Catch\" class=\"code-anchor highlight\">Catch</a></span>(...exceptions: (<a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a>&lt;any&gt; | <a href=\"https://api-references-nestjs.netlify.app/api/common/Abstract\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Abstract</a>&lt;any&gt;)[])</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b2\">Parameters</h4> <table class=\"is-full-width list-table parameters-table function-overload-parameters\"> <thead> <tr> <th data-tid=\"b3\">Option</th> <th data-tid=\"b4\">Type</th> <th data-tid=\"b5\">Description</th> </tr> </thead> <tbody> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>exceptions</code> </td> <td class=\"param-type\"><code>(<a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a><any> | <a href=\"https://api-references-nestjs.netlify.app/api/common/Abstract\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Abstract</a><any>)[]</any></any></code></td> <td class=\"param-description\"> <p data-tid=\"b6\">one or more exception <em>types</em> specifying the exceptions to be caught and handled by this filter.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b7\">Returns</h4> <p><code>ClassDecorator</code></p> </div> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b8\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/exception-filters\" target=\"_blank\" rel=\"noopener\">Exception Filters</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b9\"><span>Description</span></h3> <p data-tid=\"b10\">The decorated class must implement the <code><a href=\"#/api/common/ExceptionFilter\" class=\"code-anchor highlight\">ExceptionFilter</a></code> interface.</p> <p data-tid=\"b11\">Further information is available in the <a href=\"#/api/common/Catch#usage-notes\">Usage Notes...</a></p> </section> <section class=\"decorator-options\"> </section> <section class=\"usage-notes\"> <h3 id=\"usage-notes\" data-tid=\"b12\"><span>Usage notes</span></h3> <p data-tid=\"b13\">Exception filters are applied using the <code>@<a href=\"#/api/common/UseFilters\" class=\"code-anchor highlight\">UseFilters</a>()</code> decorator, or (globally) with <code>app.useGlobalFilters()</code>.</p> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Decorator that marks a class as a Nest exception filter. An exception filter handles exceptions thrown by or not handled by your application code.",
+   "plain": "Decorator that marks a class as a Nest exception filter. An exception filter handles exceptions thrown by or not handled by your application code.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b6",
+   "kind": "prose",
+   "tag": "p",
+   "text": "one or more exception [[0]] specifying the exceptions to be caught and handled by this filter.",
+   "plain": "one or more exception  specifying the exceptions to be caught and handled by this filter.",
+   "tokens": [
+    "<em>types</em>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b7",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b8",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b9",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b10",
+   "kind": "prose",
+   "tag": "p",
+   "text": "The decorated class must implement the [[0]] interface.",
+   "plain": "The decorated class must implement the  interface.",
+   "tokens": [
+    "<code><a href=\"#/api/common/ExceptionFilter\" class=\"code-anchor highlight\">ExceptionFilter</a></code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b11",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Further information is available in the [[0]]",
+   "plain": "Further information is available in the",
+   "tokens": [
+    "<a href=\"#/api/common/Catch#usage-notes\">Usage Notes...</a>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b12",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Usage notes",
+   "plain": "Usage notes",
+   "tokens": [],
+   "auto": "用法说明"
+  },
+  {
+   "id": "b13",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Exception filters are applied using the [[0]] decorator, or (globally) with [[1]].",
+   "plain": "Exception filters are applied using the  decorator, or (globally) with .",
+   "tokens": [
+    "<code>@<a href=\"#/api/common/UseFilters\" class=\"code-anchor highlight\">UseFilters</a>()</code>",
+    "<code>app.useGlobalFilters()</code>"
+   ],
+   "auto": null
+  }
+ ]
+}

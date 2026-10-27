@@ -1,0 +1,166 @@
+{
+ "meta": {
+  "path": "/api/common/Controller",
+  "name": "Controller",
+  "zh": "控制器",
+  "category": "routing",
+  "type": "decorator"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Decorator that marks a class as a Nest controller that can receive inbound requests and produce responses.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n <span class=\"member-name\">@<a href=\"#/api/common/Controller\" class=\"code-anchor highlight\">Controller</a></span>(prefixOrOptions?: string | string[] | <a href=\"https://api-references-nestjs.netlify.app/api/common/ControllerOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ControllerOptions</a>)</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b2\">Parameters</h4> <table class=\"is-full-width list-table parameters-table function-overload-parameters\"> <thead> <tr> <th data-tid=\"b3\">Option</th> <th data-tid=\"b4\">Type</th> <th data-tid=\"b5\">Description</th> </tr> </thead> <tbody> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>prefixOrOptions</code> </td> <td class=\"param-type\"><code>string | string[] | <a href=\"https://api-references-nestjs.netlify.app/api/common/ControllerOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ControllerOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b6\">a <code>route path prefix</code> or a <code><a href=\"https://api-references-nestjs.netlify.app/api/common/ControllerOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ControllerOptions</a></code> object. A <code>route path prefix</code> is pre-pended to the path specified in any request decorator in the class. <code><a href=\"https://api-references-nestjs.netlify.app/api/common/ControllerOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ControllerOptions</a></code> is an options configuration object specifying:</p> <ul> <li data-tid=\"b7\"><code>scope</code> - symbol that determines the lifetime of a Controller instance. <a href=\"https://docs.nestjs.com/fundamentals/injection-scopes#usage\" target=\"_blank\" rel=\"noopener\">See Scope</a> for more details.</li> <li data-tid=\"b8\"><code>prefix</code> - string that defines a <code>route path prefix</code>. The prefix is pre-pended to the path specified in any request decorator in the class.</li> <li data-tid=\"b9\"><code>version</code> - string, array of strings, or Symbol that defines the version of all routes in the class. <a href=\"https://docs.nestjs.com/techniques/versioning\" target=\"_blank\" rel=\"noopener\">See Versioning</a> for more details.</li> </ul> <pre class=\" language-typescript\"><code class=\" language-typescript\">\nOptional. Default is `undefined`.</code></pre> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b10\">Returns</h4> <p><code>ClassDecorator</code></p> </div> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b11\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/controllers#routing\" target=\"_blank\" rel=\"noopener\">Routing</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/controllers\" target=\"_blank\" rel=\"noopener\">Controllers</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/microservices/basics#request-response\" target=\"_blank\" rel=\"noopener\">Microservices</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/fundamentals/injection-scopes#usage\" target=\"_blank\" rel=\"noopener\">Scope</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/techniques/versioning\" target=\"_blank\" rel=\"noopener\">Versioning</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b12\"><span>Description</span></h3> <p data-tid=\"b13\">An HTTP Controller responds to inbound HTTP Requests and produces HTTP Responses. It defines a class that provides the context for one or more related route handlers that correspond to HTTP request methods and associated routes for example <code>GET /api/profile</code>, <code>POST /users/resume</code></p> <p data-tid=\"b14\">A Microservice Controller responds to requests as well as events, running over a variety of transports <a href=\"https://docs.nestjs.com/microservices/basics\" target=\"_blank\" rel=\"noopener\">(read more here)</a>. It defines a class that provides a context for one or more message or event handlers.</p> </section> <section class=\"decorator-options\"> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Decorator that marks a class as a Nest controller that can receive inbound requests and produce responses.",
+   "plain": "Decorator that marks a class as a Nest controller that can receive inbound requests and produce responses.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b6",
+   "kind": "prose",
+   "tag": "p",
+   "text": "a [[0]] or a [[1]] object. A [[2]] is pre-pended to the path specified in any request decorator in the class. [[3]] is an options configuration object specifying:",
+   "plain": "a  or a  object. A  is pre-pended to the path specified in any request decorator in the class.  is an options configuration object specifying:",
+   "tokens": [
+    "<code>route path prefix</code>",
+    "<code><a href=\"https://api-references-nestjs.netlify.app/api/common/ControllerOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ControllerOptions</a></code>",
+    "<code>route path prefix</code>",
+    "<code><a href=\"https://api-references-nestjs.netlify.app/api/common/ControllerOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ControllerOptions</a></code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b7",
+   "kind": "prose",
+   "tag": "li",
+   "text": "[[0]] - symbol that determines the lifetime of a Controller instance. [[1]] for more details.",
+   "plain": "- symbol that determines the lifetime of a Controller instance.  for more details.",
+   "tokens": [
+    "<code>scope</code>",
+    "<a href=\"https://docs.nestjs.com/fundamentals/injection-scopes#usage\" target=\"_blank\" rel=\"noopener\">See Scope</a>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b8",
+   "kind": "prose",
+   "tag": "li",
+   "text": "[[0]] - string that defines a [[1]]. The prefix is pre-pended to the path specified in any request decorator in the class.",
+   "plain": "- string that defines a . The prefix is pre-pended to the path specified in any request decorator in the class.",
+   "tokens": [
+    "<code>prefix</code>",
+    "<code>route path prefix</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b9",
+   "kind": "prose",
+   "tag": "li",
+   "text": "[[0]] - string, array of strings, or Symbol that defines the version of all routes in the class. [[1]] for more details.",
+   "plain": "- string, array of strings, or Symbol that defines the version of all routes in the class.  for more details.",
+   "tokens": [
+    "<code>version</code>",
+    "<a href=\"https://docs.nestjs.com/techniques/versioning\" target=\"_blank\" rel=\"noopener\">See Versioning</a>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b10",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b11",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b12",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b13",
+   "kind": "prose",
+   "tag": "p",
+   "text": "An HTTP Controller responds to inbound HTTP Requests and produces HTTP Responses. It defines a class that provides the context for one or more related route handlers that correspond to HTTP request methods and associated routes for example [[0]], [[1]]",
+   "plain": "An HTTP Controller responds to inbound HTTP Requests and produces HTTP Responses. It defines a class that provides the context for one or more related route handlers that correspond to HTTP request methods and associated routes for example ,",
+   "tokens": [
+    "<code>GET /api/profile</code>",
+    "<code>POST /users/resume</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b14",
+   "kind": "prose",
+   "tag": "p",
+   "text": "A Microservice Controller responds to requests as well as events, running over a variety of transports [[0]]. It defines a class that provides a context for one or more message or event handlers.",
+   "plain": "A Microservice Controller responds to requests as well as events, running over a variety of transports . It defines a class that provides a context for one or more message or event handlers.",
+   "tokens": [
+    "<a href=\"https://docs.nestjs.com/microservices/basics\" target=\"_blank\" rel=\"noopener\">(read more here)</a>"
+   ],
+   "auto": null
+  }
+ ]
+}

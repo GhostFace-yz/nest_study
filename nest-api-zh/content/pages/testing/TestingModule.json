@@ -1,0 +1,270 @@
+{
+ "meta": {
+  "path": "/api/testing/TestingModule",
+  "name": "TestingModule",
+  "zh": "测试模块",
+  "category": "testing",
+  "type": "class"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> </section> <pre class=\"language-typescript\">  <code class=\"language-typescript\">\nclass <a href=\"#/api/testing/TestingModule\" class=\"code-anchor highlight\">TestingModule</a> extends <a href=\"https://api-references-nestjs.netlify.app/api/core/NestApplicationContext\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestApplicationContext</a> {\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModule#constructor()\"><span class=\"member-name\">constructor</span>(container: NestContainer, graphInspector: GraphInspector, contextModule: Module, applicationConfig: ApplicationConfig, scope: Type&lt;any&gt;[] = [])</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModule#graphInspector\">protected <span class=\"member-name\">graphInspector</span>: GraphInspector</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModule#createNestApplication()\"><span class=\"member-name\">createNestApplication</span>&lt;T extends INestApplication = INestApplication&gt;(serverOrOptions: any, options?: NestApplicationOptions): T</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModule#createNestMicroservice()\"><span class=\"member-name\">createNestMicroservice</span>&lt;T extends object&gt;(options: any): INestMicroservice</a>\n}</code></pre> <h2 id=\"constructor\" data-tid=\"b0\">Constructor</h2> <a id=\"constructor()\"></a> <table class=\"is-full-width method-table constructor\"> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">constructor</span>(container: <a href=\"https://api-references-nestjs.netlify.app/api/core/NestContainer\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestContainer</a>, graphInspector: <a href=\"https://api-references-nestjs.netlify.app/api/core/GraphInspector\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">GraphInspector</a>, contextModule: <a href=\"#/api/common/Module\" class=\"code-anchor highlight\">Module</a>, applicationConfig: <a href=\"https://api-references-nestjs.netlify.app/api/core/ApplicationConfig\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ApplicationConfig</a>, scope: <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a>&lt;any&gt;[] = [])</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b1\">Parameters</h4> <table class=\"is-full-width list-table parameters-table constructor-overload-parameters\"> <thead> <tr> <th data-tid=\"b2\">Option</th> <th data-tid=\"b3\">Type</th> <th data-tid=\"b4\">Description</th> </tr> </thead> <tbody> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>container</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/NestContainer\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestContainer</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>graphInspector</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/GraphInspector\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">GraphInspector</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>contextModule</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/Module\" class=\"code-anchor highlight\">Module</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>applicationConfig</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/ApplicationConfig\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ApplicationConfig</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>scope</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a><any>[]</any></code></td> <td class=\"param-description\"> <p data-tid=\"b5\">Optional. Default is <code>[]</code>.</p> </td> </tr> </tbody> </table> </div> </td> </tr> </tbody> </table> <section class=\"instance-properties\"> <h2 id=\"properties\" data-tid=\"b6\">Properties</h2> <table class=\"is-full-width list-table property-table\"> <thead> <tr> <th data-tid=\"b7\">Property</th> <th data-tid=\"b8\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-property\"> <td> <a id=\"graphInspector\"></a> <code>protected <span class=\"member-name\">graphInspector</span>: <a href=\"https://api-references-nestjs.netlify.app/api/core/GraphInspector\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">GraphInspector</a></code> </td> <td><span class=\"read-only-property\" data-tid=\"b9\">Read-only.</span> </td> </tr> </tbody> </table> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b10\"><span><span>Methods</span></span></h3> <a id=\"createNestApplication()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------createnestapplication----------\"> createNestApplication() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">createNestApplication</span>&lt;T extends <a href=\"#/api/common/INestApplication\" class=\"code-anchor highlight\">INestApplication</a> = <a href=\"#/api/common/INestApplication\" class=\"code-anchor highlight\">INestApplication</a>&gt;(httpAdapter: any, options?: <a href=\"https://api-references-nestjs.netlify.app/api/common/NestApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestApplicationOptions</a>): T</code></pre> <h4 class=\"no-anchor\" id=\"parameters-1\" data-tid=\"b11\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b12\">Option</th> <th data-tid=\"b13\">Type</th> <th data-tid=\"b14\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>httpAdapter</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/NestApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestApplicationOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b15\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b16\">Returns</h4> <p><code>T</code></p> </div> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">createNestApplication</span>&lt;T extends <a href=\"#/api/common/INestApplication\" class=\"code-anchor highlight\">INestApplication</a> = <a href=\"#/api/common/INestApplication\" class=\"code-anchor highlight\">INestApplication</a>&gt;(options?: <a href=\"https://api-references-nestjs.netlify.app/api/common/NestApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestApplicationOptions</a>): T</code></pre> <h4 class=\"no-anchor\" id=\"parameters-2\" data-tid=\"b17\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b18\">Option</th> <th data-tid=\"b19\">Type</th> <th data-tid=\"b20\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/NestApplicationOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">NestApplicationOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b21\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-1\" data-tid=\"b22\">Returns</h4> <p><code>T</code></p> </div> </td> </tr> </tbody> </table> <a id=\"createNestMicroservice()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------createnestmicroservice----------\"> createNestMicroservice() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">createNestMicroservice</span>&lt;T extends object&gt;(options: any): <a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-3\" data-tid=\"b23\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b24\">Option</th> <th data-tid=\"b25\">Type</th> <th data-tid=\"b26\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>any</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-2\" data-tid=\"b27\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/common/INestMicroservice\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">INestMicroservice</a></code></p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "heading",
+   "tag": "h2",
+   "text": "Constructor",
+   "plain": "Constructor",
+   "tokens": [],
+   "auto": "构造函数"
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b2",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b5",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>[]</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b6",
+   "kind": "heading",
+   "tag": "h2",
+   "text": "Properties",
+   "plain": "Properties",
+   "tokens": [],
+   "auto": "属性"
+  },
+  {
+   "id": "b7",
+   "kind": "th",
+   "tag": "th",
+   "text": "Property",
+   "plain": "Property",
+   "tokens": [],
+   "auto": "属性"
+  },
+  {
+   "id": "b8",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b9",
+   "kind": "note",
+   "tag": "span",
+   "text": "Read-only.",
+   "plain": "Read-only.",
+   "tokens": [],
+   "auto": "只读。"
+  },
+  {
+   "id": "b10",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b11",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b12",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b13",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b14",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b15",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b16",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b17",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b18",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b19",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b20",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b21",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b22",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b23",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b24",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b25",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b26",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b27",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  }
+ ]
+}

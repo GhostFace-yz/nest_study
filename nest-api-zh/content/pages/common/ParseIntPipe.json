@@ -1,0 +1,214 @@
+{
+ "meta": {
+  "path": "/api/common/ParseIntPipe",
+  "name": "ParseIntPipe",
+  "zh": "整数解析管道",
+  "category": "pipes",
+  "type": "pipe"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Defines the built-in ParseInt Pipe</p> </section> <pre class=\"language-typescript\">  <code class=\"language-typescript\">\nclass <a href=\"#/api/common/ParseIntPipe\" class=\"code-anchor highlight\">ParseIntPipe</a> implements <a class=\"code-anchor\" href=\"#/api/common/PipeTransform\">PipeTransform</a> {\n  <a class=\"code-anchor\" href=\"#/api/common/ParseIntPipe#exceptionFactory\">protected <span class=\"member-name\">exceptionFactory</span>: (error: string) =&gt; any</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ParseIntPipe#options\">protected <span class=\"member-name\">options</span>?: ParseIntPipeOptions</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ParseIntPipe#transform()\"><span class=\"member-name\">transform</span>(value: unknown, metadata: ArgumentMetadata&lt;any&gt;): Promise&lt;number | undefined | null&gt;</a>\n  <a class=\"code-anchor\" href=\"#/api/common/ParseIntPipe#isNumeric()\">protected <span class=\"member-name\">isNumeric</span>(value: unknown): boolean</a>\n}</code></pre> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b1\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/pipes#built-in-pipes\" target=\"_blank\" rel=\"noopener\">Built-in Pipes</a></p> </li> </ul> </section> <section class=\"instance-properties\"> <h2 id=\"properties\" data-tid=\"b2\">Properties</h2> <table class=\"is-full-width list-table property-table\"> <thead> <tr> <th data-tid=\"b3\">Property</th> <th data-tid=\"b4\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-property\"> <td> <a id=\"exceptionFactory\"></a> <code>protected <span class=\"member-name\">exceptionFactory</span>: (error: string) =&gt; any</code> </td> <td> </td> </tr> <tr class=\"instance-property\"> <td> <a id=\"options\"></a> <code>protected <span class=\"member-name\">options</span>?: <a href=\"https://api-references-nestjs.netlify.app/api/common/ParseIntPipeOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParseIntPipeOptions</a></code> </td> <td><span class=\"read-only-property\" data-tid=\"b5\">Read-only.</span> </td> </tr> </tbody> </table> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b6\"><span><span>Methods</span></span></h3> <a id=\"transform()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------transform----------\"> transform() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b7\">Method that accesses and performs optional transformation on argument for in-flight requests.</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">transform</span>(value: unknown, metadata: <a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a>&lt;any&gt;): Promise&lt;number | undefined | null&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b8\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b9\">Option</th> <th data-tid=\"b10\">Type</th> <th data-tid=\"b11\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>unknown</code></td> <td class=\"param-description\"> <p data-tid=\"b12\">currently processed route argument</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadata</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a><any></any></code></td> <td class=\"param-description\"> <p data-tid=\"b13\">contains metadata about the currently processed route argument</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b14\">Returns</h4> <p><code>Promise&lt;number | undefined | null&gt;</code></p> </div> </td> </tr> </tbody> </table> <a id=\"isNumeric()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------isnumeric----------\"> isNumeric() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\nprotected <span class=\"member-name\">isNumeric</span>(value: unknown): boolean</code></pre> <h4 class=\"no-anchor\" id=\"parameters-1\" data-tid=\"b15\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b16\">Option</th> <th data-tid=\"b17\">Type</th> <th data-tid=\"b18\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>unknown</code></td> <td class=\"param-description\"> <p data-tid=\"b19\">currently processed route argument</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-1\" data-tid=\"b20\">Returns</h4> <p data-tid=\"b21\"><code>boolean</code> <code>true</code> if <code>value</code> is a valid integer number</p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Defines the built-in ParseInt Pipe",
+   "plain": "Defines the built-in ParseInt Pipe",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h2",
+   "text": "Properties",
+   "plain": "Properties",
+   "tokens": [],
+   "auto": "属性"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Property",
+   "plain": "Property",
+   "tokens": [],
+   "auto": "属性"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b5",
+   "kind": "note",
+   "tag": "span",
+   "text": "Read-only.",
+   "plain": "Read-only.",
+   "tokens": [],
+   "auto": "只读。"
+  },
+  {
+   "id": "b6",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b7",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Method that accesses and performs optional transformation on argument for in-flight requests.",
+   "plain": "Method that accesses and performs optional transformation on argument for in-flight requests.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b8",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b9",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b10",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b11",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b12",
+   "kind": "prose",
+   "tag": "p",
+   "text": "currently processed route argument",
+   "plain": "currently processed route argument",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b13",
+   "kind": "prose",
+   "tag": "p",
+   "text": "contains metadata about the currently processed route argument",
+   "plain": "contains metadata about the currently processed route argument",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b14",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b15",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b16",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b17",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b18",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b19",
+   "kind": "prose",
+   "tag": "p",
+   "text": "currently processed route argument",
+   "plain": "currently processed route argument",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b20",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b21",
+   "kind": "prose",
+   "tag": "p",
+   "text": "[[0]] [[1]] if [[2]] is a valid integer number",
+   "plain": "if  is a valid integer number",
+   "tokens": [
+    "<code>boolean</code>",
+    "<code>true</code>",
+    "<code>value</code>"
+   ],
+   "auto": null
+  }
+ ]
+}

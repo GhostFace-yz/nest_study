@@ -1,0 +1,123 @@
+{
+ "meta": {
+  "path": "/api/common/Header",
+  "name": "Header",
+  "zh": "响应头",
+  "category": "routing",
+  "type": "decorator"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Request method Decorator. Sets a response header.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n <span class=\"member-name\">@<a href=\"#/api/common/Header\" class=\"code-anchor highlight\">Header</a></span>(name: string, value: string | (() =&gt; string))</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b2\">Parameters</h4> <table class=\"is-full-width list-table parameters-table function-overload-parameters\"> <thead> <tr> <th data-tid=\"b3\">Option</th> <th data-tid=\"b4\">Type</th> <th data-tid=\"b5\">Description</th> </tr> </thead> <tbody> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>name</code> </td> <td class=\"param-type\"><code>string</code></td> <td class=\"param-description\"> <p data-tid=\"b6\">string to be used for header name</p> </td> </tr> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>string | (() =&gt; string)</code></td> <td class=\"param-description\"> <p data-tid=\"b7\">string to be used for header value</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b8\">Returns</h4> <p><code>MethodDecorator</code></p> </div> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b9\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/controllers#headers\" target=\"_blank\" rel=\"noopener\">Headers</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b10\"><span>Description</span></h3> <p data-tid=\"b11\">For example: <code>@<a href=\"#/api/common/Header\" class=\"code-anchor highlight\">Header</a>('Cache-Control', 'none')</code> <code>@<a href=\"#/api/common/Header\" class=\"code-anchor highlight\">Header</a>('Cache-Control', () =&gt; 'none')</code></p> </section> <section class=\"decorator-options\"> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Request method Decorator. Sets a response header.",
+   "plain": "Request method Decorator. Sets a response header.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b6",
+   "kind": "prose",
+   "tag": "p",
+   "text": "string to be used for header name",
+   "plain": "string to be used for header name",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b7",
+   "kind": "prose",
+   "tag": "p",
+   "text": "string to be used for header value",
+   "plain": "string to be used for header value",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b8",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b9",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b10",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b11",
+   "kind": "prose",
+   "tag": "p",
+   "text": "For example: [[0]] [[1]]",
+   "plain": "For example:",
+   "tokens": [
+    "<code>@<a href=\"#/api/common/Header\" class=\"code-anchor highlight\">Header</a>('Cache-Control', 'none')</code>",
+    "<code>@<a href=\"#/api/common/Header\" class=\"code-anchor highlight\">Header</a>('Cache-Control', () =&gt; 'none')</code>"
+   ],
+   "auto": null
+  }
+ ]
+}

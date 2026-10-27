@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { FeatureFlagsModule } from '../feature-flags/feature-flags.module.js'
+import { CoreService } from './core.service.js'
+import { CoreController } from './core.controller.js'
 
 @Module({
   imports: [
@@ -8,6 +10,8 @@ import { FeatureFlagsModule } from '../feature-flags/feature-flags.module.js'
       betaDashboard: false,
     })
   ],
+  providers: [CoreService],
+  controllers: [CoreController],
   exports: [FeatureFlagsModule]
 })
 export class CoreModule {}

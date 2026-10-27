@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "NestJS \u6587\u6863",
+    "slug": "nest-docs-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yangzheng.nestdocs",
+      "appleTeamId": "9B99Q22WDJ"
+    },
+    "android": {
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-status-bar"
+    ],
+    "icon": "./assets/icon.png"
+  }
+}

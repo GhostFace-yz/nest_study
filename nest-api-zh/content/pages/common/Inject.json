@@ -1,0 +1,165 @@
+{
+ "meta": {
+  "path": "/api/common/Inject",
+  "name": "Inject",
+  "zh": "注入",
+  "category": "di",
+  "type": "decorator"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Decorator that marks a constructor parameter as a target for <a href=\"https://docs.nestjs.com/providers#dependency-injection\" target=\"_blank\" rel=\"noopener\">Dependency Injection (DI)</a>.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n <span class=\"member-name\">@<a href=\"#/api/common/Inject\" class=\"code-anchor highlight\">Inject</a></span>(token?: <a href=\"https://api-references-nestjs.netlify.app/api/common/InjectionToken\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">InjectionToken</a>&lt;any&gt; | <a href=\"https://api-references-nestjs.netlify.app/api/common/ForwardReference\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ForwardReference</a>&lt;any&gt;)</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b2\">Parameters</h4> <table class=\"is-full-width list-table parameters-table function-overload-parameters\"> <thead> <tr> <th data-tid=\"b3\">Option</th> <th data-tid=\"b4\">Type</th> <th data-tid=\"b5\">Description</th> </tr> </thead> <tbody> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>token</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/InjectionToken\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">InjectionToken</a><any> | <a href=\"https://api-references-nestjs.netlify.app/api/common/ForwardReference\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ForwardReference</a><any></any></any></code></td> <td class=\"param-description\"> <p data-tid=\"b6\">lookup key for the provider to be injected (assigned to the constructor parameter).</p> <pre class=\" language-typescript\"><code class=\" language-typescript\">\nOptional. Default is `undefined`.</code></pre> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b7\">Returns</h4> <p><code>PropertyDecorator &amp; ParameterDecorator</code></p> </div> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b8\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/providers\" target=\"_blank\" rel=\"noopener\">Providers</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/fundamentals/custom-providers\" target=\"_blank\" rel=\"noopener\">Custom Providers</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/fundamentals/injection-scopes\" target=\"_blank\" rel=\"noopener\">Injection Scopes</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b9\"><span>Description</span></h3> <p data-tid=\"b10\">Any injected provider must be visible within the module scope (loosely speaking, the containing module) of the class it is being injected into. This can be done by:</p> <ul> <li data-tid=\"b11\">defining the provider in the same module scope</li> <li data-tid=\"b12\">exporting the provider from one module scope and importing that module into the module scope of the class being injected into</li> <li data-tid=\"b13\">exporting the provider from a module that is marked as global using the <code>@<a href=\"#/api/common/Global\" class=\"code-anchor highlight\">Global</a>()</code> decorator</li> </ul> <h4 id=\"injection-tokens\" data-tid=\"b14\">Injection tokens</h4> <p data-tid=\"b15\">Can be <em>types</em> (class names), <em>strings</em> or <em>symbols</em>. This depends on how the provider with which it is associated was defined. Providers defined with the <code>@<a href=\"#/api/common/Injectable\" class=\"code-anchor highlight\">Injectable</a>()</code> decorator use the class name. Custom Providers may use strings or symbols as the injection token.</p> </section> <section class=\"decorator-options\"> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Decorator that marks a constructor parameter as a target for [[0]].",
+   "plain": "Decorator that marks a constructor parameter as a target for .",
+   "tokens": [
+    "<a href=\"https://docs.nestjs.com/providers#dependency-injection\" target=\"_blank\" rel=\"noopener\">Dependency Injection (DI)</a>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b6",
+   "kind": "prose",
+   "tag": "p",
+   "text": "lookup key for the provider to be injected (assigned to the constructor parameter).",
+   "plain": "lookup key for the provider to be injected (assigned to the constructor parameter).",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b7",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b8",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b9",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b10",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Any injected provider must be visible within the module scope (loosely speaking, the containing module) of the class it is being injected into. This can be done by:",
+   "plain": "Any injected provider must be visible within the module scope (loosely speaking, the containing module) of the class it is being injected into. This can be done by:",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b11",
+   "kind": "prose",
+   "tag": "li",
+   "text": "defining the provider in the same module scope",
+   "plain": "defining the provider in the same module scope",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b12",
+   "kind": "prose",
+   "tag": "li",
+   "text": "exporting the provider from one module scope and importing that module into the module scope of the class being injected into",
+   "plain": "exporting the provider from one module scope and importing that module into the module scope of the class being injected into",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b13",
+   "kind": "prose",
+   "tag": "li",
+   "text": "exporting the provider from a module that is marked as global using the [[0]] decorator",
+   "plain": "exporting the provider from a module that is marked as global using the  decorator",
+   "tokens": [
+    "<code>@<a href=\"#/api/common/Global\" class=\"code-anchor highlight\">Global</a>()</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b14",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Injection tokens",
+   "plain": "Injection tokens",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b15",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Can be [[0]] (class names), [[1]] or [[2]]. This depends on how the provider with which it is associated was defined. Providers defined with the [[3]] decorator use the class name. Custom Providers may use strings or symbols as the injection token.",
+   "plain": "Can be  (class names),  or . This depends on how the provider with which it is associated was defined. Providers defined with the  decorator use the class name. Custom Providers may use strings or symbols as the injection token.",
+   "tokens": [
+    "<em>types</em>",
+    "<em>strings</em>",
+    "<em>symbols</em>",
+    "<code>@<a href=\"#/api/common/Injectable\" class=\"code-anchor highlight\">Injectable</a>()</code>"
+   ],
+   "auto": null
+  }
+ ]
+}

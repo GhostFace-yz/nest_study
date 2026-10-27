@@ -1,0 +1,484 @@
+{
+ "meta": {
+  "path": "/api/testing/TestingModuleBuilder",
+  "name": "TestingModuleBuilder",
+  "zh": "测试模块构建器",
+  "category": "testing",
+  "type": "class"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> </section> <pre class=\"language-typescript\">  <code class=\"language-typescript\">\nclass <a href=\"#/api/testing/TestingModuleBuilder\" class=\"code-anchor highlight\">TestingModuleBuilder</a> {\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#constructor()\"><span class=\"member-name\">constructor</span>(metadataScanner: MetadataScanner, metadata: ModuleMetadata, options?: TestingModuleOptions)</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#setLogger()\"><span class=\"member-name\">setLogger</span>(testingLogger: LoggerService)</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#overridePipe()\"><span class=\"member-name\">overridePipe</span>&lt;T = any&gt;(typeOrToken: T): OverrideBy</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#useMocker()\"><span class=\"member-name\">useMocker</span>(mocker: MockFactory): TestingModuleBuilder</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#overrideFilter()\"><span class=\"member-name\">overrideFilter</span>&lt;T = any&gt;(typeOrToken: T): OverrideBy</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#overrideGuard()\"><span class=\"member-name\">overrideGuard</span>&lt;T = any&gt;(typeOrToken: T): OverrideBy</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#overrideInterceptor()\"><span class=\"member-name\">overrideInterceptor</span>&lt;T = any&gt;(typeOrToken: T): OverrideBy</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#overrideProvider()\"><span class=\"member-name\">overrideProvider</span>&lt;T = any&gt;(typeOrToken: T): OverrideBy</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#overrideModule()\"><span class=\"member-name\">overrideModule</span>(moduleToOverride: ModuleDefinition): OverrideModule</a>\n  <a class=\"code-anchor\" href=\"#/api/testing/TestingModuleBuilder#compile()\"><span class=\"member-name\">compile</span>(options: Pick&lt;NestApplicationContextOptions, \"snapshot\" | \"preview\"&gt; = {}): Promise&lt;TestingModule&gt;</a>\n}</code></pre> <h2 id=\"constructor\" data-tid=\"b0\">Constructor</h2> <a id=\"constructor()\"></a> <table class=\"is-full-width method-table constructor\"> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">constructor</span>(metadataScanner: <a href=\"https://api-references-nestjs.netlify.app/api/core/MetadataScanner\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">MetadataScanner</a>, metadata: <a href=\"https://api-references-nestjs.netlify.app/api/common/ModuleMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ModuleMetadata</a>, options?: <a href=\"https://api-references-nestjs.netlify.app/api/testing/TestingModuleOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">TestingModuleOptions</a>)</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b1\">Parameters</h4> <table class=\"is-full-width list-table parameters-table constructor-overload-parameters\"> <thead> <tr> <th data-tid=\"b2\">Option</th> <th data-tid=\"b3\">Type</th> <th data-tid=\"b4\">Description</th> </tr> </thead> <tbody> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>metadataScanner</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/core/MetadataScanner\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">MetadataScanner</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>metadata</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ModuleMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ModuleMetadata</a></code></td> <td class=\"param-description\"> </td> </tr> <tr class=\"constructor-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/testing/TestingModuleOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">TestingModuleOptions</a></code></td> <td class=\"param-description\"> <p data-tid=\"b5\">Optional. Default is <code>undefined</code>.</p> </td> </tr> </tbody> </table> </div> </td> </tr> </tbody> </table> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b6\"><span><span>Methods</span></span></h3> <a id=\"setLogger()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------setlogger----------\"> setLogger() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">setLogger</span>(testingLogger: <a href=\"https://api-references-nestjs.netlify.app/api/common/LoggerService\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">LoggerService</a>)</code></pre> <h4 class=\"no-anchor\" id=\"parameters-1\" data-tid=\"b7\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b8\">Option</th> <th data-tid=\"b9\">Type</th> <th data-tid=\"b10\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>testingLogger</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/LoggerService\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">LoggerService</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> </div> </td> </tr> </tbody> </table> <a id=\"overridePipe()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------overridepipe----------\"> overridePipe() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">overridePipe</span>&lt;T = any&gt;(typeOrToken: T): <a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-2\" data-tid=\"b11\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b12\">Option</th> <th data-tid=\"b13\">Type</th> <th data-tid=\"b14\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>typeOrToken</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b15\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></p> </div> </td> </tr> </tbody> </table> <a id=\"useMocker()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------usemocker----------\"> useMocker() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">useMocker</span>(mocker: <a href=\"https://api-references-nestjs.netlify.app/api/testing/MockFactory\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">MockFactory</a>): <a href=\"#/api/testing/TestingModuleBuilder\" class=\"code-anchor highlight\">TestingModuleBuilder</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-3\" data-tid=\"b16\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b17\">Option</th> <th data-tid=\"b18\">Type</th> <th data-tid=\"b19\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>mocker</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/testing/MockFactory\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">MockFactory</a></code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-1\" data-tid=\"b20\">Returns</h4> <p><code><a href=\"#/api/testing/TestingModuleBuilder\" class=\"code-anchor highlight\">TestingModuleBuilder</a></code></p> </div> </td> </tr> </tbody> </table> <a id=\"overrideFilter()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------overridefilter----------\"> overrideFilter() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">overrideFilter</span>&lt;T = any&gt;(typeOrToken: T): <a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-4\" data-tid=\"b21\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b22\">Option</th> <th data-tid=\"b23\">Type</th> <th data-tid=\"b24\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>typeOrToken</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-2\" data-tid=\"b25\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></p> </div> </td> </tr> </tbody> </table> <a id=\"overrideGuard()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------overrideguard----------\"> overrideGuard() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">overrideGuard</span>&lt;T = any&gt;(typeOrToken: T): <a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-5\" data-tid=\"b26\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b27\">Option</th> <th data-tid=\"b28\">Type</th> <th data-tid=\"b29\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>typeOrToken</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-3\" data-tid=\"b30\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></p> </div> </td> </tr> </tbody> </table> <a id=\"overrideInterceptor()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------overrideinterceptor----------\"> overrideInterceptor() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">overrideInterceptor</span>&lt;T = any&gt;(typeOrToken: T): <a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-6\" data-tid=\"b31\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b32\">Option</th> <th data-tid=\"b33\">Type</th> <th data-tid=\"b34\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>typeOrToken</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-4\" data-tid=\"b35\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></p> </div> </td> </tr> </tbody> </table> <a id=\"overrideProvider()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------overrideprovider----------\"> overrideProvider() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">overrideProvider</span>&lt;T = any&gt;(typeOrToken: T): <a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></pre> <h4 class=\"no-anchor\" id=\"parameters-7\" data-tid=\"b36\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b37\">Option</th> <th data-tid=\"b38\">Type</th> <th data-tid=\"b39\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>typeOrToken</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-5\" data-tid=\"b40\">Returns</h4> <p><code><a href=\"https://api-references-nestjs.netlify.app/api/testing/OverrideBy\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">OverrideBy</a></code></p> </div> </td> </tr> </tbody> </table> <a id=\"overrideModule()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------overridemodule----------\"> overrideModule() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">overrideModule</span>(moduleToOverride: ModuleDefinition): OverrideModule</code></pre> <h4 class=\"no-anchor\" id=\"parameters-8\" data-tid=\"b41\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b42\">Option</th> <th data-tid=\"b43\">Type</th> <th data-tid=\"b44\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>moduleToOverride</code> </td> <td class=\"param-type\"><code>ModuleDefinition</code></td> <td class=\"param-description\"> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-6\" data-tid=\"b45\">Returns</h4> <p><code>OverrideModule</code></p> </div> </td> </tr> </tbody> </table> <a id=\"compile()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------compile----------\"> compile() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">compile</span>(options: Pick&lt;NestApplicationContextOptions, \"snapshot\" | \"preview\"&gt; = {}): Promise&lt;<a href=\"#/api/testing/TestingModule\" class=\"code-anchor highlight\">TestingModule</a>&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters-9\" data-tid=\"b46\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b47\">Option</th> <th data-tid=\"b48\">Type</th> <th data-tid=\"b49\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>options</code> </td> <td class=\"param-type\"><code>Pick<nestapplicationcontextoptions, &#x22;snapshot&#x22;=\"\" |=\"\" &#x22;preview&#x22;=\"\"></nestapplicationcontextoptions,></code></td> <td class=\"param-description\"> <p data-tid=\"b50\">Optional. Default is <code>{}</code>.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns-7\" data-tid=\"b51\">Returns</h4> <p><code>Promise&lt;<a href=\"#/api/testing/TestingModule\" class=\"code-anchor highlight\">TestingModule</a>&gt;</code></p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "heading",
+   "tag": "h2",
+   "text": "Constructor",
+   "plain": "Constructor",
+   "tokens": [],
+   "auto": "构造函数"
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b2",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b5",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>undefined</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b6",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b7",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b8",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b9",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b10",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b11",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b12",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b13",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b14",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b15",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b16",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b17",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b18",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b19",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b20",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b21",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b22",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b23",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b24",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b25",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b26",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b27",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b28",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b29",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b30",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b31",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b32",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b33",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b34",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b35",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b36",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b37",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b38",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b39",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b40",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b41",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b42",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b43",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b44",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b45",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b46",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b47",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b48",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b49",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b50",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Optional. Default is [[0]].",
+   "plain": "Optional. Default is .",
+   "tokens": [
+    "<code>{}</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b51",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+  "source": "https://api-references-nestjs.netlify.app/api",
+  "packages": {
+    "common": { "name": "@nestjs/common", "title": "核心装饰器与工具" },
+    "core": { "name": "@nestjs/core", "title": "应用核心" },
+    "testing": { "name": "@nestjs/testing", "title": "测试工具" }
+  },
+  "categories": [
+    { "id": "routing", "title": "控制器与路由", "en": "Controllers & Routing", "desc": "定义路由、HTTP 方法与响应行为。" },
+    { "id": "request", "title": "请求数据", "en": "Request Data", "desc": "从请求中读取参数、请求体、请求头等数据。" },
+    { "id": "di", "title": "模块与依赖注入", "en": "Modules & DI", "desc": "组织模块、声明提供者并完成依赖注入。" },
+    { "id": "pipes", "title": "管道与校验", "en": "Pipes & Validation", "desc": "在参数进入处理器之前完成转换与校验。" },
+    { "id": "guards", "title": "守卫 · 拦截器 · 过滤器", "en": "Guards, Interceptors & Filters", "desc": "控制请求的访问、增强处理流程并统一异常处理。" },
+    { "id": "exceptions", "title": "异常与状态码", "en": "Exceptions & Status", "desc": "抛出标准 HTTP 异常，或使用状态码枚举。" },
+    { "id": "core", "title": "应用核心", "en": "Application Core", "desc": "创建应用实例、访问应用上下文与元数据。" },
+    { "id": "testing", "title": "测试", "en": "Testing", "desc": "创建测试模块并覆盖提供者。" }
+  ],
+  "items": [
+    { "path": "/api/common/Controller", "name": "Controller", "zh": "控制器", "category": "routing", "type": "decorator" },
+    { "path": "/api/common/Get", "name": "Get", "zh": "GET 路由", "category": "routing", "type": "const" },
+    { "path": "/api/common/Post", "name": "Post", "zh": "POST 路由", "category": "routing", "type": "const" },
+    { "path": "/api/common/Put", "name": "Put", "zh": "PUT 路由", "category": "routing", "type": "const" },
+    { "path": "/api/common/Patch", "name": "Patch", "zh": "PATCH 路由", "category": "routing", "type": "const" },
+    { "path": "/api/common/Delete", "name": "Delete", "zh": "DELETE 路由", "category": "routing", "type": "const" },
+    { "path": "/api/common/Header", "name": "Header", "zh": "响应头", "category": "routing", "type": "decorator" },
+    { "path": "/api/common/HttpCode", "name": "HttpCode", "zh": "HTTP 状态码", "category": "routing", "type": "decorator" },
+    { "path": "/api/common/Redirect", "name": "Redirect", "zh": "重定向", "category": "routing", "type": "decorator" },
+
+    { "path": "/api/common/Body", "name": "Body", "zh": "请求体", "category": "request", "type": "decorator" },
+    { "path": "/api/common/Param", "name": "Param", "zh": "路由参数", "category": "request", "type": "decorator" },
+    { "path": "/api/common/Query", "name": "Query", "zh": "查询参数", "category": "request", "type": "decorator" },
+    { "path": "/api/common/Headers", "name": "Headers", "zh": "请求头", "category": "request", "type": "const" },
+    { "path": "/api/common/Req", "name": "Req", "zh": "请求对象", "category": "request", "type": "const" },
+    { "path": "/api/common/Res", "name": "Res", "zh": "响应对象", "category": "request", "type": "const" },
+    { "path": "/api/common/Next", "name": "Next", "zh": "下一个处理函数", "category": "request", "type": "const" },
+    { "path": "/api/common/Ip", "name": "Ip", "zh": "客户端 IP", "category": "request", "type": "const" },
+
+    { "path": "/api/common/Module", "name": "Module", "zh": "模块", "category": "di", "type": "decorator" },
+    { "path": "/api/common/Global", "name": "Global", "zh": "全局模块", "category": "di", "type": "decorator" },
+    { "path": "/api/common/Injectable", "name": "Injectable", "zh": "可注入", "category": "di", "type": "decorator" },
+    { "path": "/api/common/Inject", "name": "Inject", "zh": "注入", "category": "di", "type": "decorator" },
+    { "path": "/api/common/Optional", "name": "Optional", "zh": "可选注入", "category": "di", "type": "decorator" },
+    { "path": "/api/common/forwardRef", "name": "forwardRef", "zh": "循环依赖引用", "category": "di", "type": "const" },
+    { "path": "/api/common/SetMetadata", "name": "SetMetadata", "zh": "设置元数据", "category": "di", "type": "const" },
+
+    { "path": "/api/common/ValidationPipe", "name": "ValidationPipe", "zh": "校验管道", "category": "pipes", "type": "pipe" },
+    { "path": "/api/common/ParseIntPipe", "name": "ParseIntPipe", "zh": "整数解析管道", "category": "pipes", "type": "pipe" },
+    { "path": "/api/common/ParseUUIDPipe", "name": "ParseUUIDPipe", "zh": "UUID 解析管道", "category": "pipes", "type": "pipe" },
+    { "path": "/api/common/DefaultValuePipe", "name": "DefaultValuePipe", "zh": "默认值管道", "category": "pipes", "type": "pipe" },
+    { "path": "/api/common/ParseBoolPipe", "name": "ParseBoolPipe", "zh": "布尔解析管道", "category": "pipes", "type": "pipe" },
+
+    { "path": "/api/common/UseGuards", "name": "UseGuards", "zh": "使用守卫", "category": "guards", "type": "decorator" },
+    { "path": "/api/common/CanActivate", "name": "CanActivate", "zh": "守卫接口", "category": "guards", "type": "interface" },
+    { "path": "/api/common/UseInterceptors", "name": "UseInterceptors", "zh": "使用拦截器", "category": "guards", "type": "decorator" },
+    { "path": "/api/common/NestInterceptor", "name": "NestInterceptor", "zh": "拦截器接口", "category": "guards", "type": "interface" },
+    { "path": "/api/common/ExecutionContext", "name": "ExecutionContext", "zh": "执行上下文", "category": "guards", "type": "interface" },
+    { "path": "/api/common/CallHandler", "name": "CallHandler", "zh": "调用处理器", "category": "guards", "type": "interface" },
+    { "path": "/api/common/UseFilters", "name": "UseFilters", "zh": "使用异常过滤器", "category": "guards", "type": "const" },
+    { "path": "/api/common/Catch", "name": "Catch", "zh": "捕获异常", "category": "guards", "type": "decorator" },
+    { "path": "/api/common/ExceptionFilter", "name": "ExceptionFilter", "zh": "异常过滤器接口", "category": "guards", "type": "interface" },
+    { "path": "/api/common/ArgumentsHost", "name": "ArgumentsHost", "zh": "参数宿主", "category": "guards", "type": "interface" },
+    { "path": "/api/common/PipeTransform", "name": "PipeTransform", "zh": "管道接口", "category": "guards", "type": "interface" },
+
+    { "path": "/api/common/HttpException", "name": "HttpException", "zh": "HTTP 异常", "category": "exceptions", "type": "class" },
+    { "path": "/api/common/BadRequestException", "name": "BadRequestException", "zh": "400 错误请求", "category": "exceptions", "type": "class" },
+    { "path": "/api/common/NotFoundException", "name": "NotFoundException", "zh": "404 未找到", "category": "exceptions", "type": "class" },
+    { "path": "/api/common/UnauthorizedException", "name": "UnauthorizedException", "zh": "401 未授权", "category": "exceptions", "type": "class" },
+    { "path": "/api/common/ForbiddenException", "name": "ForbiddenException", "zh": "403 禁止访问", "category": "exceptions", "type": "class" },
+    { "path": "/api/common/ConflictException", "name": "ConflictException", "zh": "409 冲突", "category": "exceptions", "type": "class" },
+    { "path": "/api/common/InternalServerErrorException", "name": "InternalServerErrorException", "zh": "500 服务器错误", "category": "exceptions", "type": "class" },
+    { "path": "/api/common/HttpStatus", "name": "HttpStatus", "zh": "HTTP 状态码枚举", "category": "exceptions", "type": "enum" },
+
+    { "path": "/api/core/NestFactory", "name": "NestFactory", "zh": "应用工厂", "category": "core", "type": "const" },
+    { "path": "/api/core/NestApplication", "name": "NestApplication", "zh": "应用实例", "category": "core", "type": "class" },
+    { "path": "/api/core/Reflector", "name": "Reflector", "zh": "元数据反射器", "category": "core", "type": "class" },
+    { "path": "/api/common/INestApplication", "name": "INestApplication", "zh": "应用接口", "category": "core", "type": "interface" },
+
+    { "path": "/api/testing/TestingModule", "name": "TestingModule", "zh": "测试模块", "category": "testing", "type": "class" },
+    { "path": "/api/testing/TestingModuleBuilder", "name": "TestingModuleBuilder", "zh": "测试模块构建器", "category": "testing", "type": "class" }
+  ]
+}

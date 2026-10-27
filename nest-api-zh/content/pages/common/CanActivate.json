@@ -1,0 +1,109 @@
+{
+ "meta": {
+  "path": "/api/common/CanActivate",
+  "name": "CanActivate",
+  "zh": "守卫接口",
+  "category": "guards",
+  "type": "interface"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Interface defining the <code>canActivate()</code> function that must be implemented by a guard. Return value indicates whether or not the current request is allowed to proceed. Return can be either synchronous (<code>boolean</code>) or asynchronous (<code>Promise</code> or <code>Observable</code>).</p> </section> <section class=\"interface-overview\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\ninterface <a href=\"#/api/common/CanActivate\" class=\"code-anchor highlight\">CanActivate</a> {\n  <a class=\"code-anchor\" href=\"#/api/common/CanActivate#canActivate_0()\"><span class=\"member-name\">canActivate</span>(context: ExecutionContext): boolean | Promise&lt;boolean&gt; | Observable&lt;boolean&gt;</a>\n}</code></pre> </section> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b1\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/guards\" target=\"_blank\" rel=\"noopener\">Guards</a></p> </li> </ul> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b2\"><span><span>Methods</span></span></h3> <a id=\"canActivate_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------canactivate----------\"> canActivate() </h3> </th></tr></thead> <tbody> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">canActivate</span>(context: <a href=\"#/api/common/ExecutionContext\" class=\"code-anchor highlight\">ExecutionContext</a>): boolean | Promise&lt;boolean&gt; | Observable&lt;boolean&gt;</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b3\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b4\">Option</th> <th data-tid=\"b5\">Type</th> <th data-tid=\"b6\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>context</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/ExecutionContext\" class=\"code-anchor highlight\">ExecutionContext</a></code></td> <td class=\"param-description\"> <p data-tid=\"b7\">Current execution context. Provides access to details about the current request pipeline.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b8\">Returns</h4> <p data-tid=\"b9\"><code>boolean | Promise&lt;boolean&gt; | Observable&lt;boolean&gt;</code> Value indicating whether or not the current request is allowed to proceed.</p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Interface defining the [[0]] function that must be implemented by a guard. Return value indicates whether or not the current request is allowed to proceed. Return can be either synchronous ([[1]]) or asynchronous ([[2]] or [[3]]).",
+   "plain": "Interface defining the  function that must be implemented by a guard. Return value indicates whether or not the current request is allowed to proceed. Return can be either synchronous () or asynchronous ( or ).",
+   "tokens": [
+    "<code>canActivate()</code>",
+    "<code>boolean</code>",
+    "<code>Promise</code>",
+    "<code>Observable</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b3",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b6",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b7",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Current execution context. Provides access to details about the current request pipeline.",
+   "plain": "Current execution context. Provides access to details about the current request pipeline.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b8",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b9",
+   "kind": "prose",
+   "tag": "p",
+   "text": "[[0]] Value indicating whether or not the current request is allowed to proceed.",
+   "plain": "Value indicating whether or not the current request is allowed to proceed.",
+   "tokens": [
+    "<code>boolean | Promise&lt;boolean&gt; | Observable&lt;boolean&gt;</code>"
+   ],
+   "auto": null
+  }
+ ]
+}

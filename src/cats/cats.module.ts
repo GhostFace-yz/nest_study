@@ -9,5 +9,4 @@ import { CatsService } from './cats.service.js'
   exports: [CatsService]
 })
 export class CatsModule {
-  constructor (private carsService: CatsService) {}
 }

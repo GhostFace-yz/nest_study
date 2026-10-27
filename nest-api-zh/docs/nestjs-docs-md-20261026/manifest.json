@@ -1,0 +1,1026 @@
+{
+  "generatedAt": "2026-10-26T06:47:40.886Z",
+  "source": "https://docs.nestjs.com",
+  "sections": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "chapters": [
+        {
+          "title": "Introduction",
+          "path": "/index",
+          "file": "en/01-introduction/01-index.md",
+          "summary": "Nest (NestJS) is a framework for building efficient, scalable Node.js server-side applications."
+        }
+      ]
+    },
+    {
+      "id": "overview",
+      "title": "Overview",
+      "chapters": [
+        {
+          "title": "First steps",
+          "path": "/first-steps",
+          "file": "en/02-overview/01-first-steps.md",
+          "summary": "This set of articles covers the core fundamentals of Nest."
+        },
+        {
+          "title": "Controllers",
+          "path": "/controllers",
+          "file": "en/02-overview/02-controllers.md",
+          "summary": "Controllers are responsible for handling incoming requests and sending responses back to the client."
+        },
+        {
+          "title": "Providers",
+          "path": "/providers",
+          "file": "en/02-overview/03-providers.md",
+          "summary": "Providers are a core concept in Nest."
+        },
+        {
+          "title": "Modules",
+          "path": "/modules",
+          "file": "en/02-overview/04-modules.md",
+          "summary": "A module is a class annotated with the @Module() decorator."
+        },
+        {
+          "title": "Middleware",
+          "path": "/middleware",
+          "file": "en/02-overview/05-middleware.md",
+          "summary": "Middleware is a function that is called before the route handler."
+        },
+        {
+          "title": "Exception filters",
+          "path": "/exception-filters",
+          "file": "en/02-overview/06-exception-filters.md",
+          "summary": "Nest comes with a built-in exceptions layer that processes all unhandled exceptions across an application."
+        },
+        {
+          "title": "Pipes",
+          "path": "/pipes",
+          "file": "en/02-overview/07-pipes.md",
+          "summary": "A pipe is a class annotated with the @Injectable() decorator that implements the PipeTransform interface."
+        },
+        {
+          "title": "Guards",
+          "path": "/guards",
+          "file": "en/02-overview/08-guards.md",
+          "summary": "A guard is a class annotated with the @Injectable() decorator that implements the CanActivate interface."
+        },
+        {
+          "title": "Interceptors",
+          "path": "/interceptors",
+          "file": "en/02-overview/09-interceptors.md",
+          "summary": "An interceptor is a class annotated with the @Injectable() decorator that implements the NestInterceptor interface."
+        },
+        {
+          "title": "Custom decorators",
+          "path": "/custom-decorators",
+          "file": "en/02-overview/10-custom-decorators.md",
+          "summary": "Nest is built around a language feature called decorators."
+        }
+      ]
+    },
+    {
+      "id": "fundamentals",
+      "title": "Fundamentals",
+      "chapters": [
+        {
+          "title": "Custom providers",
+          "path": "/fundamentals/custom-providers",
+          "file": "en/03-fundamentals/01-fundamentals-custom-providers.md",
+          "summary": "Earlier chapters touched on various aspects of dependency injection (DI) and how Nest uses it."
+        },
+        {
+          "title": "Asynchronous providers",
+          "path": "/fundamentals/async-providers",
+          "file": "en/03-fundamentals/02-fundamentals-async-providers.md",
+          "summary": "Sometimes the application start should be delayed until one or more asynchronous tasks complete."
+        },
+        {
+          "title": "Dynamic modules",
+          "path": "/fundamentals/dynamic-modules",
+          "file": "en/03-fundamentals/03-fundamentals-dynamic-modules.md",
+          "summary": "The Modules chapter covers the basics of Nest modules and includes a brief introduction to dynamic modules."
+        },
+        {
+          "title": "Injection scopes",
+          "path": "/fundamentals/injection-scopes",
+          "file": "en/03-fundamentals/04-fundamentals-injection-scopes.md",
+          "summary": "If you come from a different programming language background, you might be surprised to learn that in Nest, almost everything is shared across incoming requests: a connection pool to the database, singleton services with global state, and so on."
+        },
+        {
+          "title": "Circular dependency",
+          "path": "/fundamentals/circular-dependency",
+          "file": "en/03-fundamentals/05-fundamentals-circular-dependency.md",
+          "summary": "A circular dependency occurs when two classes depend on each other."
+        },
+        {
+          "title": "Module reference",
+          "path": "/fundamentals/module-ref",
+          "file": "en/03-fundamentals/06-fundamentals-module-ref.md",
+          "summary": "Nest provides the ModuleRef class to navigate the internal list of providers and obtain a reference to any provider, using its injection token as a lookup key."
+        },
+        {
+          "title": "Lazy-loading modules",
+          "path": "/fundamentals/lazy-loading-modules",
+          "file": "en/03-fundamentals/07-fundamentals-lazy-loading-modules.md",
+          "summary": "By default, modules are eagerly loaded: as soon as the application loads, so do all the modules, whether or not they are immediately needed."
+        },
+        {
+          "title": "Execution context",
+          "path": "/fundamentals/execution-context",
+          "file": "en/03-fundamentals/08-fundamentals-execution-context.md",
+          "summary": "Nest provides several utility classes that help you write applications that function across multiple application contexts (e.g., HTTP server-based, microservices, and WebSockets application contexts)."
+        },
+        {
+          "title": "Lifecycle events",
+          "path": "/fundamentals/lifecycle-events",
+          "file": "en/03-fundamentals/09-fundamentals-lifecycle-events.md",
+          "summary": "A Nest application, as well as every application element, has a lifecycle managed by Nest."
+        },
+        {
+          "title": "Discovery service",
+          "path": "/fundamentals/discovery-service",
+          "file": "en/03-fundamentals/10-fundamentals-discovery-service.md",
+          "summary": "The DiscoveryService, provided by the @nestjs/core package, lets you dynamically inspect and retrieve providers, controllers, and their metadata within a NestJS application."
+        },
+        {
+          "title": "Platform agnosticism",
+          "path": "/fundamentals/platform-agnosticism",
+          "file": "en/03-fundamentals/11-fundamentals-platform-agnosticism.md",
+          "summary": "Nest is a platform-agnostic framework."
+        },
+        {
+          "title": "Testing",
+          "path": "/fundamentals/testing",
+          "file": "en/03-fundamentals/12-fundamentals-testing.md",
+          "summary": "Automated testing is an essential part of any serious software development effort."
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "title": "Application",
+      "chapters": [
+        {
+          "title": "Configuration",
+          "path": "/application/configuration",
+          "file": "en/04-application/01-application-configuration.md",
+          "summary": "Applications often run in different environments, and each environment needs its own configuration settings."
+        },
+        {
+          "title": "Validation",
+          "path": "/application/validation",
+          "file": "en/04-application/02-application-validation.md",
+          "summary": "Validate every piece of data a web application receives before acting on it."
+        },
+        {
+          "title": "Serialization",
+          "path": "/application/serialization",
+          "file": "en/04-application/03-application-serialization.md",
+          "summary": "Serialization happens before objects are returned in a network response."
+        },
+        {
+          "title": "Logging",
+          "path": "/application/logger",
+          "file": "en/04-application/04-application-logger.md",
+          "summary": "Nest comes with a built-in logger that is used during application bootstrapping and in several other circumstances, such as displaying caught exceptions (i.e., system logging)."
+        },
+        {
+          "title": "Events",
+          "path": "/application/events",
+          "file": "en/04-application/05-application-events.md",
+          "summary": "The Event Emitter package (@nestjs/event-emitter) provides an observer implementation that lets you subscribe to and listen for events that occur in your application."
+        },
+        {
+          "title": "Task scheduling",
+          "path": "/application/task-scheduling",
+          "file": "en/04-application/06-application-task-scheduling.md",
+          "summary": "Task scheduling lets you run arbitrary code (methods or functions) at a fixed date and time, at recurring intervals, or once after a specified delay."
+        },
+        {
+          "title": "Queues",
+          "path": "/application/queues",
+          "file": "en/04-application/07-application-queues.md",
+          "summary": "Queues are a design pattern that helps you deal with common application scaling and performance challenges."
+        },
+        {
+          "title": "HTTP client",
+          "path": "/application/http-client",
+          "file": "en/04-application/08-application-http-client.md",
+          "summary": "Most applications call other services over HTTP."
+        },
+        {
+          "title": "Internationalization",
+          "path": "/application/i18n",
+          "file": "en/04-application/09-application-i18n.md",
+          "summary": "An online store for cat food and supplies sells to customers in the United States, Poland and Germany, and its order API should answer each of them in their own language."
+        },
+        {
+          "title": "Mail",
+          "path": "/application/mail",
+          "file": "en/04-application/10-application-mail.md",
+          "summary": "When a customer places an order at an online store for cat food and supplies, they expect a confirmation email within a minute: the items, the total, a link to the order, and the invoice as a PDF."
+        },
+        {
+          "title": "File storage",
+          "path": "/application/file-storage",
+          "file": "en/04-application/11-application-file-storage.md",
+          "summary": "An online store for cat food and supplies keeps three kinds of files."
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Data",
+      "chapters": [
+        {
+          "title": "Overview",
+          "path": "/data/overview",
+          "file": "en/05-data/01-data-overview.md",
+          "summary": "Nest is database-agnostic, so you can integrate it with any SQL or NoSQL database."
+        },
+        {
+          "title": "TypeORM",
+          "path": "/data/typeorm",
+          "file": "en/05-data/02-data-typeorm.md",
+          "summary": "The @nestjs/typeorm package integrates TypeORM with Nest."
+        },
+        {
+          "title": "Drizzle",
+          "path": "/data/drizzle",
+          "file": "en/05-data/03-data-drizzle.md",
+          "summary": "As an alternative to TypeORM, you can use Drizzle ORM with the @nestjs/drizzle package."
+        },
+        {
+          "title": "MongoDB",
+          "path": "/data/mongodb",
+          "file": "en/05-data/04-data-mongodb.md",
+          "summary": "Nest supports two methods for integrating with the MongoDB database."
+        },
+        {
+          "title": "Prisma",
+          "path": "/data/prisma",
+          "file": "en/05-data/05-data-prisma.md",
+          "summary": "Prisma is an open-source ORM for Node.js and TypeScript."
+        },
+        {
+          "title": "MikroORM",
+          "path": "/data/mikroorm",
+          "file": "en/05-data/06-data-mikroorm.md",
+          "summary": "MikroORM is a TypeScript ORM for Node.js based on the Data Mapper, Unit of Work, and Identity Map patterns."
+        },
+        {
+          "title": "Sequelize",
+          "path": "/data/sequelize",
+          "file": "en/05-data/07-data-sequelize.md",
+          "summary": "The @nestjs/sequelize package integrates the Sequelize ORM with Nest."
+        },
+        {
+          "title": "Caching",
+          "path": "/data/caching",
+          "file": "en/05-data/08-data-caching.md",
+          "summary": "Caching is a straightforward and effective technique for improving your application's performance."
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security",
+      "chapters": [
+        {
+          "title": "Authentication",
+          "path": "/security/authentication",
+          "file": "en/06-security/01-security-authentication.md",
+          "summary": "@nestjs/authentication signs users in and tells the rest of your application who they are."
+        },
+        {
+          "title": "Authorization",
+          "path": "/security/authorization",
+          "file": "en/06-security/02-security-authorization.md",
+          "summary": "@nestjs/authorization expresses permissions as policies: classes whose methods answer \"may this user do this?\"."
+        },
+        {
+          "title": "Encryption and Hashing",
+          "path": "/security/encryption-and-hashing",
+          "file": "en/06-security/03-security-encryption-and-hashing.md",
+          "summary": "Encryption is the process of encoding information."
+        },
+        {
+          "title": "Security headers",
+          "path": "/security/helmet",
+          "file": "en/06-security/04-security-helmet.md",
+          "summary": "Security headers, such as the ones Helmet sets, tell browsers to turn on protections against well-known web attacks like cross-site scripting and clickjacking."
+        },
+        {
+          "title": "CORS",
+          "path": "/security/cors",
+          "file": "en/06-security/05-security-cors.md",
+          "summary": "Cross-origin resource sharing (CORS) is a mechanism that allows resources to be requested from another domain."
+        },
+        {
+          "title": "CSRF Protection",
+          "path": "/security/csrf",
+          "file": "en/06-security/06-security-csrf.md",
+          "summary": "Cross-site request forgery (CSRF or XSRF) is an attack in which a malicious site makes a user's browser send unwanted, state-changing requests to your application."
+        },
+        {
+          "title": "Rate limiting",
+          "path": "/security/rate-limiting",
+          "file": "en/06-security/07-security-rate-limiting.md",
+          "summary": "A common technique to protect applications from brute-force attacks is rate limiting."
+        }
+      ]
+    },
+    {
+      "id": "http",
+      "title": "HTTP",
+      "chapters": [
+        {
+          "title": "Versioning",
+          "path": "/http/versioning",
+          "file": "en/07-http/01-http-versioning.md",
+          "summary": "Versioning lets you run different versions of your controllers or individual routes within the same application."
+        },
+        {
+          "title": "Cookies",
+          "path": "/http/cookies",
+          "file": "en/07-http/02-http-cookies.md",
+          "summary": "An HTTP cookie is a small piece of data that the user's browser stores."
+        },
+        {
+          "title": "Session",
+          "path": "/http/session",
+          "file": "en/07-http/03-http-session.md",
+          "summary": "HTTP sessions store information about the user across multiple requests, which is particularly useful for MVC applications."
+        },
+        {
+          "title": "File upload and streaming",
+          "path": "/http/file-upload",
+          "file": "en/07-http/04-http-file-upload.md",
+          "summary": "This chapter covers files in both directions: receiving files that clients upload, and streaming files back to clients."
+        },
+        {
+          "title": "Compression",
+          "path": "/http/compression",
+          "file": "en/07-http/05-http-compression.md",
+          "summary": "Compression can significantly reduce the size of the response body, which makes a web app faster to load."
+        },
+        {
+          "title": "Server-Sent Events",
+          "path": "/http/server-sent-events",
+          "file": "en/07-http/06-http-server-sent-events.md",
+          "summary": "Server-Sent Events (SSE) is a server push technology that enables a client to receive automatic updates from a server over an HTTP connection."
+        },
+        {
+          "title": "Model-View-Controller",
+          "path": "/http/mvc",
+          "file": "en/07-http/07-http-mvc.md",
+          "summary": "By default, Nest uses the Express library under the hood."
+        },
+        {
+          "title": "Performance (Fastify)",
+          "path": "/http/performance",
+          "file": "en/07-http/08-http-performance.md",
+          "summary": "By default, Nest uses the Express framework."
+        },
+        {
+          "title": "Webhooks",
+          "path": "/http/webhooks",
+          "file": "en/07-http/09-http-webhooks.md",
+          "summary": "An online store for cat food and supplies sells to cat shelters and resellers that buy in bulk, through its API."
+        }
+      ]
+    },
+    {
+      "id": "observability",
+      "title": "Observability",
+      "chapters": [
+        {
+          "title": "Overview",
+          "path": "/observability/overview",
+          "file": "en/08-observability/01-observability-overview.md",
+          "summary": "NestJS Observe is the official, auto-instrumented application performance monitoring (APM) and observability platform for NestJS applications."
+        },
+        {
+          "title": "SDK",
+          "path": "/observability/sdk",
+          "file": "en/08-observability/02-observability-sdk.md",
+          "summary": "The @nestjs/observe SDK is what gets your application's requests, jobs, errors, logs, and traces into your NestJS Observe dashboard."
+        },
+        {
+          "title": "Manual instrumentation",
+          "path": "/observability/manual-instrumentation",
+          "file": "en/08-observability/03-observability-manual-instrumentation.md",
+          "summary": "Most of the SDK is automatic instrumentation: you configure it once and it decides what to record."
+        },
+        {
+          "title": "Distributed tracing",
+          "path": "/observability/distributed-tracing",
+          "file": "en/08-observability/04-observability-distributed-tracing.md",
+          "summary": "A trace is everything your applications recorded under a single trace id: the request or job that started it, and every span underneath."
+        },
+        {
+          "title": "Error monitoring",
+          "path": "/observability/error-monitoring",
+          "file": "en/08-observability/05-observability-error-monitoring.md",
+          "summary": "Error monitoring is included in every NestJS Observe plan, Free included, and needs nothing beyond the SDK."
+        },
+        {
+          "title": "Dashboard",
+          "path": "/observability/dashboard",
+          "file": "en/08-observability/06-observability-dashboard.md",
+          "summary": "Once an application is instrumented and sending data, its project dashboard fills in automatically, with no queries to write and no dashboards to build."
+        },
+        {
+          "title": "MCP server",
+          "path": "/observability/mcp-server",
+          "file": "en/08-observability/07-observability-mcp-server.md",
+          "summary": "NestJS Observe exposes an MCP server, so an MCP-compatible client (Claude Code, Claude Desktop, Cursor, VS Code, or an agent you wrote yourself) can query your projects directly instead of you copying dashboard data into a prompt."
+        },
+        {
+          "title": "OpenTelemetry",
+          "path": "/observability/opentelemetry",
+          "file": "en/08-observability/08-observability-opentelemetry.md",
+          "summary": "OpenTelemetry is the vendor-neutral standard for traces, metrics, and logs."
+        }
+      ]
+    },
+    {
+      "id": "reliability",
+      "title": "Reliability",
+      "chapters": [
+        {
+          "title": "Resilience",
+          "path": "/reliability/resilience",
+          "file": "en/09-reliability/01-reliability-resilience.md",
+          "summary": "Sooner or later, every application that calls another system meets one that is slow or down."
+        },
+        {
+          "title": "Idempotency keys",
+          "path": "/reliability/idempotency",
+          "file": "en/09-reliability/02-reliability-idempotency.md",
+          "summary": "A customer of an online store for cat food and supplies pays for salmon kibble and cat litter in the store's mobile app, on a phone on a train."
+        },
+        {
+          "title": "Transactional outbox",
+          "path": "/reliability/outbox",
+          "file": "en/09-reliability/03-reliability-outbox.md",
+          "summary": "When a customer places an order at an online store for cat food and supplies, the order API saves the order and announces it with an OrderPlaced event."
+        },
+        {
+          "title": "Durable workflows",
+          "path": "/reliability/workflows",
+          "file": "en/09-reliability/04-reliability-workflows.md",
+          "summary": "Some business processes take days and span several systems."
+        },
+        {
+          "title": "Distributed locks",
+          "path": "/reliability/locks",
+          "file": "en/09-reliability/05-reliability-locks.md",
+          "summary": "An online store for cat food and supplies runs two scheduled jobs with @nestjs/schedule."
+        },
+        {
+          "title": "Health checks",
+          "path": "/reliability/terminus",
+          "file": "en/09-reliability/06-reliability-terminus.md",
+          "summary": "The Terminus integration provides readiness/liveness health checks."
+        }
+      ]
+    },
+    {
+      "id": "graphql",
+      "title": "GraphQL",
+      "chapters": [
+        {
+          "title": "Quick start",
+          "path": "/graphql/quick-start",
+          "file": "en/10-graphql/01-graphql-quick-start.md",
+          "summary": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data."
+        },
+        {
+          "title": "Resolvers",
+          "path": "/graphql/resolvers",
+          "file": "en/10-graphql/02-graphql-resolvers.md",
+          "summary": "Resolvers provide the instructions for turning a GraphQL operation (a query, mutation, or subscription) into data."
+        },
+        {
+          "title": "Mutations",
+          "path": "/graphql/mutations",
+          "file": "en/10-graphql/03-graphql-mutations.md",
+          "summary": "Most discussions of GraphQL focus on data fetching, but any complete data platform needs a way to modify server-side data as well."
+        },
+        {
+          "title": "Subscriptions",
+          "path": "/graphql/subscriptions",
+          "file": "en/10-graphql/04-graphql-subscriptions.md",
+          "summary": "In addition to fetching data with queries and modifying data with mutations, the GraphQL spec supports a third operation type, called subscription."
+        },
+        {
+          "title": "Scalars",
+          "path": "/graphql/scalars",
+          "file": "en/10-graphql/05-graphql-scalars.md",
+          "summary": "A GraphQL object type has a name and fields, but at some point those fields have to resolve to some concrete data."
+        },
+        {
+          "title": "Directives",
+          "path": "/graphql/directives",
+          "file": "en/10-graphql/06-graphql-directives.md",
+          "summary": "A directive can be attached to a field or fragment inclusion, and can affect execution of the query in any way the server desires (see directives in the GraphQL documentation)."
+        },
+        {
+          "title": "Interfaces",
+          "path": "/graphql/interfaces",
+          "file": "en/10-graphql/07-graphql-interfaces.md",
+          "summary": "Like many type systems, GraphQL supports interfaces."
+        },
+        {
+          "title": "Unions and Enums",
+          "path": "/graphql/unions-and-enums",
+          "file": "en/10-graphql/08-graphql-unions-and-enums.md",
+          "summary": "Union types are similar to interfaces, but they don't specify any common fields between the types (see union types in the GraphQL documentation)."
+        },
+        {
+          "title": "Field middleware",
+          "path": "/graphql/field-middleware",
+          "file": "en/10-graphql/09-graphql-field-middleware.md",
+          "summary": "Field middleware lets you run arbitrary code before or after a field is resolved."
+        },
+        {
+          "title": "Mapped types",
+          "path": "/graphql/mapped-types",
+          "file": "en/10-graphql/10-graphql-mapped-types.md",
+          "summary": "As you build out features like CRUD (Create/Read/Update/Delete), it's often useful to construct variants of a base entity type."
+        },
+        {
+          "title": "Plugins",
+          "path": "/graphql/plugins",
+          "file": "en/10-graphql/11-graphql-plugins.md",
+          "summary": "Plugins let you extend Apollo Server's core functionality by performing custom operations in response to certain events."
+        },
+        {
+          "title": "Complexity",
+          "path": "/graphql/complexity",
+          "file": "en/10-graphql/12-graphql-complexity.md",
+          "summary": "Query complexity lets you define how complex certain fields are, and restrict queries with a maximum complexity."
+        },
+        {
+          "title": "Extensions",
+          "path": "/graphql/extensions",
+          "file": "en/10-graphql/13-graphql-extensions.md",
+          "summary": "Extensions are an advanced, low-level feature that lets you define arbitrary data in the types configuration."
+        },
+        {
+          "title": "CLI Plugin",
+          "path": "/graphql/cli-plugin",
+          "file": "en/10-graphql/14-graphql-cli-plugin.md",
+          "summary": "TypeScript's metadata reflection system has several limitations that make it impossible to, for instance, determine which properties a class consists of, or whether a given property is optional or required."
+        },
+        {
+          "title": "Generating SDL",
+          "path": "/graphql/generating-sdl",
+          "file": "en/10-graphql/15-graphql-generating-sdl.md",
+          "summary": "To generate a GraphQL SDL schema manually (i.e., without running an application, connecting to the database, hooking up resolvers, etc.), use the GraphQLSchemaBuilderModule:."
+        },
+        {
+          "title": "Sharing models",
+          "path": "/graphql/sharing-models",
+          "file": "en/10-graphql/16-graphql-sharing-models.md",
+          "summary": "One of the biggest advantages of using TypeScript for the backend of your project is the ability to reuse the same models in a TypeScript-based frontend application through a common TypeScript package."
+        },
+        {
+          "title": "Other features",
+          "path": "/graphql/other-features",
+          "file": "en/10-graphql/17-graphql-other-features.md",
+          "summary": "In the GraphQL world, there is a lot of debate about handling concerns like authentication or the side effects of operations."
+        },
+        {
+          "title": "Federation",
+          "path": "/graphql/federation",
+          "file": "en/10-graphql/18-graphql-federation.md",
+          "summary": "Federation lets you split a monolithic GraphQL server into independent microservices."
+        }
+      ]
+    },
+    {
+      "id": "websockets",
+      "title": "WebSockets",
+      "chapters": [
+        {
+          "title": "Gateways",
+          "path": "/websockets/gateways",
+          "file": "en/11-websockets/01-websockets-gateways.md",
+          "summary": "Most of the concepts discussed elsewhere in this documentation, such as dependency injection, decorators, exception filters, pipes, guards, and interceptors, apply equally to gateways."
+        },
+        {
+          "title": "Exception filters",
+          "path": "/websockets/exception-filters",
+          "file": "en/11-websockets/02-websockets-exception-filters.md",
+          "summary": "The WebSockets exceptions layer works like the HTTP exception filter layer, with one difference: instead of throwing HttpException, throw WsException."
+        },
+        {
+          "title": "Pipes",
+          "path": "/websockets/pipes",
+          "file": "en/11-websockets/03-websockets-pipes.md",
+          "summary": "There is no fundamental difference between regular pipes and WebSocket pipes."
+        },
+        {
+          "title": "Guards",
+          "path": "/websockets/guards",
+          "file": "en/11-websockets/04-websockets-guards.md",
+          "summary": "There is no fundamental difference between WebSocket guards and regular HTTP application guards."
+        },
+        {
+          "title": "Interceptors",
+          "path": "/websockets/interceptors",
+          "file": "en/11-websockets/05-websockets-interceptors.md",
+          "summary": "There is no difference between regular interceptors and WebSocket interceptors."
+        },
+        {
+          "title": "Adapters",
+          "path": "/websockets/adapter",
+          "file": "en/11-websockets/06-websockets-adapter.md",
+          "summary": "The WebSockets module is platform-agnostic, so you can bring your own library (or even a native implementation) by implementing the WebSocketAdapter interface."
+        }
+      ]
+    },
+    {
+      "id": "microservices",
+      "title": "Microservices",
+      "chapters": [
+        {
+          "title": "Overview",
+          "path": "/microservices/basics",
+          "file": "en/12-microservices/01-microservices-basics.md",
+          "summary": "In addition to traditional (sometimes called monolithic) application architectures, Nest natively supports the microservice architectural style of development."
+        },
+        {
+          "title": "Redis",
+          "path": "/microservices/redis",
+          "file": "en/12-microservices/02-microservices-redis.md",
+          "summary": "The Redis transporter implements the publish/subscribe messaging paradigm and uses the Pub/Sub feature of Redis."
+        },
+        {
+          "title": "MQTT",
+          "path": "/microservices/mqtt",
+          "file": "en/12-microservices/03-microservices-mqtt.md",
+          "summary": "MQTT (Message Queuing Telemetry Transport) is an open source, lightweight messaging protocol optimized for low latency."
+        },
+        {
+          "title": "NATS",
+          "path": "/microservices/nats",
+          "file": "en/12-microservices/04-microservices-nats.md",
+          "summary": "NATS is a simple, secure, and high-performance open source messaging system for cloud native applications, IoT messaging, and microservices architectures."
+        },
+        {
+          "title": "RabbitMQ",
+          "path": "/microservices/rabbitmq",
+          "file": "en/12-microservices/05-microservices-rabbitmq.md",
+          "summary": "RabbitMQ is an open-source, lightweight message broker that supports multiple messaging protocols."
+        },
+        {
+          "title": "Kafka",
+          "path": "/microservices/kafka",
+          "file": "en/12-microservices/06-microservices-kafka.md",
+          "summary": "Kafka is an open source, distributed streaming platform with three key capabilities:."
+        },
+        {
+          "title": "gRPC",
+          "path": "/microservices/grpc",
+          "file": "en/12-microservices/07-microservices-grpc.md",
+          "summary": "gRPC is a modern, open source, high-performance RPC framework that can run in any environment."
+        },
+        {
+          "title": "Custom transporters",
+          "path": "/microservices/custom-transport",
+          "file": "en/12-microservices/08-microservices-custom-transport.md",
+          "summary": "Nest provides a variety of transporters out of the box, as well as an API for building custom transport strategies."
+        },
+        {
+          "title": "Exception filters",
+          "path": "/microservices/exception-filters",
+          "file": "en/12-microservices/09-microservices-exception-filters.md",
+          "summary": "The only difference between the HTTP exception filter layer and the corresponding microservices layer is that microservices should throw RpcException instead of HttpException."
+        },
+        {
+          "title": "Pipes",
+          "path": "/microservices/pipes",
+          "file": "en/12-microservices/10-microservices-pipes.md",
+          "summary": "Microservice pipes work the same way as regular pipes."
+        },
+        {
+          "title": "Pre-request hooks",
+          "path": "/microservices/pre-request-hooks",
+          "file": "en/12-microservices/11-microservices-pre-request-hooks.md",
+          "summary": "Pre-request hooks are functions that run before all enhancers (guards, interceptors, and pipes) on every invocation of a pattern handler."
+        },
+        {
+          "title": "Guards",
+          "path": "/microservices/guards",
+          "file": "en/12-microservices/12-microservices-guards.md",
+          "summary": "Microservice guards work the same way as regular HTTP application guards."
+        },
+        {
+          "title": "Interceptors",
+          "path": "/microservices/interceptors",
+          "file": "en/12-microservices/13-microservices-interceptors.md",
+          "summary": "Microservice interceptors work the same way as regular interceptors."
+        }
+      ]
+    },
+    {
+      "id": "deployment",
+      "title": "Deployment",
+      "chapters": [
+        {
+          "title": "Deployment",
+          "path": "/deployment",
+          "file": "en/13-deployment/01-deployment.md",
+          "summary": "When you're ready to deploy your NestJS application to production, there are key steps you can take to ensure it runs as efficiently as possible."
+        }
+      ]
+    },
+    {
+      "id": "standalone-apps",
+      "title": "Standalone apps",
+      "chapters": [
+        {
+          "title": "Standalone apps",
+          "path": "/standalone-applications",
+          "file": "en/14-standalone-apps/01-standalone-applications.md",
+          "summary": "There are several ways to mount a Nest application."
+        }
+      ]
+    },
+    {
+      "id": "cli",
+      "title": "CLI",
+      "chapters": [
+        {
+          "title": "Overview",
+          "path": "/cli/overview",
+          "file": "en/15-cli/01-cli-overview.md",
+          "summary": "The Nest CLI is a command-line tool that helps you initialize, develop, and maintain Nest applications."
+        },
+        {
+          "title": "Workspaces",
+          "path": "/cli/monorepo",
+          "file": "en/15-cli/02-cli-monorepo.md",
+          "summary": "Nest has two modes for organizing code:."
+        },
+        {
+          "title": "Libraries",
+          "path": "/cli/libraries",
+          "file": "en/15-cli/03-cli-libraries.md",
+          "summary": "Many applications need to solve the same general problems, or reuse a modular component in several contexts."
+        },
+        {
+          "title": "Usage",
+          "path": "/cli/usages",
+          "file": "en/15-cli/04-cli-usages.md",
+          "summary": "Creates a new (standard mode) Nest project."
+        },
+        {
+          "title": "Scripts",
+          "path": "/cli/scripts",
+          "file": "en/15-cli/05-cli-scripts.md",
+          "summary": "This section explains how the nest command interacts with compilers and scripts, to help DevOps personnel manage the development environment."
+        }
+      ]
+    },
+    {
+      "id": "openapi",
+      "title": "OpenAPI",
+      "chapters": [
+        {
+          "title": "Introduction",
+          "path": "/openapi/introduction",
+          "file": "en/16-openapi/01-openapi-introduction.md",
+          "summary": "The OpenAPI specification is a language-agnostic definition format for describing RESTful APIs."
+        },
+        {
+          "title": "Types and Parameters",
+          "path": "/openapi/types-and-parameters",
+          "file": "en/16-openapi/02-openapi-types-and-parameters.md",
+          "summary": "The SwaggerModule searches for all @Body(), @Query(), @Param(), and @Headers() decorators in route handlers to generate the API document."
+        },
+        {
+          "title": "Operations",
+          "path": "/openapi/operations",
+          "file": "en/16-openapi/03-openapi-operations.md",
+          "summary": "In OpenAPI terms, paths are the endpoints (resources) that your API exposes, such as /users or /reports/summary."
+        },
+        {
+          "title": "Security",
+          "path": "/openapi/security",
+          "file": "en/16-openapi/04-openapi-security.md",
+          "summary": "To define which security mechanisms a specific operation uses, apply the @ApiSecurity() decorator:."
+        },
+        {
+          "title": "Mapped Types",
+          "path": "/openapi/mapped-types",
+          "file": "en/16-openapi/05-openapi-mapped-types.md",
+          "summary": "As you build out features like CRUD (Create/Read/Update/Delete), it's often useful to construct variants of a base entity type."
+        },
+        {
+          "title": "Decorators",
+          "path": "/openapi/decorators",
+          "file": "en/16-openapi/06-openapi-decorators.md",
+          "summary": "All OpenAPI decorators have an Api prefix to distinguish them from the core decorators."
+        },
+        {
+          "title": "CLI Plugin",
+          "path": "/openapi/cli-plugin",
+          "file": "en/16-openapi/07-openapi-cli-plugin.md",
+          "summary": "TypeScript's metadata reflection system has several limitations."
+        },
+        {
+          "title": "Other features",
+          "path": "/openapi/other-features",
+          "file": "en/16-openapi/08-openapi-other-features.md",
+          "summary": "This page covers other features of the Swagger module that you may find useful."
+        }
+      ]
+    },
+    {
+      "id": "recipes",
+      "title": "Recipes",
+      "chapters": [
+        {
+          "title": "REPL",
+          "path": "/recipes/repl",
+          "file": "en/17-recipes/01-recipes-repl.md",
+          "summary": "A REPL is an interactive environment that takes single user inputs, executes them, and returns the result to the user."
+        },
+        {
+          "title": "CRUD generator",
+          "path": "/recipes/crud-generator",
+          "file": "en/17-recipes/02-recipes-crud-generator.md",
+          "summary": "Over the lifespan of a project, building new features often means adding new resources to the application."
+        },
+        {
+          "title": "SWC (fast compiler)",
+          "path": "/recipes/swc",
+          "file": "en/17-recipes/03-recipes-swc.md",
+          "summary": "SWC (Speedy Web Compiler) is an extensible Rust-based platform that can be used for both compilation and bundling."
+        },
+        {
+          "title": "Passport (auth)",
+          "path": "/recipes/passport",
+          "file": "en/17-recipes/04-recipes-passport.md",
+          "summary": "Passport is the most popular Node.js authentication library, well known in the community and used in many production applications."
+        },
+        {
+          "title": "Hot reload",
+          "path": "/recipes/hot-reload",
+          "file": "en/17-recipes/05-recipes-hot-reload.md",
+          "summary": "TypeScript compilation has the biggest impact on your application's bootstrapping time."
+        },
+        {
+          "title": "Router module",
+          "path": "/recipes/router-module",
+          "file": "en/17-recipes/06-recipes-router-module.md",
+          "summary": "In an HTTP application (e.g., a REST API), the route path for a handler is determined by concatenating the (optional) prefix declared for the controller (inside the @Controller() decorator) and any path specified in the method's decorator (e.g., @Get('users'))."
+        },
+        {
+          "title": "CQRS",
+          "path": "/recipes/cqrs",
+          "file": "en/17-recipes/07-recipes-cqrs.md",
+          "summary": "The flow of simple CRUD (Create, Read, Update and Delete) applications can be described as follows:."
+        },
+        {
+          "title": "Serve static",
+          "path": "/recipes/serve-static",
+          "file": "en/17-recipes/08-recipes-serve-static.md",
+          "summary": "To serve static content, such as a single-page application (SPA), use the ServeStaticModule from the @nestjs/serve-static package."
+        },
+        {
+          "title": "Commander",
+          "path": "/recipes/nest-commander",
+          "file": "en/17-recipes/09-recipes-nest-commander.md",
+          "summary": "Expanding on the standalone applications chapter, the nest-commander package lets you write command-line applications with a structure similar to a typical Nest application."
+        },
+        {
+          "title": "Async local storage",
+          "path": "/recipes/async-local-storage",
+          "file": "en/17-recipes/10-recipes-async-local-storage.md",
+          "summary": "AsyncLocalStorage is a Node.js API (based on the asynchooks API) that provides an alternative way of propagating local state through the application without explicitly passing it as a function parameter."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "title": "FAQ",
+      "chapters": [
+        {
+          "title": "Serverless",
+          "path": "/faq/serverless",
+          "file": "en/18-faq/01-faq-serverless.md",
+          "summary": "Serverless computing is a cloud computing execution model in which the cloud provider allocates machine resources on demand, managing the servers on behalf of its customers."
+        },
+        {
+          "title": "HTTP adapter",
+          "path": "/faq/http-adapter",
+          "file": "en/18-faq/02-faq-http-adapter.md",
+          "summary": "Occasionally, you may need to access the underlying HTTP server, either from within the Nest application context or from outside of it."
+        },
+        {
+          "title": "Keep-Alive connections",
+          "path": "/faq/keep-alive-connections",
+          "file": "en/18-faq/03-faq-keep-alive-connections.md",
+          "summary": "By default, the NestJS HTTP adapters wait until responses have finished before closing the application."
+        },
+        {
+          "title": "Global path prefix",
+          "path": "/faq/global-prefix",
+          "file": "en/18-faq/04-faq-global-prefix.md",
+          "summary": "To set a prefix for every route registered in an HTTP application, call the setGlobalPrefix() method on the INestApplication instance."
+        },
+        {
+          "title": "Raw body",
+          "path": "/faq/raw-body",
+          "file": "en/18-faq/05-faq-raw-body.md",
+          "summary": "One of the most common reasons to access the raw request body is webhook signature verification."
+        },
+        {
+          "title": "Hybrid application",
+          "path": "/faq/hybrid-application",
+          "file": "en/18-faq/06-faq-hybrid-application.md",
+          "summary": "A hybrid application listens for requests from two or more different sources."
+        },
+        {
+          "title": "HTTPS & multiple servers",
+          "path": "/faq/multiple-servers",
+          "file": "en/18-faq/07-faq-multiple-servers.md",
+          "summary": "To create an application that uses the HTTPS protocol, set the httpsOptions property in the options object passed to the NestFactory.create() method:."
+        },
+        {
+          "title": "Request lifecycle",
+          "path": "/faq/request-lifecycle",
+          "file": "en/18-faq/08-faq-request-lifecycle.md",
+          "summary": "Nest applications handle requests and produce responses in a sequence called the request lifecycle."
+        },
+        {
+          "title": "Common errors",
+          "path": "/faq/common-errors",
+          "file": "en/18-faq/09-faq-common-errors.md",
+          "summary": "While learning and working with NestJS, you may run into the errors described on this page."
+        }
+      ]
+    },
+    {
+      "id": "devtools",
+      "title": "Devtools",
+      "chapters": [
+        {
+          "title": "Overview",
+          "path": "/devtools/overview",
+          "file": "en/19-devtools/01-devtools-overview.md",
+          "summary": "Nest Devtools gives you an interactive, always up-to-date view of your application's internals: modules, providers, controllers, and the routes and events that tie them together."
+        },
+        {
+          "title": "CI/CD integration",
+          "path": "/devtools/ci-cd-integration",
+          "file": "en/19-devtools/02-devtools-ci-cd-integration.md",
+          "summary": "Local usage is great for exploring your application as you build it, but the real payoff comes when Devtools becomes part of your delivery pipeline."
+        }
+      ]
+    },
+    {
+      "id": "migration-guide",
+      "title": "Migration guide",
+      "chapters": [
+        {
+          "title": "Migration guide",
+          "path": "/migration-guide",
+          "file": "en/20-migration-guide/01-migration-guide.md",
+          "summary": "This article walks you through migrating from NestJS version 11 to version 12."
+        }
+      ]
+    },
+    {
+      "id": "discover",
+      "title": "Discover",
+      "chapters": [
+        {
+          "title": "Who is using Nest?",
+          "path": "/discover/companies",
+          "file": "en/21-discover/01-discover-companies.md",
+          "summary": "Nest helps companies of all sizes build their products at scale."
+        }
+      ]
+    },
+    {
+      "id": "support-us",
+      "title": "Support us",
+      "chapters": [
+        {
+          "title": "Support us",
+          "path": "/support",
+          "file": "en/22-support-us/01-support.md",
+          "summary": "Nest is an MIT-licensed open source project whose ongoing development is made possible by the support of the community."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+ "meta": {
+  "path": "/api/common/UseInterceptors",
+  "name": "UseInterceptors",
+  "zh": "使用拦截器",
+  "category": "guards",
+  "type": "decorator"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Decorator that binds interceptors to the scope of the controller or method, depending on its context.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n <span class=\"member-name\">@<a href=\"#/api/common/UseInterceptors\" class=\"code-anchor highlight\">UseInterceptors</a></span>(...interceptors: (Function | <a href=\"#/api/common/NestInterceptor\" class=\"code-anchor highlight\">NestInterceptor</a>&lt;any, any&gt;)[])</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b2\">Parameters</h4> <table class=\"is-full-width list-table parameters-table function-overload-parameters\"> <thead> <tr> <th data-tid=\"b3\">Option</th> <th data-tid=\"b4\">Type</th> <th data-tid=\"b5\">Description</th> </tr> </thead> <tbody> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>interceptors</code> </td> <td class=\"param-type\"><code>(Function | <a href=\"#/api/common/NestInterceptor\" class=\"code-anchor highlight\">NestInterceptor</a><any, any=\"\">)[]</any,></code></td> <td class=\"param-description\"> <p data-tid=\"b6\">a single interceptor instance or class, or a list of interceptor instances or classes.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b7\">Returns</h4> <p><code>MethodDecorator &amp; ClassDecorator</code></p> </div> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b8\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/interceptors\" target=\"_blank\" rel=\"noopener\">Interceptors</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b9\"><span>Description</span></h3> <p data-tid=\"b10\">When <code>@<a href=\"#/api/common/UseInterceptors\" class=\"code-anchor highlight\">UseInterceptors</a></code> is used at the controller level, the interceptor will be applied to every handler (method) in the controller.</p> <p data-tid=\"b11\">When <code>@<a href=\"#/api/common/UseInterceptors\" class=\"code-anchor highlight\">UseInterceptors</a></code> is used at the individual handler level, the interceptor will apply only to that specific method.</p> <p data-tid=\"b12\">Further information is available in the <a href=\"#/api/common/UseInterceptors#usage-notes\">Usage Notes...</a></p> </section> <section class=\"decorator-options\"> </section> <section class=\"usage-notes\"> <h3 id=\"usage-notes\" data-tid=\"b13\"><span>Usage notes</span></h3> <p data-tid=\"b14\">Interceptors can also be set up globally for all controllers and routes using <code>app.useGlobalInterceptors()</code>. <a href=\"https://docs.nestjs.com/interceptors#binding-interceptors\" target=\"_blank\" rel=\"noopener\">See here for details</a></p> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Decorator that binds interceptors to the scope of the controller or method, depending on its context.",
+   "plain": "Decorator that binds interceptors to the scope of the controller or method, depending on its context.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b6",
+   "kind": "prose",
+   "tag": "p",
+   "text": "a single interceptor instance or class, or a list of interceptor instances or classes.",
+   "plain": "a single interceptor instance or class, or a list of interceptor instances or classes.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b7",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b8",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b9",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b10",
+   "kind": "prose",
+   "tag": "p",
+   "text": "When [[0]] is used at the controller level, the interceptor will be applied to every handler (method) in the controller.",
+   "plain": "When  is used at the controller level, the interceptor will be applied to every handler (method) in the controller.",
+   "tokens": [
+    "<code>@<a href=\"#/api/common/UseInterceptors\" class=\"code-anchor highlight\">UseInterceptors</a></code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b11",
+   "kind": "prose",
+   "tag": "p",
+   "text": "When [[0]] is used at the individual handler level, the interceptor will apply only to that specific method.",
+   "plain": "When  is used at the individual handler level, the interceptor will apply only to that specific method.",
+   "tokens": [
+    "<code>@<a href=\"#/api/common/UseInterceptors\" class=\"code-anchor highlight\">UseInterceptors</a></code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b12",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Further information is available in the [[0]]",
+   "plain": "Further information is available in the",
+   "tokens": [
+    "<a href=\"#/api/common/UseInterceptors#usage-notes\">Usage Notes...</a>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b13",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Usage notes",
+   "plain": "Usage notes",
+   "tokens": [],
+   "auto": "用法说明"
+  },
+  {
+   "id": "b14",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Interceptors can also be set up globally for all controllers and routes using [[0]]. [[1]]",
+   "plain": "Interceptors can also be set up globally for all controllers and routes using .",
+   "tokens": [
+    "<code>app.useGlobalInterceptors()</code>",
+    "<a href=\"https://docs.nestjs.com/interceptors#binding-interceptors\" target=\"_blank\" rel=\"noopener\">See here for details</a>"
+   ],
+   "auto": null
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "meta": {
+  "path": "/api/common/Next",
+  "name": "Next",
+  "zh": "下一个处理函数",
+  "category": "request",
+  "type": "const"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Route handler parameter decorator. Extracts reference to the <code><a href=\"#/api/common/Next\" class=\"code-anchor highlight\">Next</a></code> function from the underlying platform and populates the decorated parameter with the value of <code><a href=\"#/api/common/Next\" class=\"code-anchor highlight\">Next</a></code>.</p> </section> <pre class=\"language-typescript\"><code language=\"ts\" hidecopy=\"true\" class=\"language-typescript no-box api-heading\">\nconst <a href=\"#/api/common/Next\" class=\"code-anchor highlight\">Next</a>: () =&gt; ParameterDecorator;</code></pre> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Route handler parameter decorator. Extracts reference to the [[0]] function from the underlying platform and populates the decorated parameter with the value of [[1]].",
+   "plain": "Route handler parameter decorator. Extracts reference to the  function from the underlying platform and populates the decorated parameter with the value of .",
+   "tokens": [
+    "<code><a href=\"#/api/common/Next\" class=\"code-anchor highlight\">Next</a></code>",
+    "<code><a href=\"#/api/common/Next\" class=\"code-anchor highlight\">Next</a></code>"
+   ],
+   "auto": null
+  }
+ ]
+}

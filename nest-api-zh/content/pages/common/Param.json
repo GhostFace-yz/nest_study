@@ -1,0 +1,144 @@
+{
+ "meta": {
+  "path": "/api/common/Param",
+  "name": "Param",
+  "zh": "路由参数",
+  "category": "request",
+  "type": "decorator"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b1\">Route handler parameter decorator. Extracts the <code>params</code> property from the <code>req</code> object and populates the decorated parameter with the value of <code>params</code>. May also apply pipes to the bound parameter.</p> <p><a href=\"#description\" data-tid=\"b0\">See more...</a></p> </section> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n <span class=\"member-name\">@<a href=\"#/api/common/Param\" class=\"code-anchor highlight\">Param</a></span>(property?: string | <a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;any, any&gt; | <a href=\"https://api-references-nestjs.netlify.app/api/common/ParameterDecoratorOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParameterDecoratorOptions</a> | <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a>&lt;<a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;any, any&gt;&gt;, optionsOrPipe?: <a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;any, any&gt; | <a href=\"https://api-references-nestjs.netlify.app/api/common/ParameterDecoratorOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParameterDecoratorOptions</a> | <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a>&lt;<a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;any, any&gt;&gt;, ...pipes: (<a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;any, any&gt; | <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a>&lt;<a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;any, any&gt;&gt;)[])</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b2\">Parameters</h4> <table class=\"is-full-width list-table parameters-table function-overload-parameters\"> <thead> <tr> <th data-tid=\"b3\">Option</th> <th data-tid=\"b4\">Type</th> <th data-tid=\"b5\">Description</th> </tr> </thead> <tbody> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>property</code> </td> <td class=\"param-type\"><code>string | <a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a><any, any=\"\"> | <a href=\"https://api-references-nestjs.netlify.app/api/common/ParameterDecoratorOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParameterDecoratorOptions</a> | <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a><pipetransform<any, any=\"\">&gt;</pipetransform<any,></any,></code></td> <td class=\"param-description\"> <p data-tid=\"b6\">name of single property to extract from the <code>req</code> object</p> <pre class=\" language-typescript\"><code class=\" language-typescript\">\nOptional. Default is `undefined`.</code></pre> </td> </tr> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>optionsOrPipe</code> </td> <td class=\"param-type\"><code><a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a><any, any=\"\"> | <a href=\"https://api-references-nestjs.netlify.app/api/common/ParameterDecoratorOptions\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParameterDecoratorOptions</a> | <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a><pipetransform<any, any=\"\">&gt;</pipetransform<any,></any,></code></td> <td class=\"param-description\"> <p data-tid=\"b7\">one or more pipes to apply to the bound parameter or options object</p> <pre class=\" language-typescript\"><code class=\" language-typescript\">\nOptional. Default is `undefined`.</code></pre> </td> </tr> <tr class=\"function-overload-parameter\"> <td class=\"param-name\"> <code>pipes</code> </td> <td class=\"param-type\"><code>(<a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a><any, any=\"\"> | <a href=\"https://api-references-nestjs.netlify.app/api/common/Type\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">Type</a><pipetransform<any, any=\"\">&gt;)[]</pipetransform<any,></any,></code></td> <td class=\"param-description\"> <p data-tid=\"b8\">one or more pipes - either instances or classes - to apply to the bound parameter.</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b9\">Returns</h4> <p><code>ParameterDecorator</code></p> </div> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b10\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/controllers#request-object\" target=\"_blank\" rel=\"noopener\">Request object</a></p> </li> <li><p><a href=\"https://docs.nestjs.com/custom-decorators#working-with-pipes\" target=\"_blank\" rel=\"noopener\">Working with pipes</a></p> </li> </ul> </section> <section class=\"description\"> <h3 id=\"description\" data-tid=\"b11\"><span>Description</span></h3> <p data-tid=\"b12\">For example, extracting all params:</p> <pre class=\" language-typescript\"><code class=\"language-typescript language-typescript\">\nfindOne(@<a href=\"#/api/common/Param\" class=\"code-anchor highlight\">Param</a>() params: string[])</code></pre> <p data-tid=\"b13\">For example, extracting a single param:</p> <pre class=\" language-typescript\"><code class=\"language-typescript language-typescript\">\nfindOne(@<a href=\"#/api/common/Param\" class=\"code-anchor highlight\">Param</a>('id') id: string)</code></pre> </section> <section class=\"decorator-options\"> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "see-more",
+   "tag": "a",
+   "text": "See more...",
+   "plain": "See more...",
+   "tokens": [],
+   "auto": "查看更多…"
+  },
+  {
+   "id": "b1",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Route handler parameter decorator. Extracts the [[0]] property from the [[1]] object and populates the decorated parameter with the value of [[2]]. May also apply pipes to the bound parameter.",
+   "plain": "Route handler parameter decorator. Extracts the  property from the  object and populates the decorated parameter with the value of . May also apply pipes to the bound parameter.",
+   "tokens": [
+    "<code>params</code>",
+    "<code>req</code>",
+    "<code>params</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b3",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b4",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b5",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b6",
+   "kind": "prose",
+   "tag": "p",
+   "text": "name of single property to extract from the [[0]] object",
+   "plain": "name of single property to extract from the  object",
+   "tokens": [
+    "<code>req</code>"
+   ],
+   "auto": null
+  },
+  {
+   "id": "b7",
+   "kind": "prose",
+   "tag": "p",
+   "text": "one or more pipes to apply to the bound parameter or options object",
+   "plain": "one or more pipes to apply to the bound parameter or options object",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b8",
+   "kind": "prose",
+   "tag": "p",
+   "text": "one or more pipes - either instances or classes - to apply to the bound parameter.",
+   "plain": "one or more pipes - either instances or classes - to apply to the bound parameter.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b9",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  },
+  {
+   "id": "b10",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b11",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b12",
+   "kind": "prose",
+   "tag": "p",
+   "text": "For example, extracting all params:",
+   "plain": "For example, extracting all params:",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b13",
+   "kind": "prose",
+   "tag": "p",
+   "text": "For example, extracting a single param:",
+   "plain": "For example, extracting a single param:",
+   "tokens": [],
+   "auto": null
+  }
+ ]
+}

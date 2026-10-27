@@ -1,0 +1,120 @@
+{
+ "meta": {
+  "path": "/api/common/PipeTransform",
+  "name": "PipeTransform",
+  "zh": "管道接口",
+  "category": "guards",
+  "type": "interface"
+ },
+ "en": "<div><article> <div class=\"api-body\"> <section class=\"short-description\"> <p data-tid=\"b0\">Interface describing implementation of a pipe.</p> </section> <section class=\"interface-overview\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\ninterface <a href=\"#/api/common/PipeTransform\" class=\"code-anchor highlight\">PipeTransform</a>&lt;T = any, R = any&gt; {\n  <a class=\"code-anchor\" href=\"#/api/common/PipeTransform#transform_0()\"><span class=\"member-name\">transform</span>(value: T, metadata: ArgumentMetadata&lt;any&gt;): R</a>\n}</code></pre> <div class=\"descendants class\"> <h3 id=\"class-implementations\" data-tid=\"b1\"><span>Class implementations</span></h3> <ul> <li> <code><a href=\"#/api/common/DefaultValuePipe\" class=\"code-anchor highlight\">DefaultValuePipe</a></code> </li> <li> <code><a href=\"https://api-references-nestjs.netlify.app/api/common/ParseFilePipe\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParseFilePipe</a></code> </li> <li> <code><a href=\"https://api-references-nestjs.netlify.app/api/common/ParseArrayPipe\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParseArrayPipe</a></code> </li> <li> <code><a href=\"#/api/common/ParseBoolPipe\" class=\"code-anchor highlight\">ParseBoolPipe</a></code> </li> <li> <code><a href=\"https://api-references-nestjs.netlify.app/api/common/ParseDatePipe\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParseDatePipe</a></code> </li> <li> <code><a href=\"https://api-references-nestjs.netlify.app/api/common/ParseEnumPipe\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParseEnumPipe</a></code> </li> <li> <code><a href=\"https://api-references-nestjs.netlify.app/api/common/ParseFloatPipe\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ParseFloatPipe</a></code> </li> <li> <code><a href=\"#/api/common/ParseIntPipe\" class=\"code-anchor highlight\">ParseIntPipe</a></code> </li> <li> <code><a href=\"#/api/common/ParseUUIDPipe\" class=\"code-anchor highlight\">ParseUUIDPipe</a></code> </li> <li> <code><a href=\"https://api-references-nestjs.netlify.app/api/common/StandardSchemaValidationPipe\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">StandardSchemaValidationPipe</a></code> </li> <li> <code><a href=\"#/api/common/ValidationPipe\" class=\"code-anchor highlight\">ValidationPipe</a></code> </li> </ul> </div> </section> <section class=\"see-also\"> <h3 id=\"see-also\" data-tid=\"b2\"><span>See also</span></h3> <ul> <li><p><a href=\"https://docs.nestjs.com/pipes\" target=\"_blank\" rel=\"noopener\">Pipes</a></p> </li> </ul> </section> <section class=\"instance-methods\"> <h3 id=\"methods\" data-tid=\"b3\"><span><span>Methods</span></span></h3> <a id=\"transform_0()\"></a> <table class=\"is-full-width method-table instance-method\"> <thead><tr><th class=\"th-title\"> <h3 id=\"------transform----------\"> transform() </h3> </th></tr></thead> <tbody> <tr> <td class=\"short-description\"> <p data-tid=\"b4\">Method to implement a custom pipe. Called with two parameters</p> </td> </tr> <tr> <td> <div class=\"overload-info\"> <pre class=\"language-typescript\"><code class=\"language-typescript\">\n<span class=\"member-name\">transform</span>(value: T, metadata: <a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a>&lt;any&gt;): R</code></pre> <h4 class=\"no-anchor\" id=\"parameters\" data-tid=\"b5\">Parameters</h4> <table class=\"is-full-width list-table parameters-table instance-method-overload-parameters\"> <thead> <tr> <th data-tid=\"b6\">Option</th> <th data-tid=\"b7\">Type</th> <th data-tid=\"b8\">Description</th> </tr> </thead> <tbody> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>value</code> </td> <td class=\"param-type\"><code>T</code></td> <td class=\"param-description\"> <p data-tid=\"b9\">argument before it is received by route handler method</p> </td> </tr> <tr class=\"instance-method-overload-parameter\"> <td class=\"param-name\"> <code>metadata</code> </td> <td class=\"param-type\"><code><a href=\"https://api-references-nestjs.netlify.app/api/common/ArgumentMetadata\" class=\"code-anchor highlight\" target=\"_blank\" rel=\"noopener\">ArgumentMetadata</a><any></any></code></td> <td class=\"param-description\"> <p data-tid=\"b10\">contains metadata about the value</p> </td> </tr> </tbody> </table> <h4 class=\"no-anchor\" id=\"returns\" data-tid=\"b11\">Returns</h4> <p><code>R</code></p> </div> </td> </tr> </tbody> </table> </section> </div> </article> </div>",
+ "blocks": [
+  {
+   "id": "b0",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Interface describing implementation of a pipe.",
+   "plain": "Interface describing implementation of a pipe.",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b1",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Class implementations",
+   "plain": "Class implementations",
+   "tokens": [],
+   "auto": "类实现"
+  },
+  {
+   "id": "b2",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "See also",
+   "plain": "See also",
+   "tokens": [],
+   "auto": "另见"
+  },
+  {
+   "id": "b3",
+   "kind": "heading",
+   "tag": "h3",
+   "text": "Methods",
+   "plain": "Methods",
+   "tokens": [],
+   "auto": "方法"
+  },
+  {
+   "id": "b4",
+   "kind": "prose",
+   "tag": "p",
+   "text": "Method to implement a custom pipe. Called with two parameters",
+   "plain": "Method to implement a custom pipe. Called with two parameters",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b5",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Parameters",
+   "plain": "Parameters",
+   "tokens": [],
+   "auto": "参数"
+  },
+  {
+   "id": "b6",
+   "kind": "th",
+   "tag": "th",
+   "text": "Option",
+   "plain": "Option",
+   "tokens": [],
+   "auto": "选项"
+  },
+  {
+   "id": "b7",
+   "kind": "th",
+   "tag": "th",
+   "text": "Type",
+   "plain": "Type",
+   "tokens": [],
+   "auto": "类型"
+  },
+  {
+   "id": "b8",
+   "kind": "th",
+   "tag": "th",
+   "text": "Description",
+   "plain": "Description",
+   "tokens": [],
+   "auto": "说明"
+  },
+  {
+   "id": "b9",
+   "kind": "prose",
+   "tag": "p",
+   "text": "argument before it is received by route handler method",
+   "plain": "argument before it is received by route handler method",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b10",
+   "kind": "prose",
+   "tag": "p",
+   "text": "contains metadata about the value",
+   "plain": "contains metadata about the value",
+   "tokens": [],
+   "auto": null
+  },
+  {
+   "id": "b11",
+   "kind": "heading",
+   "tag": "h4",
+   "text": "Returns",
+   "plain": "Returns",
+   "tokens": [],
+   "auto": "返回值"
+  }
+ ]
+}
